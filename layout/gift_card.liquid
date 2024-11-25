@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  {% include 'header-settings' %}
+  {% include 'header-seo' %}
+  {% include 'header-social-meta' %}
+  {{ content_for_header }}
+  {% include 'header-tag' %}
+  {% include 'header-custom' %}
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
+  <main role="main" id="MainContent" money="{{shop.money_format}}">
+    {{ content_for_layout }}
+  </main>
+
+  {% include 'footer-custom' %}
+</body>
+</html>

@@ -1,0 +1,376 @@
+
+  
+<section class="gt_section-VvcHghYH0YTQh6V  " data-name="Search Results"><div class="gt_search-bg gt_lazyload" style=" background-image: url('')"><div class="gt_overlay"></div></div><div class="gt_search"><div class="gt_atom-VvcHghYH0YTQh6V_searchContentBox gt_py2--extra-large gt_mb2--extra-large gt_search-content" data-name="Search Content Box" data-attribute="searchContentBox" data-class="gt_py2--extra-large gt_mb2--extra-large gt_search-content"><div class="gt_container"><after><span class="gt_hidden gt_text--terms">{{search.terms}}</span></after><after><div class="gt_atom-VvcHghYH0YTQh6V_titleSearchingResults gt_heading--large gt_text--center" data-name="Heading" data-attribute="titleSearchingResults" data-class="gt_heading--large gt_text--center"><div class="gt_text-wrapper">
+        Searching Results
+      </div></div></after><after>
+          {% if search.performed %}
+          {% if search.results_count != 0 %}
+          <h1 class="gt_atom-VvcHghYH0YTQh6V_searchTitle gt_subheading gt_mb2--medium gt_text--center" data-name="Message" data-cache="{{search.results_count}} , '{{search.terms}}'" data-attribute="searchTitle" data-class="gt_subheading gt_mb2--medium gt_text--center"><div>Showing</div><div class="gt_search-results">&nbsp;{{search.results_count}}&nbsp;</div><div>results for</div>
+      {%- assign filtered_terms = search.terms -%}
+      {%- if filtered_terms contains ' AND ' -%}
+      {%- assign filtered_terms = filtered_terms | split: ' AND ' | last -%}
+      {%- else -%}
+      {%- assign filtered_terms = filtered_terms | split: 'product_type:' | last -%}
+      {%- endif -%}
+      <div class="gt_search-terms"><strong>&nbsp;"{{filtered_terms}}"</strong></div></h1>
+          {% endif %}
+          {% endif %}
+        </after>
+        
+        {% if search.results_count == 0 %}
+          
+            <div class="gt_atom-VvcHghYH0YTQh6V_messageOfResultsText gt_mb2--medium gt_text--center" data-name="Message Of Results Text" data-attribute="messageOfResultsText" data-class="gt_mb2--medium gt_text--center"><div class="gt_text-wrapper">
+        Sorry, nothing found for <strong>“{{search.terms}}”</strong>. <br>Check out some of these popular searches
+      </div></div>
+           
+        {% endif %}
+        <div class="gt_flex gt_justify--center gt_items--center gt_search-results-box"><div class="gt_atom-VvcHghYH0YTQh6V_searchProducts gt_header-tool-item" data-name="Input Search" data-attribute="searchProducts" data-class="gt_header-tool-item">
+  {% assign symbolCurrency = shop.money_format | slice: 0 %}
+  
+      <div class="gt_search-box"><form action="/search" method="get" class="gt_search-form" role="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" maxlength="250"><div class="gt_inputGroup-des"><input type="hidden" name="type" value="product,article,page"><input class="gt_nav-search-input-des gt_input" required="required" name="q" type="search" value="" placeholder="Search..."><input type="hidden" name="options[prefix]" value="last" aria-hidden="true"><button class="btn button gt_button-des gt_button"><svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.40959 14.9023C6.51025 14.9023 5.51097 14.7024 4.61163 14.4026C0.914326 12.8038 -0.98429 8.50692 0.514617 4.70969C1.21411 2.911 2.71301 1.4121 4.5117 0.612679C6.31039 -0.186738 8.40886 -0.186738 10.2076 0.512752C14.0048 2.01166 15.9034 6.40845 14.3046 10.2057C13.2054 13.1036 10.4074 14.9023 7.40959 14.9023ZM7.40959 2.01166C6.7101 2.01166 6.01061 2.11159 5.31112 2.41137C4.01207 3.01093 2.91287 4.11013 2.41323 5.40918C1.31403 8.20714 2.61309 11.4048 5.41105 12.504C8.20901 13.6032 11.4067 12.3042 12.5059 9.50619C13.6051 6.70823 12.306 3.51057 9.50806 2.41137C8.80857 2.11159 8.10908 2.01166 7.40959 2.01166Z" fill="currentColor"></path><path d="M17.0026 18C16.7028 18 16.5029 17.9001 16.3031 17.7002L11.3067 12.7039C10.907 12.3042 10.907 11.7046 11.3067 11.3049C11.7064 10.9052 12.306 10.9052 12.7057 11.3049L17.7021 16.3012C18.1018 16.701 18.1018 17.3005 17.7021 17.7002C17.5022 17.9001 17.3024 18 17.0026 18Z" fill="currentColor"></path></svg></button></div><div class="gt_search-results--wrapper"><div class="gt_search-results--content"><div class="gt_search-results--arrow"></div><div class="gt_skeleton-loading"><div class="gt_skeleton-box"><div class="gt_skeleton-img"></div><div class="gt_skeleton-line"></div><div class="gt_skeleton-line"></div></div><div class="gt_skeleton-box"><div class="gt_skeleton-img"></div><div class="gt_skeleton-line"></div><div class="gt_skeleton-line"></div></div><div class="gt_skeleton-box"><div class="gt_skeleton-img"></div><div class="gt_skeleton-line"></div><div class="gt_skeleton-line"></div></div><div class="gt_skeleton-box"><div class="gt_skeleton-img"></div><div class="gt_skeleton-line"></div><div class="gt_skeleton-line"></div></div></div><div class="gt_search-results"></div><div class="gt_cache_list-products"><div class="gt_title_list-products"><p class="gt_text gt_font--bold">
+                          Products
+                        </p></div><div class="gt_title_list-collections"><p class="gt_text gt_font--bold">
+                          Collections
+                        </p></div><div class="gt_title_list-articles"><p class="gt_text gt_font--bold">
+                          Articles
+                        </p></div><div class="gt_title_list-pages"><p class="gt_text gt_font--bold">
+                          Pages
+                        </p></div><div class="gt_search-no-result"><div><span class="title">
+                            No results.
+                          </span></div></div><span class="gt_search-has-results">
+                        View all results
+                      </span></div></div></div></form></div></div></div><after>
+          {% if search.performed %}
+          {% if search.results_count == 0 %}
+           <div class="gt_flex gt_header-tool gt_mt2--medium gt_justify--center gt_mb2--medium gt_items--center gt_searchSuggestionsBox"><div class="gt_atom-VvcHghYH0YTQh6V_searchSuggestions gt_flex  gt_text--center gt_justify--center gt_flex-wrap gt_items--center gt_searchSuggestions" data-name="Search Suggestions" data-attribute="searchSuggestions" data-class="gt_flex  gt_text--center gt_justify--center gt_flex-wrap gt_items--center gt_searchSuggestions"><a href="/search?type=product&amp;q=Hair Dryer" class="gt_popular-puggestions" data-index="0"><p class="gt_popular-puggestions--item">
+          Hair Dryer
+        </p></a><a href="/search?type=product&amp;q=Air Brush" class="gt_popular-puggestions" data-index="1"><p class="gt_popular-puggestions--item">
+          Air Brush
+        </p></a><a href="/search?type=product&amp;q=Electric Trimmer" class="gt_popular-puggestions" data-index="2"><p class="gt_popular-puggestions--item">
+          Electric Trimmer
+        </p></a><a href="/search?type=product&amp;q=Hair Straightener" class="gt_popular-puggestions" data-index="3"><p class="gt_popular-puggestions--item">
+          Hair Straightener
+        </p></a><a href="/search?type=product&amp;q=Hot Hair Dryer" class="gt_popular-puggestions" data-index="4"><p class="gt_popular-puggestions--item">
+          Hot Hair Dryer
+        </p></a><a href="/search?type=product&amp;q=Clippers" class="gt_popular-puggestions" data-index="5"><p class="gt_popular-puggestions--item">
+          Clippers
+        </p></a></div></div>
+          {% endif %}
+          {% endif %}
+        </after></div></div><div class="gt_container">
+   
+      {% if search.performed %}
+      {% if search.results_count != 0 %}
+
+        
+        {% paginate search.results by 8 %}
+        
+
+        <div class="gt_flex gt_flex-wrap gt_search-item">
+          
+          
+
+          {% assign countProduct = 0 %}
+          {% assign countArticle = 0 %}
+          {% assign countPage = 0 %}
+
+          {% for item in search.results limit:8  %}
+            {% if item.object_type == 'product' %}
+              {% assign product = item %}
+              <div class="gt_search-items gt_search-items-product"><div class="gt_element-85689 gt_product-element  gt_product-hover--img-change   gt_product-hover--img-scale " data-name="Master Product List" data-keyword="product">
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  
+  <script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{gtCurrentVariant.id}}">
+    {{ product | json }}
+  </script>
+  {% unless gtCurrentVariant == empty %}
+  <script type="application/json">
+    {{ gtCurrentVariant | json }}
+  </script>
+  {% endunless %}
+
+  
+  {% form 'product', product, class:'gt_product-form ' %}
+  
+  <input type="hidden" name="id" class="gt_swatches--input" value="{{gtCurrentVariant.id}}"><input type="hidden" name="quantity" class="gt_quantity--input" value="1"><a class="link_gt_product gt_product-default" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-image-box"><div class="gt_product-above-top-image-hook" style="position: absolute; top: 0; left: 0; width: 100% ; z-index: 4;"></div><div class="gt_product-above-bottom-image-hook" style="position: absolute; bottom: 0; left: 0; width: 100% ; z-index: 4;"></div>
+      
+      {%- if gtCurrentVariant.compare_at_price > gtCurrentVariant.price -%}
+      <div class="gt_product-sale-tag"><!--                <div class="gt_product-sale-tag&#45;&#45;inner gt_pt&#45;&#45;extra-small gt_pb&#45;&#45;extra-small gt_pr&#45;&#45;small gt_pl&#45;&#45;small">--><div class="gt_product-sale-tag--inner"><div class="gt_product-sale-tag--value gt_product-sale-tag--value--percent"></div><div class="gt_product-sale-tag--value gt_product-sale-tag--value--number"></div><div class="gt_product-sale-tag--after"></div></div></div>
+      {%- endif -%}
+      
+      <div class="gt_product-sold-out-tag" data-sold-out="Sold Out">
+          {% unless gtCurrentVariant.available %}
+            <div class="gt_product-sold-out-tag--inner">
+              Sold Out
+            </div>
+          {% endunless %}
+        </div><div class="gt_product-image"><div class="gt_product-image--inner"><div class="gt_product-image--list">
+            {%- assign product_image_front = product.featured_image -%}
+            {%- assign product_image_back = product.images | last -%}
+
+            
+            {%- assign product_image_front = product.featured_image -%}
+            
+
+            
+            
+            {% assign nth = 2 | minus: 1 %}
+            {% assign limit = product.images | size | minus: 1  %}
+            {% assign nth = nth | at_most: limit %}
+            {% assign product_image_back = product.images[nth] %}
+            
+            
+
+            <img class="gt_product-image--front not-variant gt_lazyload" src="{{ product_image_front.src | img_url: '50x' }}" data-id="{{ product_image_front.id }}" alt="{{ product_image_front.alt | escape | replace: '&quot;', '&apos;' }}"><img class="gt_product-image--back gt_lazyload" src="{{ product_image_back.src | img_url: '50x' }}" data-id="{{ product_image_back.id }}" alt="{{ product_image_back.alt | escape | replace: '&quot;', '&apos;' }}"></div></div></div><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-2"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></a><div class="gt_product-info gt_flex1"><div class="gt_product-info--top gt_flex1"><div class="gt_flex1"></div><div class="gt_mb--extra-small gt_product-price gt_product-price--origin gt_product-default"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+            {{ gtCurrentVariant.price | money }}
+          </span>
+          
+            {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+              <div class="gt_pr--extra-small gt_pt--extra-small"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+                {{ gtCurrentVariant.compare_at_price | money }}
+              </span>
+            {% endif %}
+          
+        </div><a class="link_gt_product" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-name"><h4 class="gt_subheading gt_atom-85689_productTitle " data-name="Product Title" data-attribute="productTitle">
+  {{product.title}}
+</h4></div></a><div class="gt_product_vendor"></div><div class="gt_product-price gt_product-price--custom"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+          {{ gtCurrentVariant.price | money }}
+        </span>
+          {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+            <div class="gt_pr--extra-small gt_pt--extra-small gt_distance--custom"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+              {{ gtCurrentVariant.compare_at_price | money }}
+            </span>
+          {% endif %}
+      </div><div class="gt_product_variants gt_product_variants--vertical"></div></div><div class="wrapper_price"><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-default"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></div>
+  
+  
+  {% endform %}
+  
+</div></div>
+            {% endif %}
+            {% if item.object_type == 'article' and countArticle <= 8 %}
+              {% assign countArticle = countArticle | plus: 1 %}
+              {% assign article = item %}
+              <div class="gt_search-items gt_search-items-article"><div class="gt_atom-VvcHghYH0YTQh6V_blogItem gt_blog-item" data-name="Blog Item" data-attribute="blogItem" data-class="gt_blog-item"><a href="{{ article.url }}"><div class="gt_atom-VvcHghYH0YTQh6V_itemImageSmall gt_item-image" data-name="Article Image" data-attribute="itemImageSmall" data-class="gt_item-image"><img class="gt_img--article gt_lazyload" src="{{ article.image.src | img_url: '1200x' }}" alt="{{ article.title | escape | replace: '&quot;', '&apos;' }}"></div></a><a href="{{ article.url }}"><h2 class="gt_atom-VvcHghYH0YTQh6V_itemTitleSmall gt_subheading gt_mt2--small gt_item-title" data-name="Article Title" data-article-id="{{article.id}}" data-attribute="itemTitleSmall" data-class="gt_subheading gt_mt2--small gt_item-title">
+ {{ article.title }}
+</h2></a><div class="gt_atom-VvcHghYH0YTQh6V_blogMeta gt_flex-wrap gt_my2--small" data-name="Blog Meta Box" data-attribute="blogMeta" data-class="gt_flex-wrap gt_my2--small"><div class="gt_flex gt_mb2--extra-small gt_items--center"><div class="gt_atom-VvcHghYH0YTQh6V_iconAuthor gt_mr2--extra-small gt_icon--author" data-name="Icon" data-attribute="iconAuthor" data-class="gt_mr2--extra-small gt_icon--author"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="VvcHghYH0YTQh6V_iconAuthor" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 448 512"><path d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"></path></svg></span></div></div><h6 class="gt_atom-VvcHghYH0YTQh6V_itemAuthor gt_mb--none gt_text--small gt_mr2--small  gt_item-author" data-name="Author" data-article-id="{{article.id}}" data-attribute="itemAuthor" data-class="gt_mb--none gt_text--small gt_mr2--small  gt_item-author">
+  by {{ article.author }} 
+</h6></div><div class="gt_flex xs:gt_mb2--extra-small gt_items--center gt_mr2--small "><div class="gt_atom-VvcHghYH0YTQh6V_iconDate gt_mr2--extra-small gt_icon--date" data-name="Icon" data-attribute="iconDate" data-class="gt_mr2--extra-small gt_icon--date"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="VvcHghYH0YTQh6V_iconDate" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 512 512"><path d="M458.472 44.8368H407.421V18.693C407.421 8.59991 399.239 0.417969 389.146 0.417969C379.053 0.417969 370.871 8.59991 370.871 18.693V44.8359H141.041V18.693C141.041 8.59991 132.859 0.417969 122.766 0.417969C112.673 0.417969 104.491 8.59991 104.491 18.693V44.8359H53.4395C26.0884 44.8359 3.83594 67.0884 3.83594 94.4395V461.961C3.83594 489.313 26.0884 511.564 53.4395 511.564H458.472C485.824 511.564 508.076 489.313 508.076 461.961V94.4395C508.076 67.0893 485.824 44.8368 458.472 44.8368ZM40.3859 94.4403C40.3859 87.2302 46.2302 81.3868 53.4395 81.3868H104.491V102.241C104.491 112.334 112.673 120.516 122.766 120.516C132.859 120.516 141.041 112.334 141.041 102.241V81.3868H370.871V102.241C370.871 112.334 379.053 120.516 389.146 120.516C399.239 120.516 407.421 112.334 407.421 102.241V81.3868H458.472C465.681 81.3868 471.525 87.231 471.525 94.4403V140.389H40.3859V94.4403ZM471.525 461.962C471.525 469.171 465.681 475.017 458.472 475.017H53.4395C46.2302 475.017 40.3859 469.171 40.3859 461.962V176.939H471.525V461.962Z" fill="currentColor"></path></svg></span></div></div><h6 class="gt_atom-VvcHghYH0YTQh6V_itemDate gt_mb--none gt_font--normal gt_text--small  gt_item-date" data-name="Date" data-article-id="{{article.id}}" data-attribute="itemDate" data-class="gt_mb--none gt_font--normal gt_text--small  gt_item-date">
+  {{ article.published_at | date: "%b %d, %Y" }}
+</h6></div><div class="gt_flex gt_items--center  gt_mr2--small "><div class="gt_atom-VvcHghYH0YTQh6V_iconCountComment gt_mr2--extra-small gt_icon--count-comment" data-name="Icon" data-attribute="iconCountComment" data-class="gt_mr2--extra-small gt_icon--count-comment"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="VvcHghYH0YTQh6V_iconCountComment" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 512 512"><path d="M462.002 4.83594H49.9777C22.6489 4.83594 0.416016 27.0696 0.416016 54.3976V362.128C0.416016 389.028 21.9584 410.991 48.6956 411.674L48.8141 457.652C48.832 464.572 50.2453 471.266 53.015 477.548C55.6508 483.526 59.3939 488.851 64.1378 493.371C73.4321 502.229 85.6026 507.108 98.4047 507.108C107.648 507.108 116.708 504.503 124.607 499.576L265.504 411.69H462.002C489.331 411.69 511.564 389.457 511.564 362.128V54.3976C511.562 27.0696 489.33 4.83594 462.002 4.83594ZM475.043 362.128C475.043 369.331 469.203 375.171 462.001 375.171H258.783C256.342 375.171 253.951 375.855 251.881 377.147L105.278 468.591C103.077 469.963 100.711 470.588 98.4047 470.588C91.6209 470.588 85.3528 465.188 85.3332 457.558L85.1559 388.18C85.138 380.99 79.3029 375.171 72.1133 375.171H49.9777C42.7744 375.171 36.9351 369.331 36.9351 362.128V54.3976C36.9351 47.1944 42.7753 41.3551 49.9777 41.3551H462.001C469.203 41.3551 475.044 47.1944 475.044 54.3976V362.128H475.043Z" fill="currentColor"></path></svg></span></div></div><h6 class="gt_atom-VvcHghYH0YTQh6V_itemCountComment gt_mb--none gt_font--normal gt_text--small gt_item-count-comment" data-name="Count Comment" data-article-id="{{article.id}}" data-attribute="itemCountComment" data-class="gt_mb--none gt_font--normal gt_text--small gt_item-count-comment">
+{{article.comments_count}} comments 
+</h6></div></div></div></div>
+            {% endif %}
+            {% if item.object_type == 'page' %}
+              {% assign page = item %}
+              <div class="gt_search-items gt_search-items-page"><a href="{{ page.url }}"><div class="gt_atom-VvcHghYH0YTQh6V_pageItem gt_flex gt_items--center gt_p2--small gt_text--center gt_justify--center gt_search-page-items" data-name="Page Item" data-attribute="pageItem" data-class="gt_flex gt_items--center gt_p2--small gt_text--center gt_justify--center gt_search-page-items"><h2 class="gt_atom-VvcHghYH0YTQh6V_pageItemTitle gt_subheading  gt_m--none" data-name="Page Title" data-page-id="{{page.id}}" data-attribute="pageItemTitle" data-class="gt_subheading  gt_m--none">
+{{ page.title }}
+</h2></div></a></div>
+            {% endif %}
+          {% endfor %}
+        </div><div class="gt_atom-VvcHghYH0YTQh6V_boxPagination gt_row gt_mt2--large gt_pb2--extra-large" data-name="Pagination Product Box" data-attribute="boxPagination" data-class="gt_row gt_mt2--large gt_pb2--extra-large"><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-VvcHghYH0YTQh6V_columnCountProductOfPage gt_justify--center gt_items--start sm:gt_items--center sm:gt_mb2--medium" data-name="Count Product" data-attribute="columnCountProductOfPage" data-class="gt_justify--center gt_items--start sm:gt_items--center sm:gt_mb2--medium"><div class="gt_atom-VvcHghYH0YTQh6V_productCountInSearchOfPage gt_text" data-name="Product Count In Search Of Page" data-attribute="productCountInSearchOfPage" data-class="gt_text">
+  
+
+
+  
+    
+
+      {% assign paginates = 0 %}
+      {% assign paginateCurrent = 0 %}
+      {% assign paginates = paginate.items %}
+      {% assign paginateCurrent = paginate.current_offset | plus: paginate.page_size %}
+      {% if paginates >= paginateCurrent %}
+      
+        Showing
+      
+      {{paginate.current_offset | plus: 1}} - {{paginate.current_offset | plus: paginate.page_size}} of {{paginate.items}} 
+      
+        Item
+      
+      {% endif %}
+    
+    
+  
+</div></div><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-VvcHghYH0YTQh6V_columnPaginationProduct gt_justify--end gt_items--end sm:gt_items--center" data-name="Pagination Product" data-attribute="columnPaginationProduct" data-class="gt_justify--end gt_items--end sm:gt_items--center"><div class="gt_atom-VvcHghYH0YTQh6V_pagination gt_search-pagination" data-name="Pagination" data-attribute="pagination" data-class="gt_search-pagination">
+  {%- if paginate.pages > 1 -%}
+    <div class="gt_paginate">
+      {% if paginate.previous.is_link %}
+        <a class="gt_paginate--item gt_previous" href="{{ paginate.previous.url }}"><div class="gt_paginate--items"><span data-optimize-type="icon" data-attribute="uploadIconPrevious," data-section-id="VvcHghYH0YTQh6V_pagination" class="gt_icon"><svg height="100%" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" class="svg-inline--fa fa-angle-left fa-w-6 fa-3x"><path fill="currentColor" d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"></path></svg></span></div></a>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <a href="{{ part.url }}" class="gt_paginate--item gt_normal"><div class="gt_paginate--items">{{ part.title }}</div></a>
+        {%- else if (part.title == paginate.current_page) -%}
+          <div class="gt_paginate--item gt_current"><span class="gt_paginate--items">{{ part.title }}</span></div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {% if paginate.next.is_link %}
+        <a class="gt_paginate--item gt_next" href="{{ paginate.next.url }}"><div class="gt_paginate--items"><span data-optimize-type="icon" data-attribute="uploadIconNext," data-section-id="VvcHghYH0YTQh6V_pagination" class="gt_icon"><svg height="100%" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" class="svg-inline--fa fa-angle-right fa-w-6 fa-3x"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z" class=""></path></svg></span></div></a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div></div></div>
+        
+          {% endpaginate %} 
+        
+      {% endif %}
+      {% endif %}
+     
+      <div class="gt_empty {% if search.results_count == 0 %} gt_active {% endif %}"><div class="gt_atom-VvcHghYH0YTQh6V_boxEmptyBottom gt_row gt_pb2--extra-large   gt_mt2--extra-large " data-name="Box Empty Bottom" data-attribute="boxEmptyBottom" data-class="gt_row gt_pb2--extra-large   gt_mt2--extra-large "><div class="gt_col-lg-4 gt_col-md-4 gt_col-sm-12 gt_col-12 gt_atom-VvcHghYH0YTQh6V_boxContentEmpty sm:gt_mb2--medium sm:gt_text--center xs:gt_text--center gt_empty-text" data-name="Content Empty" data-attribute="boxContentEmpty" data-class="sm:gt_mb2--medium sm:gt_text--center xs:gt_text--center gt_empty-text"><div class="gt_atom-VvcHghYH0YTQh6V_headingEmpty gt_heading--small gt_mb2--small" data-name="Heading Empty" data-attribute="headingEmpty" data-class="gt_heading--small gt_mb2--small"><div class="gt_text-wrapper">
+        No matching products found? Try this out!
+      </div></div><div class="gt_atom-VvcHghYH0YTQh6V_textEmpty gt_text gt_mb2--medium" data-name="Text Empty" data-attribute="textEmpty" data-class="gt_text gt_mb2--medium"><div class="gt_text-wrapper">
+        Don't worry, we've got many more fantastic handpicked items for you.
+      </div></div><div class="gt_atom-VvcHghYH0YTQh6V_buttonLinkEmpty gt_button--empty" data-name="Button Link" data-attribute="buttonLinkEmpty" data-class="gt_button--empty"><div class="gt_button  gt_atom--btn"><div class="gt_button-content-text">
+      
+        Explore Now
+      
+    </div></div></div></div><div class="gt_col-lg-8 gt_col-md-8 gt_col-sm-12 gt_col-12 gt_atom-VvcHghYH0YTQh6V_boxProductList gt_cart-product-list" data-name="Product List" data-attribute="boxProductList" data-class="gt_cart-product-list"><div class="gt_atom-VvcHghYH0YTQh6V_boxProduct gt_row gt_justify--center gt_product-list" data-name="Product Box" data-attribute="boxProduct" data-class="gt_row gt_justify--center gt_product-list">
+              
+
+              
+
+              
+              {% for product in collections.all.products limit:3 %}
+
+              
+              <div class="gt_col-lg-4 gt_col-md-4 gt_col-sm-12 gt_col-12 gt_atom-VvcHghYH0YTQh6V_productListItems sm:gt_px2--large sm:gt_mb2--medium gt_productlist-item" data-name="Product Items" data-attribute="productListItems" data-class="sm:gt_px2--large sm:gt_mb2--medium gt_productlist-item"><div class="gt_element-85689 gt_product-element  gt_product-hover--img-change   gt_product-hover--img-scale " data-name="Master Product List" data-keyword="product">
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  
+  <script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{gtCurrentVariant.id}}">
+    {{ product | json }}
+  </script>
+  {% unless gtCurrentVariant == empty %}
+  <script type="application/json">
+    {{ gtCurrentVariant | json }}
+  </script>
+  {% endunless %}
+
+  
+  {% form 'product', product, class:'gt_product-form ' %}
+  
+  <input type="hidden" name="id" class="gt_swatches--input" value="{{gtCurrentVariant.id}}"><input type="hidden" name="quantity" class="gt_quantity--input" value="1"><a class="link_gt_product gt_product-default" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-image-box"><div class="gt_product-above-top-image-hook" style="position: absolute; top: 0; left: 0; width: 100% ; z-index: 4;"></div><div class="gt_product-above-bottom-image-hook" style="position: absolute; bottom: 0; left: 0; width: 100% ; z-index: 4;"></div>
+      
+      {%- if gtCurrentVariant.compare_at_price > gtCurrentVariant.price -%}
+      <div class="gt_product-sale-tag"><!--                <div class="gt_product-sale-tag&#45;&#45;inner gt_pt&#45;&#45;extra-small gt_pb&#45;&#45;extra-small gt_pr&#45;&#45;small gt_pl&#45;&#45;small">--><div class="gt_product-sale-tag--inner"><div class="gt_product-sale-tag--value gt_product-sale-tag--value--percent"></div><div class="gt_product-sale-tag--value gt_product-sale-tag--value--number"></div><div class="gt_product-sale-tag--after"></div></div></div>
+      {%- endif -%}
+      
+      <div class="gt_product-sold-out-tag" data-sold-out="Sold Out">
+          {% unless gtCurrentVariant.available %}
+            <div class="gt_product-sold-out-tag--inner">
+              Sold Out
+            </div>
+          {% endunless %}
+        </div><div class="gt_product-image"><div class="gt_product-image--inner"><div class="gt_product-image--list">
+            {%- assign product_image_front = product.featured_image -%}
+            {%- assign product_image_back = product.images | last -%}
+
+            
+            {%- assign product_image_front = product.featured_image -%}
+            
+
+            
+            
+            {% assign nth = 2 | minus: 1 %}
+            {% assign limit = product.images | size | minus: 1  %}
+            {% assign nth = nth | at_most: limit %}
+            {% assign product_image_back = product.images[nth] %}
+            
+            
+
+            <img class="gt_product-image--front not-variant gt_lazyload" src="{{ product_image_front.src | img_url: '50x' }}" data-id="{{ product_image_front.id }}" alt="{{ product_image_front.alt | escape | replace: '&quot;', '&apos;' }}"><img class="gt_product-image--back gt_lazyload" src="{{ product_image_back.src | img_url: '50x' }}" data-id="{{ product_image_back.id }}" alt="{{ product_image_back.alt | escape | replace: '&quot;', '&apos;' }}"></div></div></div><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-2"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></a><div class="gt_product-info gt_flex1"><div class="gt_product-info--top gt_flex1"><div class="gt_flex1"></div><div class="gt_mb--extra-small gt_product-price gt_product-price--origin gt_product-default"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+            {{ gtCurrentVariant.price | money }}
+          </span>
+          
+            {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+              <div class="gt_pr--extra-small gt_pt--extra-small"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+                {{ gtCurrentVariant.compare_at_price | money }}
+              </span>
+            {% endif %}
+          
+        </div><a class="link_gt_product" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-name"><h4 class="gt_subheading gt_atom-85689_productTitle " data-name="Product Title" data-attribute="productTitle">
+  {{product.title}}
+</h4></div></a><div class="gt_product_vendor"></div><div class="gt_product-price gt_product-price--custom"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+          {{ gtCurrentVariant.price | money }}
+        </span>
+          {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+            <div class="gt_pr--extra-small gt_pt--extra-small gt_distance--custom"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+              {{ gtCurrentVariant.compare_at_price | money }}
+            </span>
+          {% endif %}
+      </div><div class="gt_product_variants gt_product_variants--vertical"></div></div><div class="wrapper_price"><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-default"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></div>
+  
+  
+  {% endform %}
+  
+</div></div>
+              {% endfor %}
+
+            </div></div></div></div></div></div></section>
+
+  

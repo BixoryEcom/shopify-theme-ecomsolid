@@ -1,0 +1,465 @@
+
+  
+{% comment %}
+You SHOULD NOT modify source code in this page because
+It is automatically generated from EcomSolid
+Try to edit page with the live editor.
+{% endcomment %}
+<div class="gt_widget-ZPndLlHJyimQv64" data-name="Variants Style">
+</div><div class="gt_widget-N49CKtI9YqrZidk" data-name="Smart Quick View">
+  {% if product == null or product == "" or product == empty %}
+    {%- assign product = collections.all.products[0] -%}
+    {% for product in collection.all.products %}
+      {% if product.images.size > 0 %} 
+        {% assign product = product %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  <div class="gt_modal-quick-view" data-keyword="product"><script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{product.selected_or_first_available_variant.id}}">
+      {{ product | json }}
+    </script><div class="gt_modal-backdrop"></div><div class="gt_modal-container"><div class="gt_modal-quick-view--close"><svg width="17.5" height="17.5" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.66683 1.27333L8.72683 0.333328L5.00016 4.06L1.2735 0.333328L0.333496 1.27333L4.06016 5L0.333496 8.72666L1.2735 9.66666L5.00016 5.93999L8.72683 9.66666L9.66683 8.72666L5.94016 5L9.66683 1.27333Z"></path></svg></div><main class="gt_modal-body">
+       
+        {% form 'product', product, data-productid: product.id, class:'gt_quick-view--product-form' %}
+        <div class="gt_atom-N49CKtI9YqrZidk_boxButtonQuickview gt_btn-preview-quick-view position-default" data-name="Box Button Quickview" data-attribute="boxButtonQuickview" data-class="gt_btn-preview-quick-view position-default"><div class="gt_bg--center gt_bg--no-repeat gt_bg--cover bg-img"><div class="gt_atom-N49CKtI9YqrZidk_tooltipBox gt_btn-quick-view-tooltip" data-name="Tooltip Box" data-attribute="tooltipBox" data-class="gt_btn-quick-view-tooltip"><div class="gt_atom-N49CKtI9YqrZidk_innerText gt_btn-quick-view-tooltip-text" data-name="Inner Text" data-attribute="innerText" data-class="gt_btn-quick-view-tooltip-text"><div class="gt_text-wrapper">
+        Quick view
+      </div></div></div><div class="gt_atom-N49CKtI9YqrZidk_iconQuickview gt_btn-quick-view-icon" data-name="Icon Quickview" data-attribute="iconQuickview" data-class="gt_btn-quick-view-icon"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="N49CKtI9YqrZidk_iconQuickview" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_757_6783)"><path d="M16 8C16 8 13 2.5 8 2.5C3 2.5 -3.85876e-08 8 -3.85876e-08 8C-3.85876e-08 8 3 13.5 8 13.5C13 13.5 16 8 16 8ZM1.173 8C1.65651 7.26512 2.21264 6.58069 2.833 5.957C4.12 4.668 5.88 3.5 8 3.5C10.12 3.5 11.879 4.668 13.168 5.957C13.7884 6.58069 14.3445 7.26512 14.828 8C14.77 8.087 14.706 8.183 14.633 8.288C14.298 8.768 13.803 9.408 13.168 10.043C11.879 11.332 10.119 12.5 8 12.5C5.88 12.5 4.121 11.332 2.832 10.043C2.21165 9.41931 1.65552 8.73487 1.172 8L1.173 8Z" fill="currentColor"></path><path d="M8 5.5C7.33696 5.5 6.70107 5.76339 6.23223 6.23223C5.76339 6.70107 5.5 7.33696 5.5 8C5.5 8.66304 5.76339 9.29893 6.23223 9.76777C6.70107 10.2366 7.33696 10.5 8 10.5C8.66304 10.5 9.29893 10.2366 9.76777 9.76777C10.2366 9.29893 10.5 8.66304 10.5 8C10.5 7.33696 10.2366 6.70107 9.76777 6.23223C9.29893 5.76339 8.66304 5.5 8 5.5ZM4.5 8C4.5 7.07174 4.86875 6.1815 5.52513 5.52513C6.1815 4.86875 7.07174 4.5 8 4.5C8.92826 4.5 9.8185 4.86875 10.4749 5.52513C11.1313 6.1815 11.5 7.07174 11.5 8C11.5 8.92826 11.1313 9.8185 10.4749 10.4749C9.8185 11.1313 8.92826 11.5 8 11.5C7.07174 11.5 6.1815 11.1313 5.52513 10.4749C4.86875 9.8185 4.5 8.92826 4.5 8Z" fill="currentColor"></path></g><defs><clipPath id="clip0_757_6783"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg></span></div></div></div></div><div class="gt_atom-N49CKtI9YqrZidk_box gt_p2--medium  boxContainer" data-name="Product Container" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="box" data-class="gt_p2--medium  boxContainer"><input class="gt_variant-input--default" type="hidden" name="id" value="{{gtCurrentVariant.id}}"><input class="gt_quantity-input--default" type="hidden" value="1" name="quantity"><div class="gt_atom-N49CKtI9YqrZidk_boxImage gt_modal-body--left sm:gt_mb--medium xs:gt_mb--medium" data-name="Product Image Box" data-attribute="boxImage" data-class="gt_modal-body--left sm:gt_mb--medium xs:gt_mb--medium"><div class="gt_atom-N49CKtI9YqrZidk_productImageList gt_product-image gt_product--sticky" data-name="Product Image" data-atom-type="Slider" data-atom-id="N49CKtI9YqrZidk_productImageList" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="productImageList" data-class="gt_product-image gt_product--sticky"><div id="gt_product-image-list-id" class="gt_product-image-list--bottom"><div class="gt_product-image--inner gt_product-image--thumb"><div class="gt_product-img">
+            {% if product.media.size > 0 %}
+            <div class="swiper-container gt_product-feature--swiper gt_product-feature--swiper-N49CKtI9YqrZidk_productImageList"><div class="swiper-wrapper gt-carousel--hide-default">
+                {% assign videoMedia = product.media | where: "media_type", "video" %}
+                {% assign exVideoMedia = product.media | where: "media_type", "external_video" %}
+                {% assign modelMedia = product.media | where: "media_type", "model" %}
+                {% assign imageMedia = product.media | where: "media_type", "image" %}
+                
+                  {% assign sortedMedia = product.media %}
+                 
+
+                
+                  {% assign sortedMedia = product.media %}
+                    
+                             
+                {%- for media in sortedMedia -%}
+                <div class="swiper-slide"><div class="gt_product-img--inner"><div class="gt_product-img-box"><div class="gt_product-img-box--inner">
+                        
+                        {% if media.media_type == "image" %}
+                          <img class="gt_lazyload gt_product-image--feature gt_product-image--scale" src="{{ media | img_url: '100x' }}" data-id="{{media.id}}" alt="{{ media.alt | escape | replace: '&quot;', '&apos;' }}" data-original="{{ media | img_url: 'master' }}">
+                        {% endif %}
+                        
+                        {% if media.media_type == "external_video" %}
+                        <div class="gt_product-image--feature gt_product-media--feature" data-id="{{media.id}}">
+                          {{ media | external_video_tag: class: "gt_product-external-video" }}
+                        </div>
+                        {% endif %}
+                        
+                        {% if media.media_type == "video" %}
+                        <div class="gt_product-image--feature gt_product-media--feature" data-id="{{media.id}}">
+                          {{ media | video_tag: controls: true }}
+                        </div>
+                        {% endif %}
+                        
+                        {% if media.media_type == "model" %}
+                        <div class="gt_product-image--feature gt_product-media--model gt_product-media--feature" data-id="{{media.id}}">
+                          {{ media | model_viewer_tag: class:"gt_product-model" }}
+                        </div>
+                        {% endif %}
+                        
+                      </div></div></div></div>
+                {%- endfor -%}
+              </div><div class="gt_flex gt_justify-c-center gt_items--center gt_product-img-nav"><div class="gt_flex gt_align-i-center gt_product-img-nav--arrow gt_product-img-nav--left"><span data-optimize-type="icon" data-attribute="iconNavPrev," data-section-id="N49CKtI9YqrZidk_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></span></div><div class="gt_control-pagination" id="gt_control-pagination-N49CKtI9YqrZidk_productImageList"></div><div class="gt_flex gt_align-i-center gt_product-img-nav--arrow gt_product-img-nav--right"><span data-optimize-type="icon" data-attribute="iconNavNext," data-section-id="N49CKtI9YqrZidk_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div></div></div>
+            {% endif %}
+            <slot></slot></div><div class="gt_product-carousel-box">
+            {% if product.media.size > 0 %}
+            <div class="swiper-container gt_product--swiper gt_product--swiper-N49CKtI9YqrZidk_productImageList"><div class="swiper-wrapper gt-carousel--hide-default">
+                {%- for media in sortedMedia -%}
+                <div class="swiper-slide"><div class="gt_product-carousel--item {{media.media_type }}" data-id="{{media.id}}"><img class="gt_lazyload" src="{{ media | img_url: '100x' }}" data-id="{{media.id}}" alt="{{ media.alt | escape | replace: '&quot;', '&apos;' }}" data-original="{{ media | img_url: 'master' }}"></div></div>
+                {%- endfor -%}
+              </div><div class="gt_control gt_flex gt_justify-c-center gt_items--center"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_control-prev"><span data-optimize-type="icon" data-attribute="iconNavigationPrev," data-section-id="N49CKtI9YqrZidk_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></span></div><div class="gt_flex gt_justify-c-center gt_align-i-center gt_control-next"><span data-optimize-type="icon" data-attribute="iconNavigationNext," data-section-id="N49CKtI9YqrZidk_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div></div></div>
+            {% endif %}
+          </div></div></div></div><div class="gt_atom-N49CKtI9YqrZidk_productTagSale gt_product-tag-sale gt_subheading  gt_product-tag-sale" data-name="Tag Sale" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-type="percent" data-label="-[!Profit!]" data-roundpercent="0" data-removezero="true" data-attribute="productTagSale" data-class="gt_subheading  gt_product-tag-sale"><div class="gt_flex gt_items--center gt_justify-c-center gt_product-tag-sale--inner"><div class="gt_product-tag-sale--value gt_product-tag-sale--value--percent"></div><div class="gt_product-tag-sale--value gt_product-tag-sale--value--number"></div><div class="gt_product-tag-sale--after"></div></div></div></div><div class="gt_atom-N49CKtI9YqrZidk_boxInfo gt_modal-body--right" data-name="Product Info Box" data-attribute="boxInfo" data-class="gt_modal-body--right"><div class="gt_atom-N49CKtI9YqrZidk_boxDetail gt_product-detail" data-name="Product Detail Box" data-attribute="boxDetail" data-class="gt_product-detail"><h2 class="gt_atom-N49CKtI9YqrZidk_productTitle gt_subheading gt_mb--small gt_product-title" id="a-N49CKtI9YqrZidk_productTitle" data-name="Title" data-product-id="{{product.id}}" data-attribute="productTitle" data-class="gt_subheading gt_mb--small gt_product-title">
+  
+      {{product.title}}
+  
+</h2><div class="position_hook"></div><div class="gt_atom-N49CKtI9YqrZidk_messengerInStock gt_mb2--small gt_text-in-stock" data-name="Messenger" data-attribute="messengerInStock" data-class="gt_mb2--small gt_text-in-stock"><div class="gt_text-wrapper">
+        Avalability: <span style="color: #52c41a;">In Stock</span></div></div><div class="gt_atom-N49CKtI9YqrZidk_boxPrice gt_items--center  gt_product-box-price" data-name="Product Price Box" data-attribute="boxPrice" data-class="gt_items--center  gt_product-box-price"><div class="gt_atom-N49CKtI9YqrZidk_productPrice gt_heading--small gt_product-price" id="a-N49CKtI9YqrZidk_productPrice" data-name="Price" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" sync-quantity-and-price="true" data-attribute="productPrice" data-class="gt_heading--small gt_product-price"><span class="gt_product-price--number" itemprop="price" data-currentprice="{{ gtCurrentVariant.price }}">
+      {{ gtCurrentVariant.price | money }}
+    </span></div><div class="gt_atom-N49CKtI9YqrZidk_productComparePrice gt_subheading  gt_product-compare-price" id="a-N49CKtI9YqrZidk_productComparePrice" data-name="Compare Price" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" sync-quantity-and-price="true" data-attribute="productComparePrice" data-class="gt_subheading  gt_product-compare-price">
+  {% assign compare_at_price = gtCurrentVariant.compare_at_price %}
+  {% assign price = gtCurrentVariant.price %}
+  {% assign gtActive = "" %}
+  {% if compare_at_price > price %}
+    {% assign gtActive = "gt_active" %}
+  {% endif %}
+  <span class="gt_product-price--compare {{gtActive}}" data-currentprice="{{ compare_at_price }}">
+    {{ compare_at_price | money }}
+  </span></div></div><div class="gt_atom-N49CKtI9YqrZidk_productDescription gt_product_description_qw gt_mb2--medium" id="a-N49CKtI9YqrZidk_productDescription" data-name="Product Description" data-product-id="{{product.id}}" data-attribute="productDescription" data-class="gt_product_description_qw gt_mb2--medium">
+  {% if product.content and product.content != '' %}
+    <div class="gt_description"><div class="gt_box-desc">
+        
+          {% assign description = product.content %}
+          
+            {% assign cloneDesc = description | split: "<img " %}
+            {% for part in cloneDesc %}
+              {% if part.size < 5 %}
+                {% continue %}
+              {% endif %}
+              {% assign threeLetters = part | slice: 0, 3 %}
+              {% assign fiveLetters = part | slice: 0, 5 %}
+              {% if threeLetters == "src" or threeLetters == "alt" or fiveLetters == "style" %}
+                {% assign tagContent = part | split: '">' %}
+                {% assign fullImageTag = tagContent[0] | prepend: "<img " | append: '">' %}
+                {% assign fullLazyImageTag = tagContent[0] | replace: "src", "data-src" | prepend: "<img " | append: '" class="gt_lazyload" data-type="auto">' %}
+                {% assign description = description | replace: fullImageTag, fullLazyImageTag %}
+              {% endif %}
+            {% endfor %}
+          
+
+          {{description}}
+
+        
+      </div><div style="clear: both;"></div><a href="{{ product.url }}" class="gt_btn-view-more gt_go-to-product"><div class="gt_title-show">
+            View details
+
+            
+            <svg viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 4C2.25 3.0335 3.0335 2.25 4 2.25H7C7.41421 2.25 7.75 2.58579 7.75 3C7.75 3.41421 7.41421 3.75 7 3.75H4C3.86193 3.75 3.75 3.86193 3.75 4V12C3.75 12.1381 3.86193 12.25 4 12.25H12C12.1381 12.25 12.25 12.1381 12.25 12V9C12.25 8.58579 12.5858 8.25 13 8.25C13.4142 8.25 13.75 8.58579 13.75 9V12C13.75 12.9665 12.9665 13.75 12 13.75H4C3.0335 13.75 2.25 12.9665 2.25 12V4Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M9.25 3C9.25 2.58579 9.58579 2.25 10 2.25H12.9999C13.4141 2.25 13.7499 2.58578 13.7499 2.99998L13.75 5.99998C13.75 6.4142 13.4142 6.74999 13 6.75C12.5858 6.75001 12.25 6.41423 12.25 6.00002L12.25 4.81063L7.53033 9.53033C7.23744 9.82322 6.76257 9.82322 6.46967 9.53033C6.17678 9.23744 6.17678 8.76257 6.46967 8.46967L11.1893 3.75H10C9.58579 3.75 9.25 3.41421 9.25 3Z"></path></svg></div><div class="gt_title-hide">
+            View Less
+            
+              <span data-optimize-type="icon" data-attribute="uploadIconViewMore," data-section-id="N49CKtI9YqrZidk_productDescription" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.23517 4.98517C1.27 4.95025 1.31139 4.92254 1.35695 4.90364C1.4025 4.88473 1.45134 4.875 1.50067 4.875C1.55 4.875 1.59884 4.88473 1.6444 4.90364C1.68995 4.92254 1.73134 4.95025 1.76617 4.98517L6.00067 9.22042L10.2352 4.98517C10.3056 4.91476 10.4011 4.8752 10.5007 4.8752C10.6003 4.8752 10.6958 4.91476 10.7662 4.98517C10.8366 5.05559 10.8761 5.15109 10.8761 5.25067C10.8761 5.35025 10.8366 5.44576 10.7662 5.51617L6.26617 10.0162C6.23134 10.0511 6.18995 10.0788 6.14439 10.0977C6.09884 10.1166 6.05 10.1263 6.00067 10.1263C5.95134 10.1263 5.9025 10.1166 5.85695 10.0977C5.81139 10.0788 5.77 10.0511 5.73517 10.0162L1.23517 5.51617C1.20025 5.48134 1.17254 5.43995 1.15364 5.3944C1.13473 5.34884 1.125 5.3 1.125 5.25067C1.125 5.20134 1.13473 5.1525 1.15364 5.10695C1.17254 5.06139 1.20025 5.02 1.23517 4.98517Z" fill="#currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.23517 1.98517C1.27 1.95025 1.31139 1.92254 1.35695 1.90364C1.4025 1.88473 1.45134 1.875 1.50067 1.875C1.55 1.875 1.59884 1.88473 1.6444 1.90364C1.68995 1.92254 1.73134 1.95025 1.76617 1.98517L6.00067 6.22042L10.2352 1.98517C10.27 1.9503 10.3114 1.92265 10.357 1.90378C10.4025 1.88491 10.4514 1.8752 10.5007 1.8752C10.55 1.8752 10.5988 1.88491 10.6444 1.90378C10.6899 1.92265 10.7313 1.9503 10.7662 1.98517C10.801 2.02004 10.8287 2.06143 10.8476 2.10698C10.8664 2.15254 10.8761 2.20136 10.8761 2.25067C10.8761 2.29998 10.8664 2.3488 10.8476 2.39436C10.8287 2.43991 10.801 2.4813 10.7662 2.51617L6.26617 7.01617C6.23134 7.05109 6.18995 7.0788 6.14439 7.0977C6.09884 7.11661 6.05 7.12634 6.00067 7.12634C5.95134 7.12634 5.9025 7.11661 5.85695 7.0977C5.81139 7.0788 5.77 7.05109 5.73517 7.01617L1.23517 2.51617C1.20025 2.48134 1.17254 2.43995 1.15364 2.3944C1.13473 2.34884 1.125 2.3 1.125 2.25067C1.125 2.20134 1.13473 2.1525 1.15364 2.10695C1.17254 2.06139 1.20025 2.02 1.23517 1.98517Z" fill="currentColor"></path></svg></span></div></a></div>
+  {% endif %}
+</div><div class="gt_atom-N49CKtI9YqrZidk_productVariant gt_product-custom-variant" data-name="Variant" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" {% if false %} style="display: block;" {% endif %} data-attribute="productVariant" data-class="gt_product-custom-variant"><input type="hidden" name="id" class="gt_variant--input" value="{{gtCurrentVariant.id}}"><div class="gt_product-variant gt_product-swatches" data-type="segment">
+    {% for option in product.options_with_values %}
+      <div class="gt_product-swatches--item gt_product-variant--item gt_variant--select-item  
+      {% if option.name == 'Title' or option.values[0] == 'Default Title' %} variant_none {% endif %} 
+      {% if option.values.size == 1 and false != true %}variant_none{% endif %}" data-name="{{option.name}}" data-check-show-one-variant="false">
+          {% if forloop.index == 1 %}
+            {% assign selected_value = gtCurrentVariant.option1 %}
+          {% elsif forloop.index ==  2 %}
+            {% assign selected_value = gtCurrentVariant.option2 %}
+          {% else %}
+            {% assign selected_value = gtCurrentVariant.option3 %}
+          {% endif %}
+          
+          <span class="gt_mb--extra-small gt_product-variant--name">
+            {{option.name}} 
+          </span><div class="gt_flex gt_flex-wrap gt_product-variant--options">
+                {% for value in option.values %}
+                  {% if value == selected_value %}
+                    {% assign selectedClass = 'gt_swatches--select gt_product-variant--select gt_product-variant--btn-select gt_active' %}
+                  {% else %}
+                    {% assign selectedClass = 'gt_swatches--select gt_product-variant--select gt_product-variant--btn-select' %}
+                  {% endif %}
+                  <div class="{{selectedClass}}" data-name="{{option.name | replace: '"', "&quot;"}}" data-value="{{value | replace: '"', "&quot;"}}"><span>{{ value }}</span></div>
+                {% endfor %}
+              </div></div>
+    {% endfor %}
+    {% if option.values.size > 1 or false %}
+      <div class="position_hook"></div>
+    {% endif %}
+  </div></div></div><div class="gt_atom-N49CKtI9YqrZidk_boxSticky gt_product-sticky" data-name="Sticky Box" data-attribute="boxSticky" data-class="gt_product-sticky"><div class="gt_atom-N49CKtI9YqrZidk_boxNotify" data-name="Notify Me Box" data-attribute="boxNotify"><div class="gt_atom-N49CKtI9YqrZidk_productSoldOutForm N49CKtI9YqrZidk_productSoldOutForm gt_product-sold-out-form gt_modal-quick-view--sold-out" data-name="Product Sold Out Form" data-attribute="productSoldOutForm" data-class="gt_modal-quick-view--sold-out"><div class="gt_mb2--medium gt_message gt_message-success">
+    Thanks! We will notify you when this product becomes available!
+  </div><div class="gt_mb2--medium gt_form">
+    {% form 'contact' %}
+      
+      <div class="gt_form-label">
+        Email me when this product is available
+      </div><input class="gt_form--type" type="hidden" name="contact[type]" value="Ecomsolid - Subscribe Buy Product Sold Out"><input type="email" name="contact[email]" class="gt_form-customer--email gt_form--email" value="{{ contact.fields.email }}" placeholder="Your Email"><input class="gt_form-product--name" type="hidden" name="contact[product_name]" value=""><input class="gt_form-variant--name" type="hidden" name="contact[variant_name]" value=""><input class="gt_form-product--url" type="hidden" name="contact[product_url]" value=""><input class="gt_form--return-url" type="hidden" name="return_to" value=""><button class="gt_btn gt_form--submit" type="submit">
+        Notify Me
+      </button>
+    {% endform %}
+  </div></div></div><div class="gt_atom-N49CKtI9YqrZidk_boxCartBtn gt_product-group-btn js_add--fixed" data-name="Cart Action Box" data-attribute="boxCartBtn" data-class="gt_product-group-btn js_add--fixed"><div class="gt_atom-N49CKtI9YqrZidk_productQuantity gt_mr2--small gt_product-custom-qty" data-name="Product Quantity" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="productQuantity" data-class="gt_mr2--small gt_product-custom-qty"><script type="application/json">{{gtCurrentVariant | json}}</script>
+  {% if gtCurrentVariant.available %}
+    {% assign classQuantity = '' %}
+  {% else %}
+    {% assign classQuantity = 'gt_soldout' %}
+  {% endif %}
+  <div class="gt_product-quantity {{classQuantity}}"><span class="gt_product-quantity--label gt_mb--extra-small">Quantity</span><div class="gt_product-quantity--container"><div class="gt_inline-flex gt_product-quantity--wrapper"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_product-quantity--minus"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 7.44772 2.44772 7 3 7L13 7C13.5523 7 14 7.44772 14 8C14 8.55228 13.5523 9 13 9L3 9C2.44772 9 2 8.55228 2 8Z" fill="currentColor"></path></svg></div><input type="text" class="input gt_product-quantity--number gt_quantity--input" value="1" min="1" name="quantity"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_product-quantity--plus"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C8.55228 2 9 2.44772 9 3V13C9 13.5523 8.55228 14 8 14C7.44772 14 7 13.5523 7 13V3C7 2.44772 7.44772 2 8 2Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 7.44772 2.44772 7 3 7L13 7C13.5523 7 14 7.44772 14 8C14 8.55228 13.5523 9 13 9L3 9C2.44772 9 2 8.55228 2 8Z" fill="currentColor"></path></svg></div></div></div></div></div><div class="gt_atom-N49CKtI9YqrZidk_boxBtn gt_product-buttons" data-name="Buttons Box" data-attribute="boxBtn" data-class="gt_product-buttons"><button type="button" class="gt_atom-N49CKtI9YqrZidk_productButtonAddToCart gt_button gt_atom--btn  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}    gt_product-button gt_button-atc gt_product-btn gt_product-btn__add-cart" data-name="Button Add To Cart" name="add" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-text="Add To Cart" data-text-sold-out="Sold out" data-attribute="productButtonAddToCart" data-class="gt_product-button gt_button-atc gt_product-btn gt_product-btn__add-cart"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_atom--button-N49CKtI9YqrZidk_productButtonAddToCart gt_button-content-text-main">
+        
+          
+            {% unless gtCurrentVariant.available %}
+              
+                Sold out
+              
+            {% else %}
+              Add To Cart
+            {% endunless %}
+          
+        
+      </span></span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div><div class="position_hook"></div></div></div></div>
+        {% endform %}
+      </main></div></div></div><div class="gt_widget-GTr2AQzUFuFOL42" data-name="Sticky Add To Cart" data-keyword="product">
+  
+    {% if request.page_type != "product" %}
+      {%- assign isInProductPage = false %}
+      
+        {%- assign product = collections.all.products[0] -%}
+      
+    {% endif %}
+  
+  <script type="application/json" class="ProductJson" data-product-page="{{isInProductPage}}" data-id="{{ product.id }}" data-variant="{{ product.selected_or_first_available_variant.id }}">
+    {{ product | json }}
+  </script>
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%} 
+  {% form 'product', product, data-productid: product.id, class:'product-form' %}
+  <input type="hidden" name="id" class="gt_swatches--input" value="{{ gtCurrentVariant.id }}"><div class="gt_atom-GTr2AQzUFuFOL42_boxSticky sticky-cart-bar-container" data-name="Sticky Add To Cart Box" data-attribute="boxSticky" data-class="sticky-cart-bar-container"><div class="gt_atom-GTr2AQzUFuFOL42_boxInfor sticky-cart-bar-container_infor" data-name="Product Information Box" data-attribute="boxInfor" data-class="sticky-cart-bar-container_infor"><div class="gt_atom-GTr2AQzUFuFOL42_productImage sticky-cart-bar-container_infor_image" data-name="Product Image" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="productImage" data-class="sticky-cart-bar-container_infor_image"><a href="{{product.url}}" class="gt_product-img--link"><div class="gt_product-img--inner"><div class="gt_product-img-box"><div class="gt_product-img-box--inner">
+          
+            
+            {% if gtCurrentVariant == empty or gtCurrentVariant.featured_image == null  %}
+            {%- assign imageURL = product.featured_image -%}
+            {% else %}
+            {%- assign imageURL = gtCurrentVariant.featured_image -%}
+            {% endif %}
+            
+
+            <img class="gt_product-image--feature gt_lazyload" src="{{ imageURL.src | img_url: '100x' }}" data-id="{{imageURL.id}}" alt="{{ imageURL.alt | escape | replace: '&quot;', '&apos;' }}"></div></div></div><slot></slot></a></div><div class="gt_atom-GTr2AQzUFuFOL42_boxTitle sticky-cart-bar-container_infor_title" data-name="Product Name Box" data-attribute="boxTitle" data-class="sticky-cart-bar-container_infor_title"><h2 class="gt_atom-GTr2AQzUFuFOL42_productTitle sticky-cart-bar-container_infor_title_name" id="a-GTr2AQzUFuFOL42_productTitle" data-name="Product Title" data-product-id="{{product.id}}" data-attribute="productTitle" data-class="sticky-cart-bar-container_infor_title_name"><a href="{{ product.url }}">
+    
+  
+      {{product.title}}
+  
+    </a></h2><div class="gt_atom-GTr2AQzUFuFOL42_boxPrice sticky-cart-bar-container_infor_title_price" data-name="Product Price Box" data-attribute="boxPrice" data-class="sticky-cart-bar-container_infor_title_price"><div class="gt_atom-GTr2AQzUFuFOL42_productPrice sticky-cart-bar-container_infor_title_price_original" id="a-GTr2AQzUFuFOL42_productPrice" data-name="Price" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" sync-quantity-and-price="true" data-attribute="productPrice" data-class="sticky-cart-bar-container_infor_title_price_original"><span class="gt_product-price--number" itemprop="price" data-currentprice="{{ gtCurrentVariant.price }}">
+      {{ gtCurrentVariant.price | money }}
+    </span></div><div class="gt_atom-GTr2AQzUFuFOL42_productComparePrice gt_ml2--extra-small sticky-cart-bar-container_infor_title_price_compare" id="a-GTr2AQzUFuFOL42_productComparePrice" data-name="Campare Price" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" sync-quantity-and-price="true" data-attribute="productComparePrice" data-class="gt_ml2--extra-small sticky-cart-bar-container_infor_title_price_compare">
+  {% assign compare_at_price = gtCurrentVariant.compare_at_price %}
+  {% assign price = gtCurrentVariant.price %}
+  {% assign gtActive = "" %}
+  {% if compare_at_price > price %}
+    {% assign gtActive = "gt_active" %}
+  {% endif %}
+  <span class="gt_product-price--compare {{gtActive}}" data-currentprice="{{ compare_at_price }}">
+    {{ compare_at_price | money }}
+  </span></div>
+          {%- if gtCurrentVariant.compare_at_price > gtCurrentVariant.price -%}
+            
+            <div class="gt_atom-GTr2AQzUFuFOL42_linePrice gt_mx2--extra-small sticky-cart-bar-container_infor_title_price_line" data-name="Line" data-attribute="linePrice" data-class="gt_mx2--extra-small sticky-cart-bar-container_infor_title_price_line"></div><div class="gt_atom-GTr2AQzUFuFOL42_productTagSale gt_product-tag-sale sticky-cart-bar-container_infor_title_price_tagsale" data-name="Product Tag Sale" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-type="percent" data-label="-[!Profit!] OFF" data-roundpercent="0" data-removezero="true" data-attribute="productTagSale" data-class="sticky-cart-bar-container_infor_title_price_tagsale"><div class="gt_flex gt_items--center gt_justify-c-center gt_product-tag-sale--inner"><div class="gt_product-tag-sale--value gt_product-tag-sale--value--percent"></div><div class="gt_product-tag-sale--value gt_product-tag-sale--value--number"></div><div class="gt_product-tag-sale--after"></div></div></div>
+            
+          {%- endif -%}
+          </div></div></div><div class="gt_atom-GTr2AQzUFuFOL42_boxOptions sticky-cart-bar-container_options" data-name="Product Options Box" data-attribute="boxOptions" data-class="sticky-cart-bar-container_options"><div class="gt_atom-GTr2AQzUFuFOL42_productVariant sticky-cart-bar-container_options_variant" data-name="Variant" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" {% if false %} style="display: block;" {% endif %} data-attribute="productVariant" value="select" data-class="sticky-cart-bar-container_options_variant"><input type="hidden" name="id" class="gt_variant--input" value="{{gtCurrentVariant.id}}"><div class="gt_product-variant gt_product-swatches" data-type="select">
+    {% for option in product.options_with_values %}
+      <div class="gt_product-swatches--item gt_product-variant--item gt_variant--select-item  
+      {% if option.name == 'Title' or option.values[0] == 'Default Title' %} variant_none {% endif %} 
+      {% if option.values.size == 1 and false != true %}variant_none{% endif %}" data-name="{{option.name}}" data-check-show-one-variant="false">
+          {% if forloop.index == 1 %}
+            {% assign selected_value = gtCurrentVariant.option1 %}
+          {% elsif forloop.index ==  2 %}
+            {% assign selected_value = gtCurrentVariant.option2 %}
+          {% else %}
+            {% assign selected_value = gtCurrentVariant.option3 %}
+          {% endif %}
+          
+          
+            
+              <div class="gt_product-variant--select-box gt_product-variant-options--select"><div class="gt_product-variant--checked"><div class="gt_flex  gt_justify--space-between gt_items--center gt_product-variant-option--selected gt_product-swatches-option-selected">
+                    {% if forloop.index == 1 %}
+                      <span data-value="{{gtCurrentVariant.option1}}" class="gt_product-variant-option--selected-text"><span>{{gtCurrentVariant.option1}}</span></span>
+                    {% elsif forloop.index ==  2 %}
+                      <span data-value="{{gtCurrentVariant.option2}}" class="gt_product-variant-option--selected-text"><span>
+                          {{gtCurrentVariant.option2}}
+                        </span></span>
+                    {% else %}
+                      <span data-value="{{gtCurrentVariant.option3}}" class="gt_product-variant-option--selected-text"><span>
+                          {{gtCurrentVariant.option3}}
+                        </span></span>
+                    {% endif %}
+                    
+                      <span data-optimize-type="icon" data-attribute="uploadIcon," data-section-id="GTr2AQzUFuFOL42_productVariant" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 18 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.05862 0.808617C1.11667 0.750413 1.18564 0.704234 1.26158 0.672726C1.33751 0.641218 1.41891 0.625 1.50112 0.625C1.58333 0.625 1.66473 0.641218 1.74066 0.672726C1.81659 0.704234 1.88556 0.750413 1.94362 0.808617L9.00112 7.86737L16.0586 0.808617C16.1167 0.750507 16.1857 0.704412 16.2616 0.672963C16.3376 0.641514 16.4189 0.625327 16.5011 0.625327C16.5833 0.625327 16.6647 0.641514 16.7406 0.672963C16.8165 0.704412 16.8855 0.750507 16.9436 0.808617C17.0017 0.866727 17.0478 0.935713 17.0793 1.01164C17.1107 1.08756 17.1269 1.16894 17.1269 1.25112C17.1269 1.3333 17.1107 1.41467 17.0793 1.4906C17.0478 1.56652 17.0017 1.63551 16.9436 1.69362L9.44362 9.19362C9.38556 9.25182 9.31659 9.298 9.24066 9.32951C9.16473 9.36102 9.08333 9.37724 9.00112 9.37724C8.91891 9.37724 8.83751 9.36102 8.76158 9.32951C8.68564 9.298 8.61667 9.25182 8.55862 9.19362L1.05862 1.69362C1.00041 1.63556 0.954235 1.56659 0.922727 1.49066C0.891219 1.41473 0.875 1.33333 0.875 1.25112C0.875 1.16891 0.891219 1.08751 0.922727 1.01157C0.954235 0.935643 1.00041 0.866674 1.05862 0.808617Z" fill="currentColor"></path></svg></span></div></div><div class="gt_product-variant-options">
+                  {% for value in option.values %}
+                    {% if value == selected_value %}
+                      {% assign selectedClass = 'gt_swatches--select gt_product-variant-option gt_product-variant--btn-select gt_variant--select gt_variant--select-item gt_active' %}
+                    {% else %}
+                      {% assign selectedClass = 'gt_swatches--select gt_product-variant-option gt_product-variant--btn-select gt_variant--select gt_variant--select-item' %}
+                    {% endif %}
+                    <div class="{{selectedClass}}" data-name="{{option.name | replace: '"', "&quot;"}}" data-value="{{value | replace: '"', "&quot;"}}"><span class="gt_product-variant-option--txt">
+                        {{ value }}
+                      </span></div>
+                  {% endfor %}
+                </div><div class="gt_product-variant-tooltip"><span class="gt_product-variant-tooltip-name">Hello world</span><span class="gt_product-variant-tooltip-arrow"></span></div></div></div>
+    {% endfor %}
+    {% if option.values.size > 1 or false %}
+      <div class="position_hook"></div>
+    {% endif %}
+  </div></div><div class="gt_atom-GTr2AQzUFuFOL42_boxSubmit sticky-cart-bar-container_button" data-name="Product Submit Box" data-attribute="boxSubmit" data-class="sticky-cart-bar-container_button"><div class="gt_atom-GTr2AQzUFuFOL42_productQuantity sticky-cart-bar-container_options_quantity" data-name="Product Quantity" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="productQuantity" value="vertical" data-class="sticky-cart-bar-container_options_quantity"><script type="application/json">{{gtCurrentVariant | json}}</script>
+  {% if gtCurrentVariant.available %}
+    {% assign classQuantity = '' %}
+  {% else %}
+    {% assign classQuantity = 'gt_soldout' %}
+  {% endif %}
+  <div class="gt_product-quantity {{classQuantity}}"><div class="gt_product-quantity--container"><div class="gt_inline-flex gt_product-quantity--wrapper"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_product-quantity--minus"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 7.44772 2.44772 7 3 7L13 7C13.5523 7 14 7.44772 14 8C14 8.55228 13.5523 9 13 9L3 9C2.44772 9 2 8.55228 2 8Z" fill="currentColor"></path></svg></div><input type="text" class="input gt_product-quantity--number gt_quantity--input" value="1" min="1" name="quantity"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_product-quantity--plus"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C8.55228 2 9 2.44772 9 3V13C9 13.5523 8.55228 14 8 14C7.44772 14 7 13.5523 7 13V3C7 2.44772 7.44772 2 8 2Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 7.44772 2.44772 7 3 7L13 7C13.5523 7 14 7.44772 14 8C14 8.55228 13.5523 9 13 9L3 9C2.44772 9 2 8.55228 2 8Z" fill="currentColor"></path></svg></div></div></div></div></div><button type="button" class="gt_atom-GTr2AQzUFuFOL42_productButtonAddToCart gt_button gt_atom--btn  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}   " data-name="Product Button" name="add" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-text="Add To Cart" data-text-sold-out="Sold out" data-attribute="productButtonAddToCart"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_atom--button-GTr2AQzUFuFOL42_productButtonAddToCart gt_button-content-text-main">
+        
+          
+            {% unless gtCurrentVariant.available %}
+              
+                Sold out
+              
+            {% else %}
+              Add To Cart
+            {% endunless %}
+          
+        
+      </span></span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></div>
+  {% endform %}
+</div>
+<div class="gt_widget-qGDJdYKeSdU1UgC " data-name="Auto Currency Converter" {% if request.page_type == "password" %}style="display: none!important;" {% endif %}>
+  <script type="application/json" class="CurencyJson">
+    [{"dataCountry":"United-States","dataCurrencySymbol":"&#36;","name":"US Dollar","value":"USD"},{"dataCountry":"Canada","dataCurrencySymbol":"&#36;","name":"Canadian Dollar","value":"CAD"},{"dataCountry":"United-Kingdom","dataCurrencySymbol":"&#163;","name":"British Pound Sterling","value":"GBP"},{"dataCountry":"Australia","dataCurrencySymbol":"&#36;","name":"Australian Dollar","value":"AUD"},{"dataCountry":"New-Zealand","dataCurrencySymbol":"&#36;","name":"New Zealand Dollar","value":"NZD"},{"dataCountry":"European-Union","dataCurrencySymbol":"&#8364;","name":"Euro","value":"EUR"}]
+  </script>
+  <div class="content-widget gf_currency_select" data-display="full">
+    <div class="current-currency">
+      <div class="flags"></div>
+      <div class="name_country"></div>
+      <div class="gt_arrow">
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14">
+          <path fill="currentColor" d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z" class=""></path>
+        </svg>
+      </div>
+    </div>
+    <div class="list-currency-modal">
+      <ul></ul>
+    </div>
+  </div>
+</div>
+<div class="gt_widget-Xy4MTWd5UciMMY8" data-name="Scroll Back To Top"><div class="gt_atom-Xy4MTWd5UciMMY8_boxIconAbsolute gt_js--scroll gt_box--icon--absolute" data-name="Scroll Back To Top" data-attribute="boxIconAbsolute" data-class="gt_js--scroll gt_box--icon--absolute"><div class="gt_bg--center gt_bg--no-repeat gt_bg--cover bg-img gt_lazyload" style=" background-image: url('')"><div class="gt_atom-Xy4MTWd5UciMMY8_iconInfoContact gt_icon-scroll" data-name="Icon" data-attribute="iconInfoContact" data-class="gt_icon-scroll"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="Xy4MTWd5UciMMY8_iconInfoContact" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.6875 13.5C1.6875 16.6329 2.93203 19.6374 5.1473 21.8527C7.36257 24.068 10.3671 25.3125 13.5 25.3125C16.6329 25.3125 19.6374 24.068 21.8527 21.8527C24.068 19.6374 25.3125 16.6329 25.3125 13.5C25.3125 10.3671 24.068 7.36257 21.8527 5.1473C19.6374 2.93203 16.6329 1.6875 13.5 1.6875C10.3671 1.6875 7.36257 2.93203 5.1473 5.1473C2.93203 7.36257 1.6875 10.3671 1.6875 13.5ZM27 13.5C27 17.0804 25.5777 20.5142 23.0459 23.0459C20.5142 25.5777 17.0804 27 13.5 27C9.91958 27 6.4858 25.5777 3.95406 23.0459C1.42232 20.5142 0 17.0804 0 13.5C0 9.91958 1.42232 6.4858 3.95406 3.95406C6.4858 1.42232 9.91958 0 13.5 0C17.0804 0 20.5142 1.42232 23.0459 3.95406C25.5777 6.4858 27 9.91958 27 13.5ZM14.3438 19.4062C14.3438 19.63 14.2549 19.8446 14.0966 20.0029C13.9384 20.1611 13.7238 20.25 13.5 20.25C13.2762 20.25 13.0616 20.1611 12.9034 20.0029C12.7451 19.8446 12.6562 19.63 12.6562 19.4062V9.63056L9.03487 13.2536C8.87644 13.4121 8.66156 13.5011 8.4375 13.5011C8.21344 13.5011 7.99856 13.4121 7.84013 13.2536C7.68169 13.0952 7.59268 12.8803 7.59268 12.6562C7.59268 12.4322 7.68169 12.2173 7.84013 12.0589L12.9026 6.99638C12.981 6.9178 13.0741 6.85546 13.1766 6.81292C13.2791 6.77039 13.389 6.74849 13.5 6.74849C13.611 6.74849 13.7209 6.77039 13.8234 6.81292C13.9259 6.85546 14.019 6.9178 14.0974 6.99638L19.1599 12.0589C19.3183 12.2173 19.4073 12.4322 19.4073 12.6562C19.4073 12.8803 19.3183 13.0952 19.1599 13.2536C19.0014 13.4121 18.7866 13.5011 18.5625 13.5011C18.3384 13.5011 18.1236 13.4121 17.9651 13.2536L14.3438 9.63056V19.4062Z" fill="currentColor"></path></svg></span></div></div></div></div></div><div class="gt_widget-rLZEauGpn5udz71 " data-name="Cart Drawer"><div class="gt_cart_drawer-wrapper"><div class="gt_coverlay_bg"></div><div class="gt_cart_drawer_body"><div class="gt_flex gt_heading_content"><div class="gt_heading_text"><div class="gt_subheading gt_atom-rLZEauGpn5udz71_headingText  gt_heading_text_content" data-name="Heading Text" data-attribute="headingText" data-class="gt_heading_text_content">
+  Your Cart
+</div></div><div class="gt_button_close_mobile"><div title="Close" class="gt_icon_close"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.467877 15.5317C0.756835 15.8208 1.13546 15.9652 1.51415 15.9652C1.89284 15.9652 2.27153 15.8207 2.56042 15.5317L7.99984 10.0923L13.4393 15.5317C13.7282 15.8208 14.1069 15.9652 14.4856 15.9652C14.8643 15.9652 15.2429 15.8207 15.5319 15.5317C16.1097 14.954 16.1097 14.0171 15.5319 13.4393L10.0923 7.99984L15.5317 2.56035C16.1096 1.9825 16.1096 1.04559 15.5317 0.467808C14.954 -0.110038 14.0171 -0.110038 13.4393 0.467808L7.99977 5.9073L2.56035 0.467808C1.9825 -0.110038 1.04559 -0.110038 0.467808 0.467808C-0.110038 1.04565 -0.110038 1.9825 0.467808 2.56035L5.9073 7.99984L0.467808 13.4393C-0.109969 14.0171 -0.109969 14.954 0.467877 15.5317Z" fill="#0635C9"></path></svg></div></div></div>
+      {% if request.page_type == "cart" %}
+        {%- assign isInCartPage = true %}
+      {% else %}
+        {%- assign isInCartPage = false %}
+      {% endif %}
+
+      {% assign classCartContent = '' %} 
+      {% if cart.item_count > 0 %} 
+        {% assign classCartContent = 'gt_active' %} 
+      {% endif %} 
+      {% assign classCartEmpty = '' %}
+      {% if cart.item_count <= 0 %} 
+        {% assign classCartEmpty = 'gt_active' %} 
+      {% endif %}
+      
+      <script type="application/json" class="gt_check_cart_page" data-check="{{isInCartPage}}"></script><form class="gt_cart_drawer-content {{ classCartContent }} " action="/cart" method="post" novalidate=""><div class="gt_scroll-content"><div class="gt_scroll_items"><div class="gt_px2--medium"><div class="position_hook"></div></div><div class="gt_list_item_cart">
+              {% for item in cart.items %} 
+                <div class="gt_cart_item_wrapper gt_items--content gt_cart-item gt_items_cart" data-key="{{item.key}}" data-product-id="{{ item.product_id }}" data-product-handle="{{ item.product.handle }}" data-variant-id="{{ item.variant.id }}"><div class="gt_flex gt_items_cart--content"><script type="application/json" class="ProductJson">
+                      {{ item.variant | json }}
+                    </script><div class="gt_item_image"><img class="gt_lazyload" src="{{ item.image | img_url: 'master' }}" alt="{{ item.title | escape | replace: '&quot;', '&apos;' }}"></div><div class="gt_item_detail"><div class="gt_name_product"><a href="{{item.url}}"><p class="gt_text gt_atom-rLZEauGpn5udz71_productNameText  gt_name_product_text" data-name="Product Name Text" data-attribute="productNameText" data-class="gt_name_product_text">
+  {{ item.product.title }}
+</p></a></div><div class="gt_variant_product">
+                          {% unless item.variant.title contains 'Default' %}
+                            <div class="gt_text gt_atom-rLZEauGpn5udz71_variantNameText  gt_variant-title" data-name="Variant Name Text" data-attribute="variantNameText" data-class="gt_variant-title">
+  {{ item.variant.title }}
+</div>
+                          {% endunless %}
+                        </div><div class="gt_property">
+                        
+                        
+                          {% assign property_size = item.properties | size %}
+                          {% if property_size > 0 %}
+                            {% for p in item.properties %}
+                              <div class="gt_item_property">
+                                {% assign first_character_in_key = p.first | truncate: 1, '' %}
+                                {% unless p.last == blank or first_character_in_key == '_' %}
+                                  <div class="gt_text gt_atom-rLZEauGpn5udz71_itemPropertiesText " data-name="Item Properties Text" data-attribute="itemPropertiesText"><span class="title_property">
+                              {{ p.first }}:
+                            </span>
+                              {% if p.last contains '/uploads/' %}
+                              <span class="detail_property"></span><a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                            {% else %}
+                              <span class="detail_property">{{ p.last }}</span>
+                            {% endif %}
+</div>
+                                {% endunless %}
+                              </div>
+                            {% endfor %}
+                          {% endif %}
+                        
+                      </div><div class="position_hook"></div><div class="gt_quantity_price_product"><div class="gt_quantity_product gt_flex"><div class="gt_box_number_quantity"><input class="gt_number_quantity" type="number" min="1" name="quantity" value="{{item.quantity}}"></div><div class="gt_box_quantity"><div class="gt_quantity_plus noselect"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.59843 0.565111L9.39118 5.80415C9.55326 6.02802 9.64253 6.31693 9.64253 6.61766C9.64253 6.92768 9.54971 7.22312 9.38114 7.44947C9.29313 7.56769 9.18906 7.6608 9.07183 7.72626C8.94889 7.79493 8.8176 7.82973 8.68165 7.82973L1.09613 7.82973C0.960187 7.82973 0.828914 7.79493 0.705984 7.7263C0.588752 7.66085 0.484686 7.56773 0.396642 7.44951C0.228088 7.22312 0.135254 6.92772 0.135254 6.6177C0.135254 6.61766 0.135254 6.61762 0.135254 6.61762C0.135254 6.31693 0.22452 6.02802 0.386599 5.80415L4.17936 0.565132C4.3609 0.314352 4.61951 0.170532 4.88889 0.170532C5.15828 0.170532 5.41689 0.314352 5.59843 0.565111ZM4.70217 1.16601L0.909409 6.40501C0.863488 6.46843 0.842905 6.54384 0.842905 6.61766C0.842905 6.78178 0.944659 6.93808 1.09613 6.93808L8.68165 6.93808C8.83312 6.93808 8.93488 6.78173 8.93488 6.61766C8.93488 6.54384 8.9143 6.46847 8.86837 6.40501L5.07562 1.16601C4.9754 1.02758 4.8024 1.02758 4.70217 1.16601Z" fill="#1D1D1B"></path></svg></div><div class="gt_quantity_minus noselect"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5983 7.43489L9.39106 2.19585C9.55314 1.97198 9.64241 1.68307 9.64241 1.38234C9.64241 1.07232 9.54959 0.776879 9.38102 0.550535C9.29301 0.432315 9.18894 0.339197 9.07171 0.273739C8.94876 0.205076 8.81748 0.170276 8.68153 0.170276L1.09601 0.170276C0.960065 0.170276 0.828792 0.205075 0.705862 0.273697C0.58863 0.339155 0.484564 0.432274 0.39652 0.550493C0.227966 0.77688 0.135132 1.07228 0.135132 1.3823C0.135132 1.38234 0.135132 1.38238 0.135132 1.38238C0.135132 1.68307 0.224398 1.97198 0.386477 2.19585L4.17924 7.43487C4.36077 7.68565 4.61939 7.82947 4.88877 7.82947C5.15815 7.82947 5.41677 7.68565 5.5983 7.43489ZM4.70205 6.83399L0.909287 1.59499C0.863366 1.53157 0.842784 1.45616 0.842784 1.38234C0.842784 1.21823 0.944537 1.06192 1.09601 1.06192L8.68153 1.06192C8.833 1.06192 8.93476 1.21827 8.93476 1.38234C8.93476 1.45616 8.91418 1.53153 8.86825 1.59499L5.0755 6.83399C4.97528 6.97242 4.80228 6.97242 4.70205 6.83399Z" fill="#1D1D1B"></path></svg></div></div></div><div class="gt_price_product"><span class="gt_subheading gt_atom-rLZEauGpn5udz71_originalPriceText  gt_total_price" data-name="Original Price Text" data-attribute="originalPriceText" data-class="gt_total_price">
+  {{ item.original_line_price | money }}
+</span>
+                          
+                            
+                              {% if item.variant.compare_at_price > item.variant.price %}
+                                {% assign compare_at_price = item.variant.compare_at_price %}
+                                <span class="gt_text gt_atom-rLZEauGpn5udz71_comparePriceText  gt_compare_price" data-name="Compare Price Text" data-attribute="comparePriceText" data-class="gt_compare_price">
+  {{ compare_at_price | times: item.quantity | money }}
+</span>
+                              {% endif %}
+                            
+                          
+                        </div></div></div><div class="gt_icon_remove_product"><span><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.661778 7.33888C0.789848 7.46698 0.957659 7.531 1.1255 7.531C1.29334 7.531 1.46118 7.46695 1.58922 7.33888L4.00005 4.92804L6.41091 7.33888C6.53895 7.46698 6.7068 7.531 6.87464 7.531C7.04248 7.531 7.21029 7.46695 7.33836 7.33888C7.59447 7.08283 7.59447 6.66757 7.33836 6.41146L4.92747 4.00062L7.3383 1.58975C7.59441 1.33364 7.59441 0.918378 7.3383 0.662298C7.08225 0.406187 6.66699 0.406187 6.41088 0.662298L4.00002 3.07317L1.58919 0.662298C1.33308 0.406187 0.917827 0.406187 0.661748 0.662298C0.405638 0.918409 0.405638 1.33364 0.661748 1.58975L3.07261 4.00062L0.661748 6.41146C0.405669 6.66757 0.405668 7.08283 0.661778 7.33888Z" fill="white"></path></svg></span></div></div><div class="position_hook"></div></div>
+              {% endfor %}
+            </div><div class="gt_cart_item_template"><div class="gt_cart_item_wrapper gt_items--content gt_cart-item gt_cart_item_template_content" data-key="" data-product-id="" data-product-handle="" data-variant-id=""><div class="gt_flex gt_items_cart--content"><script type="application/json" class="ProductJson">
+                    {}
+                  </script><div class="gt_item_image"><img class="gt_lazyload" src="image" alt="image"></div><div class="gt_item_detail"><div class="gt_name_product"><a href=""><p class="gt_text gt_atom-rLZEauGpn5udz71_productNameText  gt_name_product_text" data-name="Product Name Text" data-attribute="productNameText" data-class="gt_name_product_text">
+  {{ item.product.title }}
+</p></a></div><div class="gt_variant_product"><div class="gt_text gt_atom-rLZEauGpn5udz71_variantNameText  gt_variant-title" data-name="Variant Name Text" data-attribute="variantNameText" data-class="gt_variant-title">
+  {{ item.variant.title }}
+</div></div><div class="gt_property"><div class="gt_item_property"><div class="gt_text gt_atom-rLZEauGpn5udz71_itemPropertiesText " data-name="Item Properties Text" data-attribute="itemPropertiesText"><span class="title_property">
+                              {{ p.first }}:
+                            </span>
+                              {% if p.last contains '/uploads/' %}
+                              <span class="detail_property"></span><a class="lightbox" href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                            {% else %}
+                              <span class="detail_property">{{ p.last }}</span>
+                            {% endif %}
+</div></div></div><div class="position_hook"></div><div class="gt_quantity_price_product"><div class="gt_quantity_product gt_flex"><div class="gt_box_number_quantity"><input class="gt_number_quantity" type="number" min="1" name="quantity" value="{{item.quantity}}"></div><div class="gt_box_quantity"><div class="gt_quantity_plus noselect"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.59843 0.565111L9.39118 5.80415C9.55326 6.02802 9.64253 6.31693 9.64253 6.61766C9.64253 6.92768 9.54971 7.22312 9.38114 7.44947C9.29313 7.56769 9.18906 7.6608 9.07183 7.72626C8.94889 7.79493 8.8176 7.82973 8.68165 7.82973L1.09613 7.82973C0.960187 7.82973 0.828914 7.79493 0.705984 7.7263C0.588752 7.66085 0.484686 7.56773 0.396642 7.44951C0.228088 7.22312 0.135254 6.92772 0.135254 6.6177C0.135254 6.61766 0.135254 6.61762 0.135254 6.61762C0.135254 6.31693 0.22452 6.02802 0.386599 5.80415L4.17936 0.565132C4.3609 0.314352 4.61951 0.170532 4.88889 0.170532C5.15828 0.170532 5.41689 0.314352 5.59843 0.565111ZM4.70217 1.16601L0.909409 6.40501C0.863488 6.46843 0.842905 6.54384 0.842905 6.61766C0.842905 6.78178 0.944659 6.93808 1.09613 6.93808L8.68165 6.93808C8.83312 6.93808 8.93488 6.78173 8.93488 6.61766C8.93488 6.54384 8.9143 6.46847 8.86837 6.40501L5.07562 1.16601C4.9754 1.02758 4.8024 1.02758 4.70217 1.16601Z" fill="#1D1D1B"></path></svg></div><div class="gt_quantity_minus noselect"><svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5983 7.43489L9.39106 2.19585C9.55314 1.97198 9.64241 1.68307 9.64241 1.38234C9.64241 1.07232 9.54959 0.776879 9.38102 0.550535C9.29301 0.432315 9.18894 0.339197 9.07171 0.273739C8.94876 0.205076 8.81748 0.170276 8.68153 0.170276L1.09601 0.170276C0.960065 0.170276 0.828792 0.205075 0.705862 0.273697C0.58863 0.339155 0.484564 0.432274 0.39652 0.550493C0.227966 0.77688 0.135132 1.07228 0.135132 1.3823C0.135132 1.38234 0.135132 1.38238 0.135132 1.38238C0.135132 1.68307 0.224398 1.97198 0.386477 2.19585L4.17924 7.43487C4.36077 7.68565 4.61939 7.82947 4.88877 7.82947C5.15815 7.82947 5.41677 7.68565 5.5983 7.43489ZM4.70205 6.83399L0.909287 1.59499C0.863366 1.53157 0.842784 1.45616 0.842784 1.38234C0.842784 1.21823 0.944537 1.06192 1.09601 1.06192L8.68153 1.06192C8.833 1.06192 8.93476 1.21827 8.93476 1.38234C8.93476 1.45616 8.91418 1.53153 8.86825 1.59499L5.0755 6.83399C4.97528 6.97242 4.80228 6.97242 4.70205 6.83399Z" fill="#1D1D1B"></path></svg></div></div></div><div class="gt_price_product"><span class="gt_subheading gt_atom-rLZEauGpn5udz71_originalPriceText  gt_total_price" data-name="Original Price Text" data-attribute="originalPriceText" data-class="gt_total_price">
+  {{ item.original_line_price | money }}
+</span><span class="gt_text gt_atom-rLZEauGpn5udz71_comparePriceText  gt_compare_price" data-name="Compare Price Text" data-attribute="comparePriceText" data-class="gt_compare_price">
+  {{ compare_at_price | times: item.quantity | money }}
+</span></div></div></div><div class="gt_icon_remove_product"><span><svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.661778 7.33888C0.789848 7.46698 0.957659 7.531 1.1255 7.531C1.29334 7.531 1.46118 7.46695 1.58922 7.33888L4.00005 4.92804L6.41091 7.33888C6.53895 7.46698 6.7068 7.531 6.87464 7.531C7.04248 7.531 7.21029 7.46695 7.33836 7.33888C7.59447 7.08283 7.59447 6.66757 7.33836 6.41146L4.92747 4.00062L7.3383 1.58975C7.59441 1.33364 7.59441 0.918378 7.3383 0.662298C7.08225 0.406187 6.66699 0.406187 6.41088 0.662298L4.00002 3.07317L1.58919 0.662298C1.33308 0.406187 0.917827 0.406187 0.661748 0.662298C0.405638 0.918409 0.405638 1.33364 0.661748 1.58975L3.07261 4.00062L0.661748 6.41146C0.405669 6.66757 0.405668 7.08283 0.661778 7.33888Z" fill="white"></path></svg></span></div></div><div class="position_hook"></div></div></div></div>
+          {% assign totalComparePrice = 0 %} 
+          {% for item in cart.items %} 
+            {% if item.variant.compare_at_price > item.variant.price and item.variant.compare_at_price > 0 %} 
+              {% assign saveCompareItem = item.variant.compare_at_price | minus:item.variant.price %} 
+              {% assign totalComparePriceItem = saveCompareItem | times:item.quantity %} 
+              {% assign totalComparePrice = totalComparePrice | plus: totalComparePriceItem %} 
+            {% endif %} 
+          {% endfor %}
+          
+          <div class="gt_box_order_summary_container gt_box_order_summary_height"><div class="gt_box_order_summary_group"><div class="gt_box_order_summary"><div class="gt_padding-hook"><div class="position_hook"></div></div><div class="gt_box_order_summary_header"><div class="gt_subheading gt_atom-rLZEauGpn5udz71_orderSummaryText  gt_order_summary_heading_text" data-name="Order Summary Text" data-attribute="orderSummaryText" data-class="gt_order_summary_heading_text">
+  Order Summary
+</div></div><div class="gt_box_checkout_content"><div class="gt_discount_input_box"><input class="gt_discount_input" autocomplete="off" type="text" value="" name="discount" placeholder="Your discount code"><button class="gt_button gt_button--normal gt_atom-rLZEauGpn5udz71_applyDiscountCodeButton  gt_button_apply_discount gt_checkout_button" data-name="Apply Discount Code Button" data-attribute="applyDiscountCodeButton" data-class="gt_button_apply_discount gt_checkout_button" type="submit" name="checkout"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_button-content-text-main">
+        Apply
+      </span></span></span></button></div><div class="gt_flex gt_row_detail gt_discount"><div class="gt_label_text"><div class="gt_text gt_atom-rLZEauGpn5udz71_discountLabel " data-name="Discount Label" data-attribute="discountLabel">
+  Discount
+</div></div><div class="gt_value_text discount_value"><p class="gt_discount-price"><span class="gt_text gt_atom-rLZEauGpn5udz71_discountValue  gt_discount-price-number" data-name="Discount Value Text" data-attribute="discountValue" data-class="gt_discount-price-number">
+  -{{ cart.total_price | money }}
+</span></p></div></div><div class="gt_flex gt_row_detail"><div class="gt_label_text gt_grand_label"><p></p><div class="gt_text gt_atom-rLZEauGpn5udz71_labelGrandTotal " data-name="Grand Total Label" data-attribute="labelGrandTotal">
+  Grand Total
+</div><p></p></div><div class="gt_value_text"><span class="gt_text gt_atom-rLZEauGpn5udz71_grandTotalValue  gt_text_total" data-name="Grand Total Value Text" data-attribute="grandTotalValue" data-class="gt_text_total">
+  {{ cart.total_price | money }}
+</span></div></div></div><div class="gt_margin-hook"><div class="position_hook"></div></div></div></div></div></div><div class="gt_box_checkout gt_box_checkout_height gt_checkout_submit"><div class="gt_button_checkout_group"><div class="gt_guarantee_group"><span data-optimize-type="icon" data-attribute="guaranteeIcon," data-section-id="rLZEauGpn5udz71" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 512 512"><path d="M462.221 74.4297H49.767C22.5554 74.4297 0.417969 96.568 0.417969 123.779V388.229C0.417969 415.441 22.5563 437.579 49.767 437.579H462.221C489.433 437.579 511.569 415.441 511.569 388.229V123.779C511.569 96.568 489.433 74.4297 462.221 74.4297ZM36.7804 123.779C36.7804 116.606 42.5947 110.792 49.767 110.792H462.221C469.392 110.792 475.207 116.606 475.207 123.779V150.315H36.7804V123.779ZM475.207 209.349H36.7804V186.677H475.207V209.349ZM475.207 388.228C475.207 395.401 469.392 401.216 462.221 401.216H49.767C42.5947 401.216 36.7804 395.401 36.7804 388.228V245.712H475.207V388.228Z" fill="currentColor"></path><path d="M392.233 381.306H404.133C431.345 381.306 453.483 359.168 453.483 331.957V320.056C453.483 292.845 431.345 270.707 404.133 270.707H392.233C365.021 270.707 342.885 292.845 342.885 320.056V331.957C342.886 359.168 365.024 381.306 392.233 381.306ZM379.247 320.057C379.247 312.885 385.061 307.07 392.233 307.07H404.133C411.305 307.07 417.121 312.885 417.121 320.057V331.958C417.121 339.129 411.305 344.944 404.133 344.944H392.233C385.061 344.944 379.247 339.129 379.247 331.958V320.057Z" class="gt_fill--hightlight"></path></svg></span><div class="gt_text gt_atom-rLZEauGpn5udz71_guaranteeText " data-name="Guarantee Text" data-attribute="guaranteeText">
+  30 Day Money Back Guarantee
+</div></div><div class="gt_buttons_box"><button class="gt_button gt_button--normal gt_atom-rLZEauGpn5udz71_cartButtonText  gt_add_to_cart_button" data-name="Go To Cart Button Text" data-attribute="cartButtonText" data-class="gt_add_to_cart_button" type="button"><span class="gt_button-content"><span class="gt_button-content-text"><span data-optimize-type="icon" data-attribute="iconLeftData," data-section-id="rLZEauGpn5udz71_cartButtonText" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 512 512"><path d="M448 128.001H362.667C362.667 69.1207 314.88 21.334 256 21.334C197.12 21.334 149.333 69.1207 149.333 128.001H64V469.334H448V128.001ZM256 64.0007C291.413 64.0007 320 92.5873 320 128.001H192C192 92.5873 220.587 64.0007 256 64.0007ZM256 277.334C197.12 277.334 149.333 229.547 149.333 170.667H192C192 206.081 220.587 234.667 256 234.667C291.413 234.667 320 206.081 320 170.667H362.667C362.667 229.547 314.88 277.334 256 277.334Z" fill="currentColor"></path></svg></span><span class="gt_button-content-text-main">
+        VIEW CART
+      </span></span></span></button><button class="gt_button gt_button--large gt_atom-rLZEauGpn5udz71_primaryButtonText  gt_checkout_button gt_checkout_button_main" data-name="Checkout Button Text" data-attribute="primaryButtonText" data-class="gt_checkout_button gt_checkout_button_main" type="submit" name="checkout"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_button-content-text-main">
+        CHECKOUT
+      </span></span></span></button></div><div class="dynamic_checkout_button"></div></div></div></form><div class="gt_cart_empty {{ classCartEmpty }} "><div class="gt_message"><div class="gt_subheading gt_atom-rLZEauGpn5udz71_emptyCartMessage  gt_empty_cart_heading" data-name="Empty Cart Message" data-attribute="emptyCartMessage" data-class="gt_empty_cart_heading">
+  Your Cart Is Currently Empty
+</div></div><div class="gt_description"><div class="gt_text gt_atom-rLZEauGpn5udz71_emptyCartDescription " data-name="Empty Cart Description" data-attribute="emptyCartDescription">
+  Explore popular and trending better living products
+with BIG saving here!
+</div></div><div class="gt_button_continue_shopping"><button class="gt_button gt_button--large gt_atom-rLZEauGpn5udz71_buttonContinueShopingText " data-name="Button Continue Shopping Text" data-attribute="buttonContinueShopingText" type="button"><span class="gt_button-content"><span class="gt_button-content-text"><span data-optimize-type="icon" data-attribute="iconLeftData," data-section-id="rLZEauGpn5udz71_buttonContinueShopingText" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 512 512"><path d="M448 128.001H362.667C362.667 69.1207 314.88 21.334 256 21.334C197.12 21.334 149.333 69.1207 149.333 128.001H64V469.334H448V128.001ZM256 64.0007C291.413 64.0007 320 92.5873 320 128.001H192C192 92.5873 220.587 64.0007 256 64.0007ZM256 277.334C197.12 277.334 149.333 229.547 149.333 170.667H192C192 206.081 220.587 234.667 256 234.667C291.413 234.667 320 206.081 320 170.667H362.667C362.667 229.547 314.88 277.334 256 277.334Z" fill="currentColor"></path></svg></span><span class="gt_button-content-text-main">
+        Shop Now
+      </span></span></span></button></div>
+         
+        {% assign totalComparePrice = 0 %} 
+        {% for item in cart.items %} 
+          {% if item.variant.compare_at_price > item.variant.price and item.variant.compare_at_price > 0 %} 
+            {% assign saveCompareItem = item.variant.compare_at_price | minus:item.variant.price %} 
+            {% assign totalComparePriceItem = saveCompareItem | times:item.quantity %} 
+            {% assign totalComparePrice = totalComparePrice | plus: totalComparePriceItem %} 
+          {% endif %} 
+        {% endfor %}
+        <div class="gt_box_checkout gt_box_checkout_empty_cart"><div class="gt_button_checkout_group"><div class="gt_guarantee_group gt_guarantee_group_empty_cart"><span data-optimize-type="icon" data-attribute="guaranteeIcon," data-section-id="rLZEauGpn5udz71" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 512 512"><path d="M462.221 74.4297H49.767C22.5554 74.4297 0.417969 96.568 0.417969 123.779V388.229C0.417969 415.441 22.5563 437.579 49.767 437.579H462.221C489.433 437.579 511.569 415.441 511.569 388.229V123.779C511.569 96.568 489.433 74.4297 462.221 74.4297ZM36.7804 123.779C36.7804 116.606 42.5947 110.792 49.767 110.792H462.221C469.392 110.792 475.207 116.606 475.207 123.779V150.315H36.7804V123.779ZM475.207 209.349H36.7804V186.677H475.207V209.349ZM475.207 388.228C475.207 395.401 469.392 401.216 462.221 401.216H49.767C42.5947 401.216 36.7804 395.401 36.7804 388.228V245.712H475.207V388.228Z" fill="currentColor"></path><path d="M392.233 381.306H404.133C431.345 381.306 453.483 359.168 453.483 331.957V320.056C453.483 292.845 431.345 270.707 404.133 270.707H392.233C365.021 270.707 342.885 292.845 342.885 320.056V331.957C342.886 359.168 365.024 381.306 392.233 381.306ZM379.247 320.057C379.247 312.885 385.061 307.07 392.233 307.07H404.133C411.305 307.07 417.121 312.885 417.121 320.057V331.958C417.121 339.129 411.305 344.944 404.133 344.944H392.233C385.061 344.944 379.247 339.129 379.247 331.958V320.057Z" class="gt_fill--hightlight"></path></svg></span><div class="gt_text gt_atom-rLZEauGpn5udz71_guaranteeText " data-name="Guarantee Text" data-attribute="guaranteeText">
+  30 Day Money Back Guarantee
+</div></div></div></div></div><div class="gt_popup_confirm gt_remove_item "><div class="gt_popup_content"><div class="gt_message_text"><div class="gt_text gt_atom-rLZEauGpn5udz71_messageConfirmPopup " data-name="Message" data-attribute="messageConfirmPopup">
+  Are you sure?
+</div></div><div class="gt_button_submit"><button class="gt_button gt_button--normal gt_atom-rLZEauGpn5udz71_noTextConfirmPopup  bt_cancel cancel-gt_remove_item" data-name="'No' Text" data-attribute="noTextConfirmPopup" data-class="bt_cancel cancel-gt_remove_item" type="button"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_button-content-text-main">
+        No
+      </span></span></span></button><button class="gt_button gt_button--normal gt_atom-rLZEauGpn5udz71_yesTextConfirmPopup  bt_confirm confirm-gt_remove_item" data-name="'Yes' Text" data-attribute="yesTextConfirmPopup" data-class="bt_confirm confirm-gt_remove_item" type="button"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_button-content-text-main">
+        Yes
+      </span></span></span></button></div></div></div><div class="gt_popup_confirm gt_delete_product"><div class="gt_popup_content"><div class="gt_message_text"><div class="gt_text gt_atom-rLZEauGpn5udz71_messageConfirmPopup " data-name="Message" data-attribute="messageConfirmPopup">
+  Are you sure?
+</div></div><div class="gt_button_submit"><button class="gt_button gt_button--normal gt_atom-rLZEauGpn5udz71_noTextConfirmPopup  bt_cancel cancel-gt_delete_product" data-name="'No' Text" data-attribute="noTextConfirmPopup" data-class="bt_cancel cancel-gt_delete_product" type="button"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_button-content-text-main">
+        No
+      </span></span></span></button><button class="gt_button gt_button--normal gt_atom-rLZEauGpn5udz71_yesTextConfirmPopup  bt_confirm confirm-gt_delete_product" data-name="'Yes' Text" data-attribute="yesTextConfirmPopup" data-class="bt_confirm confirm-gt_delete_product" type="button"><span class="gt_button-content"><span class="gt_button-content-text"><span class="gt_button-content-text-main">
+        Yes
+      </span></span></span></button></div></div></div></div></div></div><div class="gt_widget-Lg49PkchGikfwVL" data-name="Browser Tab Notifications"></div>
+  

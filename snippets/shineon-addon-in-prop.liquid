@@ -1,0 +1,303 @@
+<!-- ./snippets/shineon-addon-in-prop.liquid -->
+
+{% comment %}
+    @param type<string>
+    @param placement<string>
+    @param product<Product>
+    @param cart<Cart>
+{% endcomment %}
+
+<style type="text/css">
+    .so-icons.so-icon-info svg {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+    }
+    .so-addon-input-wrap .left-side {
+        width: 100%;
+    }
+</style>
+
+{% if type == 'product_addon' %}
+    {% assign addons = product.metafields.shineon.addons.value | default: product.metafields.shineon.addons %}
+    {% assign addon_items = addons.items | where: 'name', name | sort: 'order' %}
+
+    {% assign valid_addons = null | sort %}
+    {% for addon in addon_items %}
+        {% if addon.placement.size > 1 %}
+            {% if addon.placement == placement and addon.type == type %}
+                {% assign _product = all_products[addon.handle] | sort %}
+                {% assign valid_addons = valid_addons | concat: _product %}
+            {% endif %}
+        {% else %}
+            {% if addon.placement[0] == placement and addon.type == type %}
+                {% assign _product = all_products[addon.handle] | sort %}
+                {% assign valid_addons = valid_addons | concat: _product %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% if valid_addons.size > 0 %}
+        <div class="tailwind">
+            <div class="tw-font-sans tw-mt-6 tw-font-sans tw-bg-white tw-rounded-md tw-shadow-sm tw-border tw-border-solid tw-border-[#c0cbd3] tw-overflow-hidden">
+                <div class="so-product-page-addons tw-divide-y tw-divide-[#c0cbd3]">
+                    {% for addon in addon_items %}
+                        {% assign addon_product = all_products[addon.handle] %}
+                        {% assign hide_gift_wrap = false %}
+
+                        {% assign should_show_information_modal = false %}
+
+                        {% liquid
+                            assign information_modal_description = addon_product.metafields.shineon.modal_description
+
+                            if information_modal_description != blank
+                                assign should_show_information_modal = true
+                            endif
+                        %}
+
+                        {% if addon.handle == section.settings.gift_bag_kit_handle or addon.name == 'Gift Wrap Kit' or addon.handle == 'do-it-yourself-gift-wrap' %}
+                        {% if section.settings.show_gift_bag_kit == true %}
+                            {% assign hide_gift_wrap = true %}
+                        {% endif %}
+                        {% endif %}
+
+                        {% unless hide_gift_wrap %}
+                            {% assign shop_cf_slug = "" %}
+                            {% assign addon_schema_v2_obj = addon_product.metafields.shineon.schema_v2.value | default: addon_product.metafields.shineon.schema_v2 %}
+                            {% assign pt_id = 'pt_' | append: addon_schema_v2_obj.product_template_id %}
+                            {% assign shop_pt_id_obj = shop.metafields.shineon[pt_id].value | default: shop.metafields.shineon[pt_id] %}
+                            {% assign addon_cf_obj = shop_pt_id_obj.custom_fields %}
+                            {% for addon_cf_id in addon_cf_obj %}
+                                {% assign shop_cf = shop.metafields.shineon[addon_cf_id.key].value | default: shop.metafields.shineon[addon_cf_id.key] %}
+                                {% assign shop_cf_slug = "personalized-gift-kit" %}
+                            {% endfor %}
+                            <label for="{{ addon_product.handle }}__addon" class="addon_product-label tw-px-6 tw-py-4 tw-mb-0 tw-flex tw-items-center tw-space-x-8 hover:tw-bg-gray-50 hover:tw-cursor-pointer{% if show_quantity and addon.singular != true %} addon__quantity-label{% endif %}">
+                                <div class="so-flex tw-text-gray-700 hover:tw-text-gray-900 tw-font-semibold">
+                                    <input id="{{ addon_product.handle }}__addon"
+                                        name="{{ addon_product.handle }}__addon"
+                                        type="checkbox"
+                                        class="form-checkbox focus:so-ring-gray-500 so-h-6 so-w-6 so-text-gray-700 so-border so-border-gray-400 so-rounded checked:so-border-transparent"
+                                        data-addon-price="{{ addon_product.price }}"
+                                        data-addon-title="{{ addon_product.title }}"
+                                        data-addon-handle="{{ addon_product.handle }}"
+                                        data-variant-id="{{ addon_product.variants.first.id }}"
+                                        data-singular="{{ addon.singular }}"
+                                        {% if shop_cf_slug == "personalized-gift-kit" %}
+                                        data-gift-kit="1"
+                                        data-parent-title="{{ product.title }}"
+                                        data-addon-label="{{ shop_cf.label }}"
+                                        data-addon-name="{{ shop_cf.name }}"
+                                        {% endif %}
+                                        autocomplete="off"
+                                    >
+                                    <span class="addon-product-title-wrap so-font-bold so-text-green-600">
+                                        <span>Gift Wrap My Item For</span> <span>{% if addon.display_price %}{{ addon_product.price | money }}{% endif %}</span>
+                                    </span>
+                                    {% if should_show_information_modal %}
+                                        <button class="btn-transparent" style="display: inline-block; cursor: help;" onclick="showAddonModal('{{ addon_product.handle }}')" role="button">
+                                            {% render 'shineon-app-icons' with 'info', add_wrap: true %}
+                                        </button>
+                                    {% endif %}
+                                </div>
+                                <span class="tw-block">
+                                    <span class="tw-block tw-text-sm tw-text-gray-400 so-italic so-text-sm">
+                                        {% if addon_product.description contains section.settings.addons_description_splitter %}
+                                            {% assign description_array = addon_product.description | split: section.settings.addons_description_splitter %}
+                                            {{ description_array | first }}
+                                        {% else %}
+                                            {% if addon_product.description contains '[maxlength]' %}
+                                                {% assign maxlength = ' up to ' | append: shop_cf.maxlength | append: ' characters' %}
+                                            {% endif %}
+                                            {{ addon_product.description | replace: '[maxlength]', maxlength }}
+                                        {% endif %}
+                                    </span>
+                                    {% if shop_cf_slug == "personalized-gift-kit" %}
+                                        {% for addon_cf_id in addon_cf_obj %}
+                                            {% assign shop_cf = shop.metafields.shineon[addon_cf_id.key].value | default: shop.metafields.shineon[addon_cf_id.key] %}
+                                            {% if shop_cf.slug == "personalized-gift-kit" %}
+                                                <div class="so-addon-input-wrap shineon-theme shineon-theme--primary so-hidden">
+                                                    <div class="so-flex so-items-center so-p-4">
+                                                        <span class="so-block so-w-16 so-h-16 so-relative so-flex-shrink-0">
+                                                        {% if addon.singular != true %}
+                                                            <span class="so-invisible so-flex so-items-center so-justify-center so-h-6 so-w-6 so-absolute so-bg-gray-800/75 so--top-2.5 so--right-2.5 so-rounded-full">
+                                                                <span class="so-font-bold so-text-white so-text-sm addon__quantity">1</span>
+                                                            </span>
+                                                            <img class="tw-block tw-rounded-md tw-w-16 tw-h-16 tw-object-cover" src="{{ addon_product | img_url: '96x96' }}" alt="{{ addon_product.title | escape }}">
+                                                        {% endif %}
+                                                        </span>
+                                                        <div class="left-side so-ml-9">
+                                                            <div class="field so-mt-3">
+                                                                <textarea type="text"
+                                                                    name="properties[+ {{ addon_product.title }}({{ shop_cf.label }})]"
+                                                                    id="{{ shop_cf.html_id }}"
+                                                                    data-variant-id="{{ addon_product.selected_or_first_available_variant.id }}"
+                                                                    data-label="{{ shop_cf.label }}"
+                                                                    class="field__input so-addon-input {{ shop_cf_slug }} focus:tw-ring-gray-500 tw-text-gray-700 tw-border tw-border-gray-400 tw-rounded so-px-3"
+                                                                    placeholder="{{ shop_cf.placeholder }} "
+                                                                    maxlength="{{ shop_cf.maxlength }}"
+                                                                    minlength="{{ shop_cf.minlength }}"
+                                                                    rows="3"
+                                                                    {% if shop_cf.required == 1 %}
+                                                                    required
+                                                                    {% endif %}
+                                                                    autocomplete="off"/></textarea>
+                                                                <label class="field__label tw-font-semibold so-text-sm" for="{{ shop_cf.html_id }}">
+                                                                    {{ shop_cf.label }}
+                                                                    <span class="addon-textarea-counter" data-maxlength="{{ shop_cf.maxlength }}">
+                                                                        <span class="counter">0</span>/{{ shop_cf.maxlength }}
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endif %}
+                                </span>
+                            </label>
+                        {% endunless %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showAddonModal(product_handle) {
+                var $modal = $('#modal-info-' + product_handle)
+                $modal.insertAfter($('div.page-container').length ? 'div.page-container' : 'body');
+                $modal.so_modal('show')
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                jQuery(document).ready(function() {
+                    var $ = jQuery
+                    var $form = $('form.so-product-form')
+
+                    var $quantity_change_selector = $('.so-quantity-change')
+                    var $quantity_selector = $('.so-cart-qty-input')
+
+                    setTimeout(function () {
+                        applyAddonQuantity()
+                    }, 1)
+
+                    $quantity_change_selector.on('click', function () {
+                        setTimeout(function () {
+                            applyAddonQuantity()
+                            syncProductPageAddons()
+                        }, 1)
+                    })
+
+                    $quantity_selector.change(function (e) {
+                        setTimeout(function () {
+                            applyAddonQuantity()
+                            syncProductPageAddons()
+
+                            var input_name_attr = '[name="' + $('.so-addon-input')[0].getAttribute('name') + '"]',
+                                addon_id = $('.so-addon-input')[0].getAttribute('data-variant-id'),
+                                base_name = 'items' + '[' + addon_id + ']',
+                                addon_input_label = '[name="' + base_name + '[properties[' + $('.so-addon-input')[0].getAttribute('data-label') + ']]"]';
+                            $(input_name_attr).val($('.so-addon-input').val());
+                            $(addon_input_label).val($('.so-addon-input').val());
+                        }, 1)
+                    })
+
+                    function applyAddonQuantity() {
+                        var quantity = parseInt($quantity_selector.val())
+                        var $addon_quantity = $('.addon__quantity')
+                        var $addon_quantity_parent = $addon_quantity.parent()
+
+                        $addon_quantity.text(quantity)
+
+                        if (quantity > 1 && $addon_quantity_parent.hasClass('tw-invisible')) {
+                            $addon_quantity_parent.removeClass('tw-invisible')
+                        } else if (quantity <= 1) {
+                            $addon_quantity_parent.addClass('tw-invisible')
+                        }
+
+                        if (quantity > 1 && $addon_quantity_parent.hasClass('so-invisible')) {
+                            $addon_quantity_parent.removeClass('so-invisible')
+                        } else if (quantity <= 1) {
+                            $addon_quantity_parent.addClass('so-invisible')
+                        }
+                    }
+
+                    function syncProductPageAddons() {
+                        $('.addon__selection').remove()
+                        if (typeof this.hasAttribute === "function") {
+                            if (this.hasAttribute('data-gift-kit')) {
+                                $('.so-addon-input-wrap').toggleClass('so-hidden');
+                            }
+                        }
+                        $('.so-product-page-addons input:checked').each(function (index, el) {
+                            var is_gift_kit = el.hasAttribute('data-gift-kit')
+                            var el_input = $(el).parent().find('.so-addon-input')
+                            var variant_id = $(el).data('variant-id')
+                            var is_checked = $(el).is(':checked')
+                            var singular = $(el).data('singular')
+
+                            var base_name = 'items' + '[' + variant_id + ']'
+                            var id_input_name = base_name + '[id]'
+                            var quantity_input_name = base_name + '[quantity]'
+                            var prop_parent_id_name = base_name + '[properties[_Addon | Assigned to]]'
+                            var prop_engraving_input_label = base_name + '[properties[' + el.getAttribute('data-addon-label') + ']]'
+
+                            if (is_checked) {
+                                var addon_selection_class = "addon__selection"
+                                if (is_gift_kit) {
+                                    var is_checked_gift_kit = true
+                                        addon_title = el.getAttribute('data-addon-title')
+                                        addon_variant_id = el.getAttribute('data-variant-id')
+                                        addon_handle = el.getAttribute('data-addon-handle')
+                                    addon_selection_class += " addon-gift-kit"
+                                }
+                                var quantity = singular ? 1 : (parseInt($('.so-cart-qty-input').val()) || 1)
+
+                                var $base_input = $('<input class="' + addon_selection_class +'" type="hidden" />').data('variant-id', variant_id)
+
+                                var $id_input = $base_input.clone().attr('name', id_input_name).val(variant_id)
+                                var $quantity_input = $base_input.clone().attr('name', quantity_input_name).val(quantity)
+                                if (is_gift_kit) {
+                                    var $addon_title_for_hero = $base_input.clone().attr('name', 'properties[+ ' + addon_title + '(' + el.getAttribute('data-addon-label') + ')' + ']').val(el_input.val())
+                                    var $addon_id_for_hero = $base_input.clone().attr('name', 'properties[_Addon | Assigned with]').val(addon_variant_id)
+                                    var $addon_handle = $base_input.clone().attr('name', 'properties[_Addon | handle]').val(addon_handle)
+                                    var $hero_prod_id_for_addon = $base_input.clone().attr('name', prop_parent_id_name).val(el.getAttribute('data-parent-title'))
+                                    var $prop_engraving_input_label = $base_input.clone().attr('name', prop_engraving_input_label).val(el_input.val())
+                                }
+
+                                $form.append($id_input)
+                                $form.append($quantity_input)
+                                if (is_gift_kit) {
+                                    $form.append($hero_prod_id_for_addon)
+                                    $form.append($addon_title_for_hero)
+                                    $form.append($addon_id_for_hero)
+                                    $form.append($addon_handle)
+                                    $form.append($prop_engraving_input_label)
+                                }
+                            }
+                        })
+                    }
+
+                    setTimeout(function () {
+                        $('.so-product-page-addons input[type="checkbox"]').change(syncProductPageAddons)
+                    }, 1)
+
+                    $('.so-addon-input').off('change').on('change', function (e) {
+                        var input_name_attr = '[name="' + this.getAttribute('name') + '"]',
+                            addon_id = this.getAttribute('data-variant-id'),
+                            base_name = 'items' + '[' + addon_id + ']',
+                            addon_input_label = '[name="' + base_name + '[properties[' + this.getAttribute('data-label') + ']]"]';
+                        $(input_name_attr).val($(this).val());
+                        $(addon_input_label).val($(this).val());
+                    });
+
+                    $('.so-addon-input').off('keyup').on('keyup', function (e) {
+                        var label_text = $(this).parent().find('.field__label'),
+                            addon_counter = label_text.find('.counter');
+                        addon_counter.text($(this).val().length);
+                    });
+                })
+            })
+        </script>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,277 @@
+
+  
+<section class="gt_section-EEpsVmRcAkpZvAm gt_animation-zoom-out-up gt_animatable" data-name="Collection"><div class="gt_featured-bg gt_lazyload" style=" background-image: url('')"><div class="gt_overlay"></div></div><div class="gt_pb2--extra-large gt_collection"><div class="position_hook"></div>
+      
+      
+      
+        {% paginate collection.products by 12 %}
+      
+      <after><div class="position_hook"></div></after><div class="gt_atom-EEpsVmRcAkpZvAm_collectionHeader gt_py2--extra-large gt_mb2--small gt_collection--header" data-name="Collection Header" data-attribute="collectionHeader" data-class="gt_py2--extra-large gt_mb2--small gt_collection--header"><div class="gt_container"><div class="gt_row gt_justify--center"><div class="gt_col-lg-12 gt_col-md-12 gt_col-sm-12 gt_col-12 gt_atom-EEpsVmRcAkpZvAm_collectionHeaderColumn gt_justify--center gt_items--center gt_mb2--small sm:gt_items--center" data-name="Collection Header Column" data-attribute="collectionHeaderColumn" data-class="gt_justify--center gt_items--center gt_mb2--small sm:gt_items--center"><h3 class="gt_atom-EEpsVmRcAkpZvAm_collectionTitle gt_heading gt_text--center" data-name="Collection Name" data-collection-id="{{collection.id}}" data-attribute="collectionTitle" data-class="gt_heading gt_text--center">
+  {{collection.title}}
+</h3></div></div></div></div><div class="gt_atom-EEpsVmRcAkpZvAm_boxCollectionTop gt_mb2--medium gt_collection--content" data-name="Content Collection" data-attribute="boxCollectionTop" data-class="gt_mb2--medium gt_collection--content"><div class="gt_container"><div class="gt_row"><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-EEpsVmRcAkpZvAm_columnSortProduct gt_justify--end gt_mb2--small gt_items--center sm:gt_mb2--medium xs:gt_mb2--medium gt_collection--soft--product" data-name="Content Right" data-attribute="columnSortProduct" data-class="gt_justify--end gt_mb2--small gt_items--center sm:gt_mb2--medium xs:gt_mb2--medium gt_collection--soft--product"><div class="gt_atom-EEpsVmRcAkpZvAm_headingText gt_mr2--small sm:gt_mb2--extra-small sm:gt_text--center" data-name="Message" data-attribute="headingText" data-class="gt_mr2--small sm:gt_mb2--extra-small sm:gt_text--center"><div class="gt_text-wrapper">
+        Sort by:
+      </div></div><div class="gt_atom-EEpsVmRcAkpZvAm_sortProduct gt_collection--sort" data-name="Setting Option Sort" data-attribute="sortProduct" data-class="gt_collection--sort"><select name="" id="" class="gt_select-hidden gt_form-select-fiter">
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'best-selling' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="best-selling" {{ checked }}="">Best selling</option>
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'title-ascending' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="title-ascending" {{ checked }}="">Alphabetically, A-Z</option>
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'title-ascending' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="title-descending" {{ checked }}="">Alphabetically, Z-A</option>
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'price-ascending' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="price-ascending" {{ checked }}="">Price, low to high</option>
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'price-descending' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="price-descending" {{ checked }}="">Price, high to low</option>
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'created-ascending' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="created-ascending" {{ checked }}="">Date, old to new</option>
+    
+
+    
+      {% assign checked = '' %}
+      {% if 'created-descending' == collection.sort_by %}
+        {% assign checked = 'selected' %}
+      {% endif %}
+      <option value="created-descending" {{ checked }}="">Date, new to old</option></select></div></div></div></div></div><div class="gt_container"><div class="gt_flex gt_flex-wrap gt_productlist-items">
+        {% for product in collection.products limit:12 %}
+          
+            <div class="gt_productlist-item"><div class="gt_element-85689 gt_product-element  gt_product-hover--img-change   gt_product-hover--img-scale " data-name="Master Product List" data-keyword="product">
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  
+  <script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{gtCurrentVariant.id}}">
+    {{ product | json }}
+  </script>
+  {% unless gtCurrentVariant == empty %}
+  <script type="application/json">
+    {{ gtCurrentVariant | json }}
+  </script>
+  {% endunless %}
+
+  
+  {% form 'product', product, class:'gt_product-form ' %}
+  
+  <input type="hidden" name="id" class="gt_swatches--input" value="{{gtCurrentVariant.id}}"><input type="hidden" name="quantity" class="gt_quantity--input" value="1"><a class="link_gt_product gt_product-default" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-image-box"><div class="gt_product-above-top-image-hook" style="position: absolute; top: 0; left: 0; width: 100% ; z-index: 4;"></div><div class="gt_product-above-bottom-image-hook" style="position: absolute; bottom: 0; left: 0; width: 100% ; z-index: 4;"></div>
+      
+      {%- if gtCurrentVariant.compare_at_price > gtCurrentVariant.price -%}
+      <div class="gt_product-sale-tag"><!--                <div class="gt_product-sale-tag&#45;&#45;inner gt_pt&#45;&#45;extra-small gt_pb&#45;&#45;extra-small gt_pr&#45;&#45;small gt_pl&#45;&#45;small">--><div class="gt_product-sale-tag--inner"><div class="gt_product-sale-tag--value gt_product-sale-tag--value--percent"></div><div class="gt_product-sale-tag--value gt_product-sale-tag--value--number"></div><div class="gt_product-sale-tag--after"></div></div></div>
+      {%- endif -%}
+      
+      <div class="gt_product-sold-out-tag" data-sold-out="Sold Out">
+          {% unless gtCurrentVariant.available %}
+            <div class="gt_product-sold-out-tag--inner">
+              Sold Out
+            </div>
+          {% endunless %}
+        </div><div class="gt_product-image"><div class="gt_product-image--inner"><div class="gt_product-image--list">
+            {%- assign product_image_front = product.featured_image -%}
+            {%- assign product_image_back = product.images | last -%}
+
+            
+            {%- assign product_image_front = product.featured_image -%}
+            
+
+            
+            
+            {% assign nth = 2 | minus: 1 %}
+            {% assign limit = product.images | size | minus: 1  %}
+            {% assign nth = nth | at_most: limit %}
+            {% assign product_image_back = product.images[nth] %}
+            
+            
+
+            <img class="gt_product-image--front not-variant gt_lazyload" src="{{ product_image_front.src | img_url: '50x' }}" data-id="{{ product_image_front.id }}" alt="{{ product_image_front.alt | escape | replace: '&quot;', '&apos;' }}"><img class="gt_product-image--back gt_lazyload" src="{{ product_image_back.src | img_url: '50x' }}" data-id="{{ product_image_back.id }}" alt="{{ product_image_back.alt | escape | replace: '&quot;', '&apos;' }}"></div></div></div><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-2"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></a><div class="gt_product-info gt_flex1"><div class="gt_product-info--top gt_flex1"><div class="gt_flex1"></div><div class="gt_mb--extra-small gt_product-price gt_product-price--origin gt_product-default"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+            {{ gtCurrentVariant.price | money }}
+          </span>
+          
+            {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+              <div class="gt_pr--extra-small gt_pt--extra-small"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+                {{ gtCurrentVariant.compare_at_price | money }}
+              </span>
+            {% endif %}
+          
+        </div><a class="link_gt_product" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-name"><h4 class="gt_subheading gt_atom-85689_productTitle " data-name="Product Title" data-attribute="productTitle">
+  {{product.title}}
+</h4></div></a><div class="gt_product_vendor"></div><div class="gt_product-price gt_product-price--custom"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+          {{ gtCurrentVariant.price | money }}
+        </span>
+          {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+            <div class="gt_pr--extra-small gt_pt--extra-small gt_distance--custom"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+              {{ gtCurrentVariant.compare_at_price | money }}
+            </span>
+          {% endif %}
+      </div><div class="gt_product_variants gt_product_variants--vertical"></div></div><div class="wrapper_price"><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-default"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></div>
+  
+  
+  {% endform %}
+  
+</div></div>
+          
+        {% endfor %}
+      </div><before><div class="position_hook"></div></before><div class="gt_row"><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-EEpsVmRcAkpZvAm_columnCountProductOfPage gt_justify--center gt_items--start sm:gt_items--center sm:gt_mb2--medium" data-name="Product Count Of Page Column" data-attribute="columnCountProductOfPage" data-class="gt_justify--center gt_items--start sm:gt_items--center sm:gt_mb2--medium"></div><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-EEpsVmRcAkpZvAm_columnPaginationProduct gt_justify--end gt_items--end  sm:gt_items--center" data-name="Pagination Column" data-attribute="columnPaginationProduct" data-class="gt_justify--end gt_items--end  sm:gt_items--center"><div class="gt_atom-EEpsVmRcAkpZvAm_pagination gt_collection-pagination" data-name="Pagination" data-attribute="pagination" data-class="gt_collection-pagination">
+  {%- if paginate.pages > 1 -%}
+    <div class="gt_paginate">
+      {% if paginate.previous.is_link %}
+        <a class="gt_paginate--item gt_previous" href="{{ paginate.previous.url }}"><div class="gt_paginate--items"><span data-optimize-type="icon" data-attribute="uploadIconPrevious," data-section-id="EEpsVmRcAkpZvAm_pagination" class="gt_icon"><svg height="100%" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" class="svg-inline--fa fa-angle-left fa-w-6 fa-3x"><path fill="currentColor" d="M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z"></path></svg></span></div></a>
+      {%- endif -%}
+
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <a href="{{ part.url }}" class="gt_paginate--item gt_normal"><div class="gt_paginate--items">{{ part.title }}</div></a>
+        {%- else if (part.title == paginate.current_page) -%}
+          <div class="gt_paginate--item gt_current"><span class="gt_paginate--items">{{ part.title }}</span></div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {% if paginate.next.is_link %}
+        <a class="gt_paginate--item gt_next" href="{{ paginate.next.url }}"><div class="gt_paginate--items"><span data-optimize-type="icon" data-attribute="uploadIconNext," data-section-id="EEpsVmRcAkpZvAm_pagination" class="gt_icon"><svg height="100%" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" class="svg-inline--fa fa-angle-right fa-w-6 fa-3x"><path fill="currentColor" d="M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z" class=""></path></svg></span></div></a>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+</div></div></div>
+      
+        {% endpaginate %}
+      
+    </div><div class="position_hook"></div></div></section>
+
+<section class="gt_section-fJPaj0tjjEr6Jyo gt_animation-fade-up gt_animatable" data-name="Benefit List">
+  <div class="gt_features_list">
+    <div class="gt_container">
+      <div class="gt_mb--medium gt_features_header">
+        <p class="gt_heading gt_features_name">
+          Awesome Selection
+        </p>
+        <p class="gt_subheading gt_features_name_message">
+          Best Offers Online
+        </p>
+      </div>
+      <div class="gt_flex gt_align-i-center gt_justify-c-center gt_flex-wrap gt_features_body">
+        
+          <div class="gt_features_items">
+            <div class="gt_mb--small gt_features_icon">
+              <span data-optimize-type="icon" data-attribute="icon1," data-section-id="fJPaj0tjjEr6Jyo" class="gt_icon"><svg height="100%" width="100%" fill="currentColor" viewBox="0 0 513 512">
+<path d="M269.295 207.427L298.338 283.727C300.412 287.966 304.561 292.205 308.71 292.205L387.542 296.444C397.914 296.444 404.138 311.28 393.765 319.758L331.53 370.624C327.381 372.744 325.306 379.102 327.381 383.341L348.126 461.761C350.2 472.358 339.828 482.955 329.455 476.597L263.071 432.088C258.922 429.969 252.699 429.969 248.55 432.088L182.165 476.597C171.793 482.955 161.42 474.477 163.495 461.761L184.24 383.341C186.314 379.102 184.24 372.744 180.091 370.624L117.856 319.758C109.558 313.4 113.707 298.563 124.079 296.444L202.91 292.205C207.06 292.205 211.209 287.966 213.283 283.727L242.326 207.427C248.55 196.83 265.146 196.83 269.295 207.427Z" class="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M480.923 223.925C487.052 244.723 490.251 266.214 490.478 287.78C490.518 291.605 488.896 294.755 485.891 297.108C482.715 299.595 478.029 301.061 472.876 300.304C463.655 298.948 454.157 289.19 452.926 274.134C451.827 260.702 449.355 247.378 445.524 234.376C437.443 206.949 423.508 181.606 404.684 160.098C385.859 138.59 362.593 121.43 336.494 109.804C310.394 98.1777 282.084 92.3629 253.52 92.7611C224.956 93.1594 196.818 99.7613 171.053 112.11C145.287 124.46 122.508 142.262 104.289 164.286C86.0697 186.311 72.8457 212.033 65.5308 239.674C62.0629 252.778 59.9623 266.166 59.2381 279.623C58.4263 294.707 49.204 304.727 40.0234 306.339C34.8935 307.24 30.1691 305.905 26.9248 303.507C23.8555 301.239 22.1469 298.135 22.0807 294.31C21.7073 272.747 24.3073 251.175 29.8544 230.214C38.5376 197.403 54.235 166.87 75.8616 140.726C97.4884 114.582 124.529 93.45 155.114 78.7909C185.699 64.1318 219.099 56.2951 253.006 55.8224C286.913 55.3496 320.518 62.2521 351.499 76.0528C382.48 89.8535 410.098 110.223 432.444 135.754C454.79 161.285 471.331 191.369 480.923 223.925ZM469.747 321.633C491.599 324.846 512.247 309.659 512.014 287.553C511.766 264.004 508.273 240.537 501.581 217.827C491.106 182.276 473.045 149.427 448.644 121.548C424.243 93.6694 394.086 71.4265 360.256 56.3568C326.426 41.287 289.731 33.7498 252.706 34.266C215.681 34.7823 179.209 43.3396 145.812 59.3466C112.415 75.3537 82.8879 98.4287 59.2726 126.977C35.6572 155.525 18.5164 188.865 9.03476 224.694C2.97761 247.582 0.138505 271.137 0.546218 294.684C0.928957 316.788 21.9915 331.394 43.7456 327.573C65.4998 323.752 79.5565 302.859 80.7446 280.783C81.3898 268.794 83.2611 256.868 86.3505 245.194C92.8669 220.57 104.647 197.656 120.878 178.035C137.108 158.415 157.401 142.556 180.354 131.555C203.307 120.553 228.373 114.672 253.82 114.317C279.266 113.963 304.486 119.143 327.737 129.5C350.987 139.857 371.714 155.144 388.483 174.304C405.253 193.465 417.667 216.041 424.866 240.474C428.279 252.058 430.482 263.927 431.46 275.893C433.262 297.927 447.895 318.421 469.747 321.633ZM58.6439 342.847L68.6357 368.305C69.544 370.123 70.4524 371.033 72.2691 371.033L99.5196 372.851C103.153 372.851 104.97 378.306 102.245 380.125L81.3526 397.4C80.4442 398.309 79.5359 400.128 79.5359 401.946L86.8027 428.314C87.711 431.951 84.0776 434.678 80.4442 432.86L57.7355 418.312C55.9188 417.403 54.1021 417.403 53.1938 418.312L30.485 432.86C26.8516 434.678 23.2182 431.951 24.1266 428.314L31.3934 401.946C31.3934 400.128 31.3934 398.309 29.5767 397.4L8.68466 380.125C5.95961 377.397 6.86796 372.851 11.4097 372.851L38.6602 371.033C40.4769 371.033 41.3852 370.123 42.2936 368.305L52.2854 342.847C52.2854 339.21 57.7355 339.21 58.6439 342.847ZM463.871 342.847L473.863 368.305C474.772 370.123 475.68 371.033 477.497 371.033L504.747 372.851C508.381 372.851 510.197 378.306 507.472 380.125L486.58 397.4C485.672 398.309 484.764 400.128 484.764 401.946L492.03 428.314C492.939 431.951 489.305 434.678 485.672 432.86L462.963 418.312C461.146 417.403 459.33 417.403 458.421 418.312L435.713 432.86C432.079 434.678 428.446 431.951 429.354 428.314L436.621 401.946C436.621 400.128 436.621 398.309 434.804 397.4L413.912 380.125C411.187 377.397 412.096 372.851 416.637 372.851L443.888 371.033C445.704 371.033 446.613 370.123 447.521 368.305L457.513 342.847C456.605 339.21 462.055 339.21 463.871 342.847Z" fill="currentColor"></path>
+</svg></span>                            
+            </div>
+            <div class="gt_features_text">
+              <p class="gt_subheading gt_features_text--title">
+                Great Selection
+              </p>
+              <p class="gt_features_text--message">
+                
+              </p>
+            </div>
+          </div>
+        
+
+        
+          <div class="gt_features_items">
+            <div class="gt_mb--small gt_features_icon">
+              <span data-optimize-type="icon" data-attribute="icon2," data-section-id="fJPaj0tjjEr6Jyo" class="gt_icon"><svg height="100%" width="100%" fill="currentColor" viewBox="0 0 512 512">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M357.032 187.153C357.032 243.223 311.578 288.677 255.507 288.677C199.437 288.677 153.982 243.223 153.982 187.153C153.982 131.082 199.437 85.6279 255.507 85.6279C311.578 85.6279 357.032 131.082 357.032 187.153ZM311.612 156.488C315.502 151.934 314.965 145.089 310.411 141.199C305.858 137.308 299.013 137.846 295.122 142.399L238.84 208.275L214.5 184.475C210.218 180.288 203.352 180.365 199.165 184.648C194.978 188.93 195.055 195.796 199.337 199.983L231.97 231.89C234.117 233.989 237.038 235.104 240.037 234.97C243.037 234.835 245.846 233.464 247.796 231.181L311.612 156.488Z" class="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M221.049 35.3493C208.226 48.1368 190.302 55.8633 172.112 55.8633C145.468 55.8633 124.217 77.1145 124.217 103.758C124.217 122.494 117.349 139.642 104.605 153.235C104.486 153.362 104.364 153.486 104.239 153.607C85.5004 171.76 85.3225 201.781 104.362 220.821C117.189 233.648 124.942 251.602 124.942 269.824C124.942 296.468 146.193 317.719 172.837 317.719C181.02 317.719 189.149 319.282 196.785 322.167C198.032 322.337 199.271 322.729 200.446 323.36C201.01 323.662 201.537 324.008 202.024 324.39C209.363 327.856 216.113 332.572 221.84 338.299L221.961 338.422C240.114 357.161 270.135 357.338 289.174 338.299C298.971 328.502 311.759 321.665 325.373 318.981C326.391 318.646 327.434 318.471 328.472 318.445C331.68 317.966 334.924 317.719 338.177 317.719C364.821 317.719 386.072 296.468 386.072 269.824C386.072 251.602 393.826 233.648 406.653 220.821L406.775 220.7C425.514 202.547 425.692 172.526 406.653 153.487C393.826 140.66 386.072 122.705 386.072 104.484C386.072 77.8397 364.821 56.5885 338.177 56.5885C319.956 56.5885 302.001 48.8352 289.174 36.0081C270.202 17.036 240.032 17.0167 221.049 35.3493ZM199.58 347.904C202.035 349.58 204.341 351.479 206.449 353.58C233.263 381.185 277.161 380.985 304.51 353.635C309.779 348.367 316.292 344.362 323.261 341.963L378.342 444.257L346.075 435.57C340.514 434.073 334.754 437.183 332.954 442.652L322.693 473.848L276.652 388.672C273.804 383.403 267.224 381.441 261.955 384.289C256.687 387.137 254.724 393.716 257.572 398.985L315.586 506.311C317.646 510.121 321.775 512.34 326.089 511.956C330.402 511.571 334.074 508.657 335.427 504.543L350.349 459.181L397 471.741C401.181 472.867 405.631 471.397 408.32 468.003C411.008 464.609 411.42 459.941 409.367 456.128L346.27 338.948C381.035 334.977 407.761 305.707 407.761 269.824C407.761 257.613 413.039 245.137 421.933 236.212C449.538 209.398 449.339 165.5 421.989 138.151C413.061 129.222 407.761 116.719 407.761 104.484C407.761 65.8616 376.799 34.9001 338.177 34.9001C325.942 34.9001 313.438 29.6003 304.51 20.6721C277.09 -6.74839 233.333 -6.74773 205.902 19.8262L205.779 19.9469C196.851 28.8751 184.348 34.175 172.112 34.175C133.49 34.175 102.529 65.1364 102.529 103.758C102.529 116.851 97.8511 128.646 88.9452 138.228C61.4768 165.053 61.7208 208.852 89.0257 236.157C97.9539 245.085 103.254 257.588 103.254 269.824C103.254 308.446 134.215 339.407 172.837 339.407C174.98 339.407 177.131 339.57 179.269 339.886L116.871 456.142C114.825 459.955 115.241 464.62 117.93 468.01C120.62 471.4 125.067 472.867 129.245 471.742L176.013 459.151L191.584 504.666C192.978 508.741 196.652 511.605 200.945 511.962C205.237 512.32 209.334 510.103 211.383 506.314L249.818 435.247C252.667 429.979 250.706 423.399 245.438 420.55C240.17 417.701 233.589 419.662 230.74 424.93L204.088 474.211L193.25 442.532C191.403 437.131 185.683 434.087 180.171 435.571L147.858 444.27L199.58 347.904Z" fill="currentColor"></path>
+</svg></span>                              
+            </div>
+            <div class="gt_features_text">
+              <p class="gt_subheading gt_features_text--title">
+                High Quality
+              </p>
+              <p class="gt_features_text--message">
+                
+              </p>
+            </div>
+          </div>
+        
+
+        
+          <div class="gt_features_items">
+            <div class="gt_mb--small gt_features_icon">
+              <span data-optimize-type="icon" data-attribute="icon3," data-section-id="fJPaj0tjjEr6Jyo" class="gt_icon"><svg height="100%" width="100%" fill="currentColor" viewBox="0 0 512 512">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M356.514 168.006C356.514 224.938 310.361 271.09 253.43 271.09C196.498 271.09 150.346 224.938 150.346 168.006C150.346 111.074 196.498 64.9219 253.43 64.9219C310.361 64.9219 356.514 111.074 356.514 168.006ZM310.397 136.87C314.347 132.247 313.801 125.296 309.177 121.346C304.554 117.396 297.604 117.942 293.654 122.565L236.507 189.453L211.793 165.287C207.445 161.036 200.474 161.114 196.223 165.462C191.971 169.81 192.049 176.782 196.397 181.033L229.532 213.431C231.711 215.562 234.677 216.694 237.723 216.558C240.768 216.421 243.621 215.028 245.601 212.71L310.397 136.87Z" class="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M223.698 33.7943C212.037 45.4156 195.742 52.4427 179.177 52.4427C156.199 52.4427 137.887 70.7545 137.887 93.7193C137.887 110.746 131.637 126.342 120.057 138.691C119.936 138.82 119.812 138.946 119.685 139.069C103.56 154.686 103.379 180.536 119.81 196.963C131.475 208.625 138.532 224.948 138.532 241.544C138.532 264.509 156.845 282.821 179.822 282.821C196.42 282.821 212.747 289.875 224.412 301.537L224.534 301.662C240.157 317.784 266.019 317.965 282.451 301.537C294.116 289.875 310.443 282.821 327.04 282.821C350.018 282.821 368.33 264.509 368.33 241.544C368.33 224.948 375.388 208.625 387.053 196.963L387.177 196.84C403.303 181.223 403.483 155.373 387.053 138.946C375.388 127.284 368.33 110.961 368.33 94.3649C368.33 71.4001 350.018 53.0882 327.04 53.0882C310.443 53.0882 294.116 46.0337 282.451 34.3717C266.087 18.012 240.073 17.9925 223.698 33.7943ZM208.321 18.03C233.273 -6.13617 273.079 -6.13689 298.02 18.7981C305.726 26.5019 316.519 31.0667 327.04 31.0667C362.175 31.0667 390.352 59.2325 390.352 94.3649C390.352 104.881 394.917 115.669 402.622 123.373C427.493 148.237 427.697 188.18 402.567 212.591C394.895 220.291 390.352 231.053 390.352 241.544C390.352 276.676 362.175 304.842 327.04 304.842C316.519 304.842 305.726 309.407 298.02 317.111C273.151 341.974 233.203 342.177 208.787 317.056C201.085 309.385 190.319 304.842 179.822 304.842C144.688 304.842 116.511 276.676 116.511 241.544C116.511 231.028 111.946 220.24 104.24 212.536C79.4152 187.718 79.1668 147.877 104.156 123.453C111.84 115.177 115.865 105.016 115.865 93.7193C115.865 58.587 144.042 30.4212 179.177 30.4212C189.698 30.4212 200.491 25.8563 208.196 18.1526L208.321 18.03Z" fill="currentColor"></path>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M172.631 327.65C182.634 332.151 202.481 341.321 219.808 349.356C228.535 353.403 236.644 357.173 242.57 359.93C245.534 361.308 247.952 362.434 249.629 363.215L252.242 364.432C252.242 364.433 252.245 364.434 247.593 374.414L252.242 364.432L252.373 364.494L252.5 364.557C257.676 367.134 262.139 370.656 265.735 375.131L265.782 375.19L265.828 375.249C269.789 380.319 272.872 386.813 273.878 393.793C274.768 393.282 275.719 392.736 276.728 392.157C283.545 388.243 292.959 382.833 303.347 376.848C324.139 364.871 348.786 350.621 364.345 341.452L364.384 341.429C374.552 335.494 385.645 331.357 396.053 330.747C406.641 330.127 417.877 333.232 424.888 343.434L424.925 343.489L424.962 343.544C429.385 350.149 433.963 359.392 431.808 370.756C429.715 381.789 421.797 391.996 408.49 402.189L408.465 402.208C407.271 403.117 404.905 404.937 401.603 407.479C376.249 426.988 295.706 488.965 266.875 506.797C263.779 508.793 259.761 509.984 258.444 510.374C258.269 510.426 258.142 510.464 258.071 510.488L257.844 510.563L257.615 510.628C251.185 512.457 244.638 512.457 238.208 510.628L237.726 510.491L135.766 471.151L135.499 471.074C135.039 470.942 134.404 470.758 133.706 470.554C132.663 470.248 131.349 469.859 130.267 469.517C129.472 469.407 128.216 469.305 126.767 469.243C125.97 469.208 125.253 469.191 124.737 469.182C124.481 469.178 124.279 469.176 124.146 469.175L124.003 469.174L123.977 469.174H84.4711C75.8859 469.174 69 462.385 69 453.722V352.842C69 348.952 70.4008 345.396 72.4105 342.728C74.0892 340.499 77.5209 337.254 82.64 336.807L89.1535 335.772C93.4533 335.088 99.3056 334.157 105.516 333.166C117.917 331.187 131.689 328.98 137.415 328.03C138.798 327.786 140.402 327.47 142.112 327.132C145.806 326.402 149.999 325.574 153.552 325.168C159.087 324.536 166.024 324.438 172.631 327.65ZM85.5548 358.607C85.555 358.607 85.5546 358.607 85.5548 358.607V358.607ZM91.0215 357.773V447.152H123.977V458.163C123.977 447.152 123.977 447.152 123.977 447.152H123.983L124.013 447.152L124.082 447.152L124.314 447.154C124.507 447.155 124.778 447.158 125.109 447.164C125.768 447.175 126.684 447.197 127.719 447.242C129.593 447.323 132.558 447.503 135.048 447.999L135.718 448.132L136.366 448.347C137.109 448.594 138.52 449.017 139.895 449.42C140.551 449.612 141.151 449.785 141.587 449.911L142.101 450.058L142.281 450.11L142.765 450.248L244.653 489.56C246.932 490.138 249.123 490.117 251.408 489.497C251.803 489.369 252.213 489.241 252.551 489.136C252.656 489.103 252.754 489.073 252.842 489.045C253.35 488.886 253.745 488.758 254.099 488.632C254.688 488.423 254.914 488.303 254.928 488.297L255.036 488.226L255.19 488.13C282.709 471.142 361.502 410.537 387.649 390.427C391.184 387.707 393.757 385.729 395.11 384.698C406.644 375.861 409.557 369.892 410.172 366.651C410.722 363.753 409.895 360.639 406.707 355.861C405.426 354.027 402.957 352.402 397.341 352.731C391.504 353.073 383.807 355.593 375.504 360.437C359.839 369.668 335.116 383.962 314.34 395.93C303.94 401.921 294.517 407.337 287.693 411.254C284.282 413.213 281.52 414.798 279.611 415.893L276.656 417.587L276.647 417.592C276.646 417.592 276.644 417.594 271.169 408.04L276.647 417.592L271.189 420.719L265.395 417.423C263.483 416.336 261.975 415.478 260.539 414.489C259.091 413.49 257.777 412.399 256.137 411.038L250.897 406.69L252.054 400.352C252.632 397.19 251.503 392.715 248.521 388.866C247.049 387.05 245.19 385.535 242.8 384.328L240.333 383.178C238.657 382.398 236.242 381.274 233.281 379.896C227.36 377.142 219.26 373.376 210.543 369.334C193.083 361.237 173.234 352.067 163.428 347.657L163.23 347.568L163.036 347.472C162.063 346.987 160.171 346.577 156.052 347.048C153.307 347.361 150.779 347.867 147.759 348.472C145.827 348.859 143.695 349.286 141.175 349.728L141.124 349.737L141.073 349.746C135.296 350.705 121.397 352.932 108.986 354.912C102.771 355.904 96.9146 356.836 92.6123 357.52L91.0215 357.773Z" fill="currentColor"></path>
+</svg></span>                       
+            </div>
+            <div class="gt_features_text">
+              <p class="gt_subheading gt_features_text--title">
+                Best Values
+              </p>
+              <p class="gt_features_text--message">
+                
+              </p>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+  
+
+  

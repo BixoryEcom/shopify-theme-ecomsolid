@@ -1,0 +1,616 @@
+
+  
+<section class="gt_section-8h0gglAiUNVB1qE" data-name="Product Details" keyword="product">
+  {%- assign gtCachedProduct = product -%}
+  <div class="gt_background gt_lazyload" style=" background-image: url('')"><div class="gt_overlay"></div></div>
+  
+    {% if request.page_type != "product" %}
+      {%- assign product = collections.all.products[0] -%}
+    {% endif %}
+  
+
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  
+
+  <script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{product.selected_or_first_available_variant.id}}">
+      {{ product | json }}
+  </script>
+  {% unless gtCurrentVariant == empty %}
+  <script type="application/json">
+      {{ gtCurrentVariant | json }}
+  </script>
+  {% endunless %}
+
+  <div class="position_hook"></div><div class="gt_product">
+    {% form 'product', product, data-productid: product.id, class:'product-form' %}
+      <div class="gt_container"><div class="gt_atom-8h0gglAiUNVB1qE_box gt_row gt_justify--center boxContainer" data-name="Product Container" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="box" data-class="gt_row gt_justify--center boxContainer"><input class="gt_variant-input--default" type="hidden" name="id" value="{{gtCurrentVariant.id}}"><input class="gt_quantity-input--default" type="hidden" value="1" name="quantity"><div class="gt_col-lg-8 gt_col-md-8 gt_col-sm-12 gt_col-12 gt_atom-8h0gglAiUNVB1qE_productTitleBox gt_mb2--medium gt_product-top-title" data-name="Product Title Box" data-attribute="productTitleBox" data-class="gt_mb2--medium gt_product-top-title"><before><div class="position_hook"></div></before><h2 class="gt_atom-8h0gglAiUNVB1qE_productTitleTop gt_text--center xs:gt_mb--medium gt_heading" id="a-8h0gglAiUNVB1qE_productTitleTop" data-name="Product Title" data-product-id="{{product.id}}" data-attribute="productTitleTop" data-class="gt_text--center xs:gt_mb--medium gt_heading"><a href="{{ product.url }}">
+    
+  
+      {{product.title}}
+  
+    </a></h2><after><div class="position_hook">
+<div class="gt_widget-9lpAEDZGOO3P4CT" data-name="Ryviu Reviews">
+  <div class="gt_container-full">
+    <div class="gt_reviews">
+        
+          
+            
+              
+              <div class="review-widget">
+                <ryviu-widget-total reviews_data="{{product.metafields.ryviu.product_reviews_info  | escape  }}" product_id="{{product.id}}" handle="{{product.handle}}"></ryviu-widget-total>
+              </div>
+              
+            
+          
+
+      
+     </div>
+  </div>
+</div>
+
+<div data-name="Below Product Heading"></div></div></after></div><div class="gt_col-lg-11 gt_col-md-11 gt_col-sm-12 gt_col-12 gt_atom-8h0gglAiUNVB1qE_productImageBox gt_mb2--large gt_product-image" data-name="Product Image Box" data-attribute="productImageBox" data-class="gt_mb2--large gt_product-image"><before><div class="position_hook"></div></before><div class="gt_atom-8h0gglAiUNVB1qE_productImageList" data-name="Product Image" data-atom-type="Slider" data-atom-id="8h0gglAiUNVB1qE_productImageList" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="productImageList"><div class="gt_product-image-list--bottom"><div class="gt_product-image--inner"><div class="gt_product-img">
+            {% if product.images.size > 0 %}
+            <div class="swiper-container gt_product-feature--swiper gt_product-feature--swiper-8h0gglAiUNVB1qE_productImageList"><div class="swiper-wrapper gt-carousel--hide-default">
+                {%- for image in product.images -%}
+                <div class="swiper-slide"><div class="gt_product-img--inner"><div class="gt_product-img-box"><div class="gt_product-img-box--inner"><img class="gt_lazyload gt_product-image--feature" src="{{ image.src | img_url: '100x' }}" data-id="{{ image.id }}" alt="{{ image.alt | escape | replace: '&quot;', '&apos;' }}" data-original="{{ image.src | img_url: 'master' }}"></div></div></div></div>
+                {%- endfor -%}
+              </div><div class="gt_flex gt_justify-c-center gt_items--center gt_product-img-nav"><div class="gt_flex gt_align-i-center gt_product-img-nav--arrow gt_product-img-nav--left"><span data-optimize-type="icon" data-attribute="iconNavPrev," data-section-id="8h0gglAiUNVB1qE_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></span></div><div class="gt_flex gt_align-i-center gt_product-img-nav--arrow gt_product-img-nav--right"><span data-optimize-type="icon" data-attribute="iconNavNext," data-section-id="8h0gglAiUNVB1qE_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div></div></div>
+            {% endif %}
+            <div class="gt_atom-8h0gglAiUNVB1qE_productTagSaleImage gt_product-tag-sale gt_tagsale-cirlce" data-name="Sale" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-type="percent" data-label="[!Profit!] OFF" data-roundpercent="0" data-removezero="true" data-attribute="productTagSaleImage" data-class="gt_tagsale-cirlce"><div class="gt_flex gt_items--center gt_justify-c-center gt_product-tag-sale--inner"><div class="gt_product-tag-sale--value gt_product-tag-sale--value--percent"></div><div class="gt_product-tag-sale--value gt_product-tag-sale--value--number"></div><div class="gt_product-tag-sale--after"></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_productBackground gt_product-bg" data-name="Product Background" data-attribute="productBackground" data-class="gt_product-bg"><div class="gt_bg--center gt_bg--no-repeat gt_bg--cover bg-img"><slot></slot></div></div></div><div class="gt_product-carousel-box">
+            {% if product.images.size > 0 %}
+            <div class="swiper-container gt_product--swiper gt_product--swiper-8h0gglAiUNVB1qE_productImageList"><div class="swiper-wrapper gt-carousel--hide-default">
+                {%- for image in product.images -%}
+                <div class="swiper-slide"><div class="gt_product-carousel--item"><img class="gt_lazyload" src="{{ image.src | img_url: '100x' }}" data-id="{{image.id}}" alt="{{ image.alt | escape | replace: '&quot;', '&apos;' }}" data-original="{{ image.src | img_url: 'master' }}"></div></div>
+                {%- endfor -%}
+              </div><div class="swiper-pagination"></div><div class="gt_control gt_flex gt_justify-c-center gt_items--center"><div class="gt_control-pagination swiper-pagination"></div><div class="gt_flex gt_justify-c-center gt_align-i-center gt_control-prev"><span data-optimize-type="icon" data-attribute="iconNavigationPrev," data-section-id="8h0gglAiUNVB1qE_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z"></path></svg></span></div><div class="gt_flex gt_justify-c-center gt_align-i-center gt_control-next"><span data-optimize-type="icon" data-attribute="iconNavigationNext," data-section-id="8h0gglAiUNVB1qE_productImageList" class="gt_icon"><svg height="100%" fill="currentColor" viewBox="0 0 320 512"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"></path></svg></span></div></div></div>
+            {% endif %}
+            <div class="gt_atom-8h0gglAiUNVB1qE_productTagSaleImage gt_product-tag-sale gt_tagsale-cirlce" data-name="Sale" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-type="percent" data-label="[!Profit!] OFF" data-roundpercent="0" data-removezero="true" data-attribute="productTagSaleImage" data-class="gt_tagsale-cirlce"><div class="gt_flex gt_items--center gt_justify-c-center gt_product-tag-sale--inner"><div class="gt_product-tag-sale--value gt_product-tag-sale--value--percent"></div><div class="gt_product-tag-sale--value gt_product-tag-sale--value--number"></div><div class="gt_product-tag-sale--after"></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_productBackground gt_product-bg" data-name="Product Background" data-attribute="productBackground" data-class="gt_product-bg"><div class="gt_bg--center gt_bg--no-repeat gt_bg--cover bg-img"><slot></slot></div></div></div></div></div></div><after><div class="position_hook"></div></after></div><div class="gt_col-lg-12 gt_col-md-12 gt_col-sm-12 gt_col-12 gt_atom-8h0gglAiUNVB1qE_productInfoBox gt_items--center gt_product-content" data-name="Product Info Box" data-attribute="productInfoBox" data-class="gt_items--center gt_product-content"><before><div class="position_hook"></div></before><div class="gt_row gt_justify--center"></div><after><div class="position_hook"></div></after><before><div class="position_hook"></div></before><div class="gt_atom-8h0gglAiUNVB1qE_boxPrice gt_items--center gt_justify--center gt_flex-wrap gt_mb2--medium gt_boxPrice" data-name="Product Price Box" data-attribute="boxPrice" data-class="gt_items--center gt_justify--center gt_flex-wrap gt_mb2--medium gt_boxPrice"><div class="gt_atom-8h0gglAiUNVB1qE_productPrice gt_mr2--extra-small gt-product-price" id="a-8h0gglAiUNVB1qE_productPrice" data-name="Price" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" sync-quantity-and-price="true" data-attribute="productPrice" data-class="gt_mr2--extra-small gt-product-price"><span class="gt_product-price--number" itemprop="price" data-currentprice="{{ gtCurrentVariant.price }}">
+      {{ gtCurrentVariant.price | money }}
+    </span></div><div class="gt_atom-8h0gglAiUNVB1qE_productComparePrice gt_mr2--extra-small gt-product-compare--price" id="a-8h0gglAiUNVB1qE_productComparePrice" data-name="Compare Price" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" sync-quantity-and-price="true" data-attribute="productComparePrice" data-class="gt_mr2--extra-small gt-product-compare--price">
+  {% assign compare_at_price = gtCurrentVariant.compare_at_price %}
+  {% assign price = gtCurrentVariant.price %}
+  {% assign gtActive = "" %}
+  {% if compare_at_price > price %}
+    {% assign gtActive = "gt_active" %}
+  {% endif %}
+  <span class="gt_product-price--compare {{gtActive}}" data-currentprice="{{ compare_at_price }}">
+    {{ compare_at_price | money }}
+  </span></div></div><after><div class="position_hook"></div></after><before><div class="position_hook"></div></before><div class="gt_atom-8h0gglAiUNVB1qE_productContent gt_row gt_items--center gt_justify--center sm:gt_justify--start" data-name="Product Content" data-attribute="productContent" data-class="gt_row gt_items--center gt_justify--center sm:gt_justify--start"><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-8h0gglAiUNVB1qE_serviceList gt_pr2--medium gt_items--end md:gt_items--start sm:gt_items--start xs:gt_items--start gt_service-list" data-name="Service List" data-attribute="serviceList" data-class="gt_pr2--medium gt_items--end md:gt_items--start sm:gt_items--start xs:gt_items--start gt_service-list"><div><div class="gt_atom-8h0gglAiUNVB1qE_serviceListItem_0 gt_service-item gt_items--center gt_mb2--small" data-name="Item 1" data-class="gt_service-item gt_items--center gt_mb2--small" data-attribute="serviceListItem" index="0"><div class="gt_atom-8h0gglAiUNVB1qE_iconService_0 gt_mr2--extra-small gt_service-icon" data-name="Icon" data-attribute="iconService" data-class="gt_mr2--extra-small gt_service-icon" index="0"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconService_0" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0846 6.837C15.2783 6.6526 15.5361 6.55066 15.8035 6.55268C16.0709 6.5547 16.3271 6.66054 16.518 6.84785C16.7089 7.03516 16.8195 7.2893 16.8266 7.55664C16.8337 7.82398 16.7366 8.08362 16.5559 8.28075L11.0696 15.142C10.9753 15.2436 10.8614 15.3252 10.7349 15.3818C10.6083 15.4384 10.4716 15.4689 10.333 15.4714C10.1944 15.474 10.0566 15.4486 9.92805 15.3967C9.79947 15.3448 9.68267 15.2676 9.58464 15.1695L5.94639 11.5313C5.84507 11.4368 5.7638 11.323 5.70744 11.1965C5.65108 11.07 5.62077 10.9334 5.61832 10.795C5.61588 10.6565 5.64135 10.519 5.69322 10.3906C5.74509 10.2621 5.82228 10.1455 5.92021 10.0476C6.01814 9.94965 6.13478 9.87245 6.26319 9.82059C6.3916 9.76872 6.52914 9.74325 6.66761 9.74569C6.80607 9.74813 6.94263 9.77844 7.06913 9.83481C7.19563 9.89117 7.30948 9.97243 7.40389 10.0738L10.2831 12.9516L15.0585 6.86725C15.0671 6.85667 15.0763 6.84657 15.086 6.837H15.0846Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-8h0gglAiUNVB1qE_messageService_0 gt_text gt_message-service" data-name="Message" data-attribute="messageService" data-class="gt_text gt_message-service" index="0"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Premium Quality</div></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_serviceListItem_1 gt_service-item gt_items--center gt_mb2--small" data-name="Item 2" data-class="gt_service-item gt_items--center gt_mb2--small" data-attribute="serviceListItem" index="1"><div class="gt_atom-8h0gglAiUNVB1qE_iconService_1 gt_mr2--extra-small gt_service-icon" data-name="Icon" data-attribute="iconService" data-class="gt_mr2--extra-small gt_service-icon" index="1"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconService_1" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0846 6.837C15.2783 6.6526 15.5361 6.55066 15.8035 6.55268C16.0709 6.5547 16.3271 6.66054 16.518 6.84785C16.7089 7.03516 16.8195 7.2893 16.8266 7.55664C16.8337 7.82398 16.7366 8.08362 16.5559 8.28075L11.0696 15.142C10.9753 15.2436 10.8614 15.3252 10.7349 15.3818C10.6083 15.4384 10.4716 15.4689 10.333 15.4714C10.1944 15.474 10.0566 15.4486 9.92805 15.3967C9.79947 15.3448 9.68267 15.2676 9.58464 15.1695L5.94639 11.5313C5.84507 11.4368 5.7638 11.323 5.70744 11.1965C5.65108 11.07 5.62077 10.9334 5.61832 10.795C5.61588 10.6565 5.64135 10.519 5.69322 10.3906C5.74509 10.2621 5.82228 10.1455 5.92021 10.0476C6.01814 9.94965 6.13478 9.87245 6.26319 9.82059C6.3916 9.76872 6.52914 9.74325 6.66761 9.74569C6.80607 9.74813 6.94263 9.77844 7.06913 9.83481C7.19563 9.89117 7.30948 9.97243 7.40389 10.0738L10.2831 12.9516L15.0585 6.86725C15.0671 6.85667 15.0763 6.84657 15.086 6.837H15.0846Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-8h0gglAiUNVB1qE_messageService_1 gt_text gt_message-service" data-name="Message" data-attribute="messageService" data-class="gt_text gt_message-service" index="1"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Great Value</div></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_serviceListItem_2 gt_service-item gt_items--center gt_mb2--small" data-name="Item 2" data-class="gt_service-item gt_items--center gt_mb2--small" data-attribute="serviceListItem" index="2"><div class="gt_atom-8h0gglAiUNVB1qE_iconService_2 gt_mr2--extra-small gt_service-icon" data-name="Icon" data-attribute="iconService" data-class="gt_mr2--extra-small gt_service-icon" index="2"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconService_2" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0846 6.837C15.2783 6.6526 15.5361 6.55066 15.8035 6.55268C16.0709 6.5547 16.3271 6.66054 16.518 6.84785C16.7089 7.03516 16.8195 7.2893 16.8266 7.55664C16.8337 7.82398 16.7366 8.08362 16.5559 8.28075L11.0696 15.142C10.9753 15.2436 10.8614 15.3252 10.7349 15.3818C10.6083 15.4384 10.4716 15.4689 10.333 15.4714C10.1944 15.474 10.0566 15.4486 9.92805 15.3967C9.79947 15.3448 9.68267 15.2676 9.58464 15.1695L5.94639 11.5313C5.84507 11.4368 5.7638 11.323 5.70744 11.1965C5.65108 11.07 5.62077 10.9334 5.61832 10.795C5.61588 10.6565 5.64135 10.519 5.69322 10.3906C5.74509 10.2621 5.82228 10.1455 5.92021 10.0476C6.01814 9.94965 6.13478 9.87245 6.26319 9.82059C6.3916 9.76872 6.52914 9.74325 6.66761 9.74569C6.80607 9.74813 6.94263 9.77844 7.06913 9.83481C7.19563 9.89117 7.30948 9.97243 7.40389 10.0738L10.2831 12.9516L15.0585 6.86725C15.0671 6.85667 15.0763 6.84657 15.086 6.837H15.0846Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-8h0gglAiUNVB1qE_messageService_2 gt_text gt_message-service" data-name="Message" data-attribute="messageService" data-class="gt_text gt_message-service" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Secure Payment</div></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_serviceListItem_3 gt_service-item gt_items--center gt_mb2--small" data-name="Item 2" data-class="gt_service-item gt_items--center gt_mb2--small" data-attribute="serviceListItem" index="3"><div class="gt_atom-8h0gglAiUNVB1qE_iconService_3 gt_mr2--extra-small gt_service-icon" data-name="Icon" data-attribute="iconService" data-class="gt_mr2--extra-small gt_service-icon" index="3"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconService_3" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0846 6.837C15.2783 6.6526 15.5361 6.55066 15.8035 6.55268C16.0709 6.5547 16.3271 6.66054 16.518 6.84785C16.7089 7.03516 16.8195 7.2893 16.8266 7.55664C16.8337 7.82398 16.7366 8.08362 16.5559 8.28075L11.0696 15.142C10.9753 15.2436 10.8614 15.3252 10.7349 15.3818C10.6083 15.4384 10.4716 15.4689 10.333 15.4714C10.1944 15.474 10.0566 15.4486 9.92805 15.3967C9.79947 15.3448 9.68267 15.2676 9.58464 15.1695L5.94639 11.5313C5.84507 11.4368 5.7638 11.323 5.70744 11.1965C5.65108 11.07 5.62077 10.9334 5.61832 10.795C5.61588 10.6565 5.64135 10.519 5.69322 10.3906C5.74509 10.2621 5.82228 10.1455 5.92021 10.0476C6.01814 9.94965 6.13478 9.87245 6.26319 9.82059C6.3916 9.76872 6.52914 9.74325 6.66761 9.74569C6.80607 9.74813 6.94263 9.77844 7.06913 9.83481C7.19563 9.89117 7.30948 9.97243 7.40389 10.0738L10.2831 12.9516L15.0585 6.86725C15.0671 6.85667 15.0763 6.84657 15.086 6.837H15.0846Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-8h0gglAiUNVB1qE_messageService_3 gt_text gt_message-service" data-name="Message" data-attribute="messageService" data-class="gt_text gt_message-service" index="3"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Hassle-free Return</div></div></div></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_line gt_product-content-border" data-name="Border" data-attribute="line" data-class="gt_product-content-border"></div><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-8h0gglAiUNVB1qE_productOption xs:gt_mt2--medium sm:gt_mt2--medium gt_product-option" data-name="Product Option" data-attribute="productOption" data-class="xs:gt_mt2--medium sm:gt_mt2--medium gt_product-option"><div class="gt_atom-8h0gglAiUNVB1qE_productVariant gt_mb2--small gt_fq-variant" data-name="Variant:" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" {% if false %} style="display: block;" {% endif %} data-attribute="productVariant" data-class="gt_mb2--small gt_fq-variant"><input type="hidden" name="id" class="gt_variant--input" value="{{gtCurrentVariant.id}}"><div class="gt_product-variant gt_product-swatches" data-type="segment">
+    {% for option in product.options_with_values %}
+      <div class="gt_product-swatches--item gt_product-variant--item gt_variant--select-item  
+      {% if option.name == 'Title' or option.values[0] == 'Default Title' %} variant_none {% endif %} 
+      {% if option.values.size == 1 and false != true %}variant_none{% endif %}" data-name="{{option.name}}" data-check-show-one-variant="false">
+          {% if forloop.index == 1 %}
+            {% assign selected_value = gtCurrentVariant.option1 %}
+          {% elsif forloop.index ==  2 %}
+            {% assign selected_value = gtCurrentVariant.option2 %}
+          {% else %}
+            {% assign selected_value = gtCurrentVariant.option3 %}
+          {% endif %}
+          
+          <span class="gt_mb--extra-small gt_product-variant--name">
+            {{option.name}} 
+          </span><div class="gt_flex gt_flex-wrap gt_product-variant--options">
+                {% for value in option.values %}
+                  {% if value == selected_value %}
+                    {% assign selectedClass = 'gt_swatches--select gt_product-variant--select gt_product-variant--btn-select gt_active' %}
+                  {% else %}
+                    {% assign selectedClass = 'gt_swatches--select gt_product-variant--select gt_product-variant--btn-select' %}
+                  {% endif %}
+                  <div class="{{selectedClass}}" data-name="{{option.name | replace: '"', "&quot;"}}" data-value="{{value | replace: '"', "&quot;"}}"><span>{{ value }}</span></div>
+                {% endfor %}
+              </div></div>
+    {% endfor %}
+    {% if option.values.size > 1 or false %}
+      <div class="position_hook"></div>
+    {% endif %}
+  </div></div><div class="gt_atom-8h0gglAiUNVB1qE_productQuantity {% unless gtCurrentVariant.available %}gt_product--hided{% endunless %} gt_fq-quantity" data-name="Quantity:" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-attribute="productQuantity" data-class="{% unless gtCurrentVariant.available %}gt_product--hided{% endunless %} gt_fq-quantity"><script type="application/json">{{gtCurrentVariant | json}}</script>
+  {% if gtCurrentVariant.available %}
+    {% assign classQuantity = '' %}
+  {% else %}
+    {% assign classQuantity = 'gt_soldout' %}
+  {% endif %}
+  <div class="gt_product-quantity {{classQuantity}}"><span class="gt_product-quantity--label gt_mb--extra-small">Quantity</span><div class="gt_product-quantity--container"><div class="gt_inline-flex gt_product-quantity--wrapper"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_product-quantity--minus"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 7.44772 2.44772 7 3 7L13 7C13.5523 7 14 7.44772 14 8C14 8.55228 13.5523 9 13 9L3 9C2.44772 9 2 8.55228 2 8Z" fill="currentColor"></path></svg></div><input type="text" class="input gt_product-quantity--number gt_quantity--input" value="1" min="1" name="quantity"><div class="gt_flex gt_justify-c-center gt_align-i-center gt_product-quantity--plus"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 2C8.55228 2 9 2.44772 9 3V13C9 13.5523 8.55228 14 8 14C7.44772 14 7 13.5523 7 13V3C7 2.44772 7.44772 2 8 2Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 7.44772 2.44772 7 3 7L13 7C13.5523 7 14 7.44772 14 8C14 8.55228 13.5523 9 13 9L3 9C2.44772 9 2 8.55228 2 8Z" fill="currentColor"></path></svg></div></div></div></div></div></div><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-6 gt_col-12 gt_atom-8h0gglAiUNVB1qE_productAction gt_mt2--medium" data-name="Product Action" data-attribute="productAction" data-class="gt_mt2--medium"><div class="position_hook">
+<div class="gt_widget-3cH2oKuexPRdzgP hide" data-name="Upsell Quantity Discounts">
+<div class="gt_container">
+  
+  <div class="gt_product_widgets">
+    <p class="gt_product_widgets_title">
+      Buy More Save More!
+    </p>
+    <div class="gt_discount_container"></div>
+  </div>
+  
+</div>
+</div>
+
+<div data-name="Above Button Buy/Add To Cart"></div></div><button type="button" class="gt_atom-8h0gglAiUNVB1qE_productButtonBuyItNow gt_button gt_atom--btn  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}    gt_mb2--medium gt_button--large gt_product-button {% unless gtCurrentVariant.available %}gt_product--hided{% endunless %} gt_button--product" data-name="Product Button" name="add" data-product-id="{{product.id}}" data-variant-id="{{gtCurrentVariant.id}}" data-text="Get Yours Now" data-text-sold-out="Sold out" data-attribute="productButtonBuyItNow" data-class="gt_mb2--medium gt_button--large gt_product-button {% unless gtCurrentVariant.available %}gt_product--hided{% endunless %} gt_button--product"><span class="gt_button-content"><span class="gt_button-content-text"><span data-optimize-type="icon" data-attribute="iconBefore," data-section-id="8h0gglAiUNVB1qE_productButtonBuyItNow" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.922 4.43114C14.7126 3.9462 14.4106 3.50675 14.0329 3.13739C13.655 2.76693 13.2094 2.47253 12.7204 2.2702C12.2134 2.05957 11.6695 1.95175 11.1204 1.95301C10.3501 1.95301 9.59856 2.16395 8.94543 2.56239C8.78918 2.6577 8.64075 2.76239 8.50012 2.87645C8.3595 2.76239 8.21106 2.6577 8.05481 2.56239C7.40168 2.16395 6.65012 1.95301 5.87981 1.95301C5.32512 1.95301 4.78762 2.05926 4.27981 2.2702C3.78918 2.47333 3.347 2.76551 2.96731 3.13739C2.58918 3.50633 2.28712 3.94588 2.07825 4.43114C1.86106 4.93583 1.75012 5.47176 1.75012 6.02333C1.75012 6.54364 1.85637 7.08583 2.06731 7.63739C2.24387 8.09833 2.497 8.57645 2.82043 9.05926C3.33293 9.82333 4.03762 10.6202 4.91262 11.428C6.36262 12.7671 7.79856 13.6921 7.8595 13.7296L8.22981 13.9671C8.39387 14.0718 8.60481 14.0718 8.76887 13.9671L9.13918 13.7296C9.20012 13.6905 10.6345 12.7671 12.0861 11.428C12.9611 10.6202 13.6657 9.82333 14.1782 9.05926C14.5017 8.57645 14.7564 8.09833 14.9314 7.63739C15.1423 7.08583 15.2486 6.54364 15.2486 6.02333C15.2501 5.47176 15.1392 4.93583 14.922 4.43114Z" fill="currentColor"></path></svg></span><span class="gt_atom--button-8h0gglAiUNVB1qE_productButtonBuyItNow gt_button-content-text-main">
+        
+          
+            {% unless gtCurrentVariant.available %}
+              
+                Sold out
+              
+            {% else %}
+              Get Yours Now
+            {% endunless %}
+          
+        
+      </span></span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button><div class="gt_atom-8h0gglAiUNVB1qE_productSoldOutForm 8h0gglAiUNVB1qE_productSoldOutForm gt_product-sold-out-form gt_box-sold-out" data-name="Notify Me" data-attribute="productSoldOutForm" data-class="gt_box-sold-out"><div class="gt_mb2--medium gt_message gt_message-success">
+    You have been registered for notification <a href="/collections/all"><b>Continue Shopping</b></a></div><div class="gt_mb2--medium gt_form">
+    {% form 'contact' %}
+      
+      <div class="gt_form-label">
+        Email me when this product is available
+      </div><input class="gt_form--type" type="hidden" name="contact[type]" value="Ecomsolid - Subscribe Buy Product Sold Out"><input type="email" name="contact[email]" class="gt_form-customer--email gt_form--email" value="{{ contact.fields.email }}" placeholder="Your Email"><input class="gt_form-product--name" type="hidden" name="contact[product_name]" value=""><input class="gt_form-variant--name" type="hidden" name="contact[variant_name]" value=""><input class="gt_form-product--url" type="hidden" name="contact[product_url]" value=""><input class="gt_form--return-url" type="hidden" name="return_to" value=""><button class="gt_btn gt_form--submit" type="submit">
+        Notify Me
+      </button>
+    {% endform %}
+  </div></div><div class="position_hook"></div><div class="position_hook"></div><div class="gt_atom-8h0gglAiUNVB1qE_trustBadges gt_image-guarantee" data-name="Trust Badges" data-attribute="trustBadges" data-class="gt_image-guarantee"><div class="gt_image--body"><img class="gt_atom-img gt_lazyload" src="https://cdn.shopify.com/s/files/1/0550/5987/3838/t/2/assets/UmTcRqRCyW-pay-method-trust-badge-png_20x.png" alt="Image Trust badge" title="Image"><div class="gt_atom--overlay"></div><div class="gt_atom--overlay-hover"></div></div></div><div class="gt_atom-8h0gglAiUNVB1qE_socialBox gt_items--center gt_justify--center gt_mt--medium" data-name="Box Social" data-attribute="socialBox" data-class="gt_items--center gt_justify--center gt_mt--medium"><div class="gt_atom-8h0gglAiUNVB1qE_textShare gt_font--bold" data-name="Share" data-attribute="textShare" data-class="gt_font--bold"><div class="gt_text-wrapper">
+        Share:
+      </div></div><div class="gt_atom-8h0gglAiUNVB1qE_iconTwitter gt_ml--small" data-name="Icon Twitter" data-attribute="iconTwitter" data-class="gt_ml--small"><a href="https://twitter.com/share?url=https://{{shop.domain}}{{ product.url }}" class="gt_icon--link"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconTwitter" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.6396 5.31457C18.0007 5.59856 17.3132 5.79012 16.5917 5.87584C17.3283 5.43487 17.8931 4.73637 18.1595 3.90311C17.4705 4.31198 16.7078 4.60867 15.8954 4.76883C15.2452 4.07597 14.3184 3.64276 13.2929 3.64276C11.3241 3.64276 9.72775 5.23908 9.72775 7.20828C9.72775 7.48733 9.75915 7.75932 9.82018 8.02073C6.85685 7.87186 4.22936 6.45263 2.47077 4.2954C2.16385 4.82174 1.98817 5.43416 1.98817 6.08821C1.98817 7.32505 2.61752 8.41654 3.57426 9.05578C2.99006 9.03708 2.44008 8.87656 1.95924 8.60951C1.95889 8.62433 1.95889 8.6395 1.95889 8.65467C1.95889 10.3819 3.18796 11.8226 4.81921 12.1507C4.52005 12.2318 4.20502 12.2756 3.87976 12.2756C3.64975 12.2756 3.42644 12.2533 3.20878 12.2114C3.6628 13.6278 4.97937 14.6589 6.53935 14.6875C5.31909 15.6439 3.78204 16.214 2.11129 16.214C1.82377 16.214 1.53979 16.197 1.26074 16.1639C2.83907 17.176 4.71302 17.7658 6.72632 17.7658C13.2848 17.7658 16.8708 12.3331 16.8708 7.62138C16.8708 7.46687 16.8676 7.3127 16.8609 7.1596C17.5573 6.65795 18.1619 6.02965 18.6396 5.31457Z" fill="currentColor"></path></svg></span></div></a></div><div class="gt_atom-8h0gglAiUNVB1qE_iconFacebook gt_ml--small" data-name="Icon Facebook" data-attribute="iconFacebook" data-class="gt_ml--small"><a href="https://www.facebook.com/sharer/sharer.php?u=https://{{shop.domain}}{{ product.url }}" class="gt_icon--link"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconFacebook" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.362 17H10.981V9.93865H12.808L13 7.57518H10.981V6.22878C10.981 5.67343 11.086 5.45387 11.581 5.45387H13V3H11.2C9.241 3 8.362 3.92343 8.362 5.6928V7.57518H7V9.96771H8.362V17Z" fill="currentColor"></path></svg></span></div></a></div><div class="gt_atom-8h0gglAiUNVB1qE_iconPrinterest gt_ml--small" data-name="Icon Printerest" data-attribute="iconPrinterest" data-class="gt_ml--small"><a href="http://pinterest.com/pin/create/link/?url=https://{{shop.domain}}{{ product.url }}" class="gt_icon--link"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconPrinterest" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.0006 1.81964C5.2032 1.81964 1.31348 5.7083 1.31348 10.5068C1.31348 14.0635 3.45237 17.1192 6.51306 18.463C6.48872 17.8558 6.50883 17.1284 6.6644 16.4684C6.83127 15.7628 7.782 11.7348 7.782 11.7348C7.782 11.7348 7.50436 11.1802 7.50436 10.3604C7.50436 9.07345 8.25049 8.11213 9.1797 8.11213C9.96992 8.11213 10.3516 8.7055 10.3516 9.41564C10.3516 10.2101 9.84469 11.3979 9.58434 12.4982C9.36703 13.42 10.0465 14.1718 10.9556 14.1718C12.6013 14.1718 13.7101 12.0579 13.7101 9.55322C13.7101 7.64928 12.4277 6.22406 10.0955 6.22406C7.46027 6.22406 5.81879 8.18903 5.81879 10.384C5.81879 11.1411 6.0421 11.6745 6.39171 12.0879C6.55222 12.2774 6.5748 12.3539 6.51659 12.5716C6.47496 12.7314 6.37936 13.1166 6.33985 13.269C6.28199 13.4895 6.10384 13.5682 5.90487 13.4867C4.69132 12.9914 4.12582 11.6621 4.12582 10.1678C4.12582 7.70044 6.20685 4.74134 10.3343 4.74134C13.6504 4.74134 15.8334 7.14164 15.8334 9.71797C15.8334 13.1251 13.9394 15.6711 11.1468 15.6711C10.2088 15.6711 9.32646 15.1638 9.02448 14.5888C9.02448 14.5888 8.52001 16.5904 8.41347 16.9764C8.22932 17.6466 7.86843 18.3159 7.53894 18.8373C8.32034 19.068 9.14548 19.1936 10.001 19.1936C14.798 19.1936 18.6874 15.3049 18.6874 10.5071C18.687 5.7083 14.7973 1.81964 10.0006 1.81964Z" fill="currentColor"></path></svg></span></div></a></div><div class="gt_atom-8h0gglAiUNVB1qE_iconMail gt_ml--small" data-name="Icon Mail" data-attribute="iconMail" data-class="gt_ml--small"><a href="mailto:?body=https://{{shop.domain}}{{ product.url }}" class="gt_icon--link"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="8h0gglAiUNVB1qE_iconMail" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.875 4.5C1.59886 4.5 1.375 4.72386 1.375 5V15C1.375 15.2761 1.59886 15.5 1.875 15.5H18.125C18.4011 15.5 18.625 15.2761 18.625 15V5C18.625 4.72386 18.4011 4.5 18.125 4.5H1.875ZM-0.125 5C-0.125 3.89544 0.770436 3 1.875 3H18.125C19.2296 3 20.125 3.89544 20.125 5V15C20.125 16.1046 19.2296 17 18.125 17H1.875C0.770436 17 -0.125 16.1046 -0.125 15V5Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5107 7.82284C12.7835 7.51108 13.2573 7.47945 13.569 7.75218L19.4941 12.9355C19.8058 13.2082 19.8375 13.6821 19.5647 13.9938C19.292 14.3056 18.8182 14.3372 18.5064 14.0645L12.5814 8.88114C12.2696 8.60842 12.238 8.1346 12.5107 7.82284Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M7.48949 7.82284C7.76222 8.13459 7.73059 8.60841 7.41883 8.88114L1.49383 14.0645C1.18208 14.3372 0.708259 14.3056 0.435529 13.9938C0.162798 13.6821 0.194433 13.2082 0.506188 12.9355L6.43119 7.75218C6.74294 7.47945 7.21676 7.51108 7.48949 7.82284Z" fill="currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M0.315744 3.75258C0.55089 3.41159 1.01795 3.32578 1.35894 3.56092L9.28644 9.02759C9.71562 9.32391 10.2837 9.32415 10.7129 9.02783L18.6407 3.56092C18.9817 3.32578 19.4488 3.41159 19.6839 3.75258C19.9191 4.09358 19.8333 4.56064 19.4923 4.79578L11.5651 10.2622C11.565 10.2623 11.5652 10.2621 11.5651 10.2622C10.6231 10.9124 9.3769 10.9126 8.43491 10.2625L0.507405 4.79578C0.166408 4.56064 0.0805981 4.09358 0.315744 3.75258Z" fill="currentColor"></path></svg></span></div></a></div></div><div class="position_hook"></div></div></div></div></div></div>
+    {% endform %}
+  </div><div class="position_hook"></div><script type="application/ld+json">{%- assign schemaProduct = product -%}
+{%- assign schemaVariant = product.selected_or_first_available_variant -%}
+{%- assign g_review_count = 0 -%}
+{%- assign g_rating_value = 0 -%}
+{%- comment -%}
+  For Shopify Product Reviews
+{%- endcomment -%}
+{%- if schemaProduct.metafields.spr.reviews -%}
+    {%- assign product_review_array = "reviewCount,ratingValue" | split: ',' -%}
+    {%- capture review_data -%}
+        {{schemaProduct.metafields.spr.reviews}}
+    {%- endcapture -%}
+    {%- assign array_builder = "" -%}
+    {%- for review_data_item in product_review_array -%}
+        {%- capture new_var -%}
+          "{{ review_data_item }}"
+        {%- endcapture -%}
+        {%- assign review_data1 = review_data | split: new_var -%}
+        {%- assign review_data2 = review_data1[1] | split: ":" -%}
+        {%- assign review_data3 = review_data2[1] | split: '"' -%}
+        {%- assign review_data_value = review_data3[1] | plus: 1 | minus: 1 -%}
+        {%- assign array_builder = array_builder | append: review_data_value | append: '_' -%}
+    {%- endfor -%}
+
+    {%- assign review_data_array = array_builder | split:'_' -%}
+    {%- assign g_review_count = review_data_array[0] -%}
+    {%- assign g_rating_value = review_data_array[1] -%}
+{%- endif -%}
+{%- comment -%}
+  For Judge Reviews
+{%- endcomment -%}
+{%- if schemaProduct.metafields.judgeme.badge -%}
+    {%- assign product_review_array="data-number-of-reviews,data-average-rating" | split: ',' -%}
+    {%- capture review_data -%}
+        {{schemaProduct.metafields.judgeme.badge}}
+    {%- endcapture -%}
+    {%- assign array_builder = "" -%}
+    {%- for review_data_item in product_review_array -%}
+        {%- assign review_data1 = review_data | split: review_data_item -%}
+        {%- assign review_data2 = review_data1[1] | split: "=" -%}
+        {%- assign review_data3 = review_data2[1] | split: "'" -%}
+        {%- assign review_data_value = review_data3[1] | plus: 1 | minus: 1 -%}
+        {%- assign array_builder = array_builder | append:review_data_value | append: '_' -%}
+    {%- endfor -%}
+    {%- assign review_data_array = array_builder | split: '_' -%}
+    {%- assign g_review_count = review_data_array[0] -%}
+    {%- assign g_rating_value = review_data_array[1] -%}
+{%- endif -%}
+{%- comment -%}
+  For Loox Reviews
+{%- endcomment -%}
+{%- if schemaProduct.metafields.loox.num_reviews -%}
+    {%- assign g_review_count = schemaProduct.metafields.loox.num_reviews -%}
+    {%- assign g_rating_value = schemaProduct.metafields.loox.avg_rating -%}
+{%- endif -%}
+{%- comment -%}
+  Opinew Product Reviews
+{%- endcomment -%}
+{%- if schemaProduct.metafields.opinew_metafields.reviews_count and schemaProduct.metafields.opinew_metafields.reviews_count != "0" -%}
+    {%- assign g_review_count = schemaProduct.metafields.opinew_metafields.reviews_count -%}
+    {%- assign g_rating_value = schemaProduct.metafields.opinew_metafields.reviews_average -%}
+{%- endif -%}
+{%- comment -%}
+  For Growave
+{%- endcomment -%}
+{%- if schemaProduct.metafields.ssw[ssw_rate_data_key] -%}
+    {%- assign g_review_count = schemaProduct.metafields.ssw[ssw_rate_data_key].count | plus: 0 -%}
+    {%- assign g_rating_value = schemaProduct.metafields.ssw[ssw_rate_data_key].avg | plus: 0 -%}
+    {%- assign ssw_product_id = schemaProduct.id -%}
+    {%- if schemaProduct.metafields.ssw[ssw_rate_data_key].product_id -%}
+        {%- assign ssw_product_id = schemaProduct.metafields.ssw[ssw_rate_data_key].product_id | plus: 0 -%}
+    {%- endif -%}
+    {%- if ssw_product_id != schemaProduct.id -%}
+        {%- assign g_review_count = 0 -%}
+    {%- endif -%}
+{%- endif -%}
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name":{{schemaProduct.title | json}},
+  "url":{{shop.url | append: schemaProduct.url | json}},
+{%- if schemaProduct.featured_image -%}
+  {%- assign image_size = schemaProduct.featured_image.width | append: 'x' -%}
+  "image": [
+    {{schemaProduct.featured_image.src | img_url: image_size | prepend: "https:" | json}}
+  ],
+{%- endif -%}
+
+  "description": {{schemaProduct.description | default: "" | strip_html | json}},
+
+{%- if schemaProduct.selected_or_first_available_variant.sku != blank -%}
+  "sku":{{schemaProduct.selected_or_first_available_variant.sku | json}},
+{%- endif -%}
+
+  "brand":{
+    "@type": "Thing",
+    "name":{{schemaProduct.vendor | json}}
+  },
+  "mpn": "",
+
+{% if schemaVariant.barcode.size == 12 %}
+  "gtin12": {{ schemaVariant.barcode }},
+{%- endif -%}
+
+{%- if schemaVariant.barcode.size == 13 -%}
+  "gtin13": {{ schemaVariant.barcode }},
+{%- endif -%}
+
+{%- if schemaVariant.barcode.size == 14 -%}
+  "gtin14": {{ schemaVariant.barcode }},
+{%- endif -%}
+
+{%- assign g_review_count = g_review_count | plus: 0 -%}
+{%- if g_review_count != 0 -%}
+  "aggregateRating": {"@type":"AggregateRating","ratingValue":"{{ g_rating_value }}","reviewCount":"{{ g_review_count }}", "bestRating": "5", "worstRating": "1"},
+{%- elsif schemaProduct.metafields.alireviews.seo_rating_review_key_script -%}
+  {{schemaProduct.metafields.alireviews.seo_rating_review_key_script}}
+{%- endif -%}
+
+  "offers": {
+    "@type" : "Offer",
+
+  {%- if schemaVariant.sku != blank -%}
+    "sku":{{schemaVariant.sku | json}},
+  {%- endif -%}
+    "availability" : "http://schema.org/{% if schemaVariant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "price" :{{schemaVariant.price | divided_by: 100.00 | json}},
+    "priceCurrency" :{{cart.currency.iso_code | json}},
+    "priceValidUntil": "{{ 'now' | date: '%s' | plus: 31536000 | date: '%Y-%m-%d' | uri_encode | replace:'+','%20' }}",
+    "url" :{{shop.url | append: schemaVariant.url | json}}
+  }
+}
+</script>
+
+  {%- assign product = gtCachedProduct -%}
+</section>
+
+<section class="gt_section-3qX1gpR9pRgvLGG gt_animation-fade-up gt_animatable" data-name="Product Tabs"><div class="gt_tab-bg gt_lazyload" style=" background-image: url('')"><div class="gt_overlay"></div></div><div class="gt_container"><div class="gt_row gt_justify--center gt_tabs"><div class="gt_col-lg-10 gt_col-md-10 gt_col-sm-12 gt_col-12 gt_atom-3qX1gpR9pRgvLGG_productTab gt_tab--content" data-name="Product Tabs" data-attribute="productTab" data-class="gt_tab--content"><div class="gt_atom-3qX1gpR9pRgvLGG_tabContainer gt_tab-container" data-name="Tab Container" data-attribute="tabContainer" data-class="gt_tab-container"><div class="gt_atom-3qX1gpR9pRgvLGG_tabSeparator_0 gt_tab-separator" data-name="Tab Separator" data-attribute="tabSeparator" index="0" data-class="gt_tab-separator"></div><div class="gt_atom-3qX1gpR9pRgvLGG_tabItem_1 gt_items--center gt_justify--space-between gt_mx2--medium xs:gt_mx--none xs:gt_my2--extra-small xs:gt_py2--extra-small gt_tab-heading" data-name="Tab Item" data-attribute="tabItem" data-class="gt_items--center gt_justify--space-between gt_mx2--medium xs:gt_mx--none xs:gt_my2--extra-small xs:gt_py2--extra-small gt_tab-heading" index="1"><div class="gt_atom-3qX1gpR9pRgvLGG_tabTitle_1 gt_font--bold gt_pb2--small xs:gt_pb--none gt_tab-title" data-name="Tab Title" data-attribute="tabTitle" index="1" data-class="gt_font--bold gt_pb2--small xs:gt_pb--none gt_tab-title"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Product Details</div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_tabLine_1 gt_line" data-name="Active Line" data-attribute="tabLine" index="1" data-class="gt_line"></div><div class="gt_tab-icons" index="1"><div class="gt_atom-3qX1gpR9pRgvLGG_iconOpen_1 gt_tab-icon gt_icon--open" data-name="Icon" data-attribute="iconOpen" data-class="gt_tab-icon gt_icon--open" index="1"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3qX1gpR9pRgvLGG_iconOpen_1" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.05862 6.30862C2.11667 6.25041 2.18564 6.20423 2.26158 6.17273C2.33751 6.14122 2.41891 6.125 2.50112 6.125C2.58333 6.125 2.66473 6.14122 2.74066 6.17273C2.81659 6.20423 2.88556 6.25041 2.94362 6.30862L10.0011 13.3674L17.0586 6.30861C17.1167 6.2505 17.1857 6.20441 17.2616 6.17296C17.3376 6.14151 17.4189 6.12532 17.5011 6.12532C17.5833 6.12532 17.6647 6.14151 17.7406 6.17296C17.8165 6.20441 17.8855 6.2505 17.9436 6.30861C18.0017 6.36672 18.0478 6.43571 18.0793 6.51163C18.1107 6.58756 18.1269 6.66893 18.1269 6.75111C18.1269 6.83329 18.1107 6.91467 18.0793 6.99059C18.0478 7.06652 18.0017 7.1355 17.9436 7.19361L10.4436 14.6936C10.3856 14.7518 10.3166 14.798 10.2407 14.8295C10.1647 14.861 10.0833 14.8772 10.0011 14.8772C9.91891 14.8772 9.83751 14.861 9.76158 14.8295C9.68565 14.798 9.61668 14.7518 9.55862 14.6936L2.05862 7.19362C2.00041 7.13556 1.95423 7.06659 1.92273 6.99066C1.89122 6.91473 1.875 6.83333 1.875 6.75112C1.875 6.66891 1.89122 6.58751 1.92273 6.51157C1.95423 6.43564 2.00041 6.36667 2.05862 6.30862Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_iconClose_1 gt_tab-icon gt_icon--close" data-name="Icon" data-attribute="iconClose" data-class="gt_tab-icon gt_icon--close" index="1"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3qX1gpR9pRgvLGG_iconClose_1" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.9414 14.6914C17.8833 14.7496 17.8144 14.7958 17.7384 14.8273C17.6625 14.8588 17.5811 14.875 17.4989 14.875C17.4167 14.875 17.3353 14.8588 17.2593 14.8273C17.1834 14.7958 17.1144 14.7496 17.0564 14.6914L9.99888 7.63263L2.94138 14.6914C2.88327 14.7495 2.81429 14.7956 2.73836 14.827C2.66244 14.8585 2.58106 14.8747 2.49888 14.8747C2.4167 14.8747 2.33533 14.8585 2.2594 14.827C2.18348 14.7956 2.11449 14.7495 2.05638 14.6914C1.99827 14.6333 1.95218 14.5643 1.92073 14.4884C1.88928 14.4124 1.87309 14.3311 1.87309 14.2489C1.87309 14.1667 1.88928 14.0853 1.92073 14.0094C1.95218 13.9335 1.99827 13.8645 2.05638 13.8064L9.55638 6.30638C9.61444 6.24818 9.68341 6.202 9.75934 6.17049C9.83527 6.13898 9.91667 6.12276 9.99888 6.12276C10.0811 6.12276 10.1625 6.13898 10.2384 6.17049C10.3144 6.202 10.3833 6.24818 10.4414 6.30638L17.9414 13.8064C17.9996 13.8644 18.0458 13.9334 18.0773 14.0093C18.1088 14.0853 18.125 14.1667 18.125 14.2489C18.125 14.3311 18.1088 14.4125 18.0773 14.4884C18.0458 14.5644 17.9996 14.6333 17.9414 14.6914Z" fill="currentColor"></path></svg></span></div></div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_tabItem_1 gt_tab-content" data-name="Tab Item" data-attribute="tabItem" data-class="gt_tab-content" index="1"><div class="gt_atom-3qX1gpR9pRgvLGG_tabContent_1 gt_pt2--large xs:gt_pt2--medium gt_content--box" data-name="Tab Content" data-attribute="tabContent" index="1" data-class="gt_pt2--large xs:gt_pt2--medium gt_content--box"><div class="gt_atom-3qX1gpR9pRgvLGG_productDescription_1 gt_product-desciption gt_product-desciption--tab" id="a-3qX1gpR9pRgvLGG_productDescription_1" data-name="Product Description" data-product-id="{{product.id}}" data-attribute="productDescription" data-class="gt_product-desciption gt_product-desciption--tab" index="1">
+  {% if product.content and product.content != '' %}
+    <div class="gt_description"><div class="gt_box-desc">
+        
+          {% assign description = product.content %}
+          
+            {% assign cloneDesc = description | split: "<img " %}
+            {% for part in cloneDesc %}
+              {% if part.size < 5 %}
+                {% continue %}
+              {% endif %}
+              {% assign threeLetters = part | slice: 0, 3 %}
+              {% assign fiveLetters = part | slice: 0, 5 %}
+              {% if threeLetters == "src" or threeLetters == "alt" or fiveLetters == "style" %}
+                {% assign tagContent = part | split: '">' %}
+                {% assign fullImageTag = tagContent[0] | prepend: "<img " | append: '">' %}
+                {% assign fullLazyImageTag = tagContent[0] | replace: "src", "data-src" | prepend: "<img " | append: '" class="gt_lazyload" data-type="auto">' %}
+                {% assign description = description | replace: fullImageTag, fullLazyImageTag %}
+              {% endif %}
+            {% endfor %}
+          
+
+          {{description}}
+
+        
+      </div><div style="clear: both;"></div><div class="gt_btn-view-more" id="toggleDes"><div class="gt_title-show">
+            Show more
+
+            
+
+              
+                <span data-optimize-type="icon" data-attribute="uploadIconViewMore," data-section-id="3qX1gpR9pRgvLGG_productDescription_1" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.23517 4.98517C1.27 4.95025 1.31139 4.92254 1.35695 4.90364C1.4025 4.88473 1.45134 4.875 1.50067 4.875C1.55 4.875 1.59884 4.88473 1.6444 4.90364C1.68995 4.92254 1.73134 4.95025 1.76617 4.98517L6.00067 9.22042L10.2352 4.98517C10.3056 4.91476 10.4011 4.8752 10.5007 4.8752C10.6003 4.8752 10.6958 4.91476 10.7662 4.98517C10.8366 5.05559 10.8761 5.15109 10.8761 5.25067C10.8761 5.35025 10.8366 5.44576 10.7662 5.51617L6.26617 10.0162C6.23134 10.0511 6.18995 10.0788 6.14439 10.0977C6.09884 10.1166 6.05 10.1263 6.00067 10.1263C5.95134 10.1263 5.9025 10.1166 5.85695 10.0977C5.81139 10.0788 5.77 10.0511 5.73517 10.0162L1.23517 5.51617C1.20025 5.48134 1.17254 5.43995 1.15364 5.3944C1.13473 5.34884 1.125 5.3 1.125 5.25067C1.125 5.20134 1.13473 5.1525 1.15364 5.10695C1.17254 5.06139 1.20025 5.02 1.23517 4.98517Z" fill="#currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.23517 1.98517C1.27 1.95025 1.31139 1.92254 1.35695 1.90364C1.4025 1.88473 1.45134 1.875 1.50067 1.875C1.55 1.875 1.59884 1.88473 1.6444 1.90364C1.68995 1.92254 1.73134 1.95025 1.76617 1.98517L6.00067 6.22042L10.2352 1.98517C10.27 1.9503 10.3114 1.92265 10.357 1.90378C10.4025 1.88491 10.4514 1.8752 10.5007 1.8752C10.55 1.8752 10.5988 1.88491 10.6444 1.90378C10.6899 1.92265 10.7313 1.9503 10.7662 1.98517C10.801 2.02004 10.8287 2.06143 10.8476 2.10698C10.8664 2.15254 10.8761 2.20136 10.8761 2.25067C10.8761 2.29998 10.8664 2.3488 10.8476 2.39436C10.8287 2.43991 10.801 2.4813 10.7662 2.51617L6.26617 7.01617C6.23134 7.05109 6.18995 7.0788 6.14439 7.0977C6.09884 7.11661 6.05 7.12634 6.00067 7.12634C5.95134 7.12634 5.9025 7.11661 5.85695 7.0977C5.81139 7.0788 5.77 7.05109 5.73517 7.01617L1.23517 2.51617C1.20025 2.48134 1.17254 2.43995 1.15364 2.3944C1.13473 2.34884 1.125 2.3 1.125 2.25067C1.125 2.20134 1.13473 2.1525 1.15364 2.10695C1.17254 2.06139 1.20025 2.02 1.23517 1.98517Z" fill="currentColor"></path></svg></span></div><div class="gt_title-hide">
+            Show less
+            
+              <span data-optimize-type="icon" data-attribute="uploadIconViewMore," data-section-id="3qX1gpR9pRgvLGG_productDescription_1" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.23517 4.98517C1.27 4.95025 1.31139 4.92254 1.35695 4.90364C1.4025 4.88473 1.45134 4.875 1.50067 4.875C1.55 4.875 1.59884 4.88473 1.6444 4.90364C1.68995 4.92254 1.73134 4.95025 1.76617 4.98517L6.00067 9.22042L10.2352 4.98517C10.3056 4.91476 10.4011 4.8752 10.5007 4.8752C10.6003 4.8752 10.6958 4.91476 10.7662 4.98517C10.8366 5.05559 10.8761 5.15109 10.8761 5.25067C10.8761 5.35025 10.8366 5.44576 10.7662 5.51617L6.26617 10.0162C6.23134 10.0511 6.18995 10.0788 6.14439 10.0977C6.09884 10.1166 6.05 10.1263 6.00067 10.1263C5.95134 10.1263 5.9025 10.1166 5.85695 10.0977C5.81139 10.0788 5.77 10.0511 5.73517 10.0162L1.23517 5.51617C1.20025 5.48134 1.17254 5.43995 1.15364 5.3944C1.13473 5.34884 1.125 5.3 1.125 5.25067C1.125 5.20134 1.13473 5.1525 1.15364 5.10695C1.17254 5.06139 1.20025 5.02 1.23517 4.98517Z" fill="#currentColor"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M1.23517 1.98517C1.27 1.95025 1.31139 1.92254 1.35695 1.90364C1.4025 1.88473 1.45134 1.875 1.50067 1.875C1.55 1.875 1.59884 1.88473 1.6444 1.90364C1.68995 1.92254 1.73134 1.95025 1.76617 1.98517L6.00067 6.22042L10.2352 1.98517C10.27 1.9503 10.3114 1.92265 10.357 1.90378C10.4025 1.88491 10.4514 1.8752 10.5007 1.8752C10.55 1.8752 10.5988 1.88491 10.6444 1.90378C10.6899 1.92265 10.7313 1.9503 10.7662 1.98517C10.801 2.02004 10.8287 2.06143 10.8476 2.10698C10.8664 2.15254 10.8761 2.20136 10.8761 2.25067C10.8761 2.29998 10.8664 2.3488 10.8476 2.39436C10.8287 2.43991 10.801 2.4813 10.7662 2.51617L6.26617 7.01617C6.23134 7.05109 6.18995 7.0788 6.14439 7.0977C6.09884 7.11661 6.05 7.12634 6.00067 7.12634C5.95134 7.12634 5.9025 7.11661 5.85695 7.0977C5.81139 7.0788 5.77 7.05109 5.73517 7.01617L1.23517 2.51617C1.20025 2.48134 1.17254 2.43995 1.15364 2.3944C1.13473 2.34884 1.125 2.3 1.125 2.25067C1.125 2.20134 1.13473 2.1525 1.15364 2.10695C1.17254 2.06139 1.20025 2.02 1.23517 1.98517Z" fill="currentColor"></path></svg></span></div></div></div>
+  {% endif %}
+</div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_tabItem_2 gt_items--center gt_justify--space-between gt_mx2--medium xs:gt_mx--none xs:gt_my2--extra-small xs:gt_py2--extra-small gt_tab-heading" data-name="Tab Item" data-attribute="tabItem" data-class="gt_items--center gt_justify--space-between gt_mx2--medium xs:gt_mx--none xs:gt_my2--extra-small xs:gt_py2--extra-small gt_tab-heading" index="2"><div class="gt_atom-3qX1gpR9pRgvLGG_tabTitle_2 gt_font--bold gt_pb2--small xs:gt_pb--none gt_tab-title" data-name="Tab Title" data-attribute="tabTitle" index="2" data-class="gt_font--bold gt_pb2--small xs:gt_pb--none gt_tab-title"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Free Shipping &amp; Return</div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_tabLine_2 gt_line" data-name="Active Line" data-attribute="tabLine" index="2" data-class="gt_line"></div><div class="gt_tab-icons" index="2"><div class="gt_atom-3qX1gpR9pRgvLGG_iconOpen_2 gt_tab-icon gt_icon--open" data-name="Icon" data-attribute="iconOpen" data-class="gt_tab-icon gt_icon--open" index="2"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3qX1gpR9pRgvLGG_iconOpen_2" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.05862 6.30862C2.11667 6.25041 2.18564 6.20423 2.26158 6.17273C2.33751 6.14122 2.41891 6.125 2.50112 6.125C2.58333 6.125 2.66473 6.14122 2.74066 6.17273C2.81659 6.20423 2.88556 6.25041 2.94362 6.30862L10.0011 13.3674L17.0586 6.30861C17.1167 6.2505 17.1857 6.20441 17.2616 6.17296C17.3376 6.14151 17.4189 6.12532 17.5011 6.12532C17.5833 6.12532 17.6647 6.14151 17.7406 6.17296C17.8165 6.20441 17.8855 6.2505 17.9436 6.30861C18.0017 6.36672 18.0478 6.43571 18.0793 6.51163C18.1107 6.58756 18.1269 6.66893 18.1269 6.75111C18.1269 6.83329 18.1107 6.91467 18.0793 6.99059C18.0478 7.06652 18.0017 7.1355 17.9436 7.19361L10.4436 14.6936C10.3856 14.7518 10.3166 14.798 10.2407 14.8295C10.1647 14.861 10.0833 14.8772 10.0011 14.8772C9.91891 14.8772 9.83751 14.861 9.76158 14.8295C9.68565 14.798 9.61668 14.7518 9.55862 14.6936L2.05862 7.19362C2.00041 7.13556 1.95423 7.06659 1.92273 6.99066C1.89122 6.91473 1.875 6.83333 1.875 6.75112C1.875 6.66891 1.89122 6.58751 1.92273 6.51157C1.95423 6.43564 2.00041 6.36667 2.05862 6.30862Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_iconClose_2 gt_tab-icon gt_icon--close" data-name="Icon" data-attribute="iconClose" data-class="gt_tab-icon gt_icon--close" index="2"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3qX1gpR9pRgvLGG_iconClose_2" class="gt_icon"><svg width="100%" height="100%" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M17.9414 14.6914C17.8833 14.7496 17.8144 14.7958 17.7384 14.8273C17.6625 14.8588 17.5811 14.875 17.4989 14.875C17.4167 14.875 17.3353 14.8588 17.2593 14.8273C17.1834 14.7958 17.1144 14.7496 17.0564 14.6914L9.99888 7.63263L2.94138 14.6914C2.88327 14.7495 2.81429 14.7956 2.73836 14.827C2.66244 14.8585 2.58106 14.8747 2.49888 14.8747C2.4167 14.8747 2.33533 14.8585 2.2594 14.827C2.18348 14.7956 2.11449 14.7495 2.05638 14.6914C1.99827 14.6333 1.95218 14.5643 1.92073 14.4884C1.88928 14.4124 1.87309 14.3311 1.87309 14.2489C1.87309 14.1667 1.88928 14.0853 1.92073 14.0094C1.95218 13.9335 1.99827 13.8645 2.05638 13.8064L9.55638 6.30638C9.61444 6.24818 9.68341 6.202 9.75934 6.17049C9.83527 6.13898 9.91667 6.12276 9.99888 6.12276C10.0811 6.12276 10.1625 6.13898 10.2384 6.17049C10.3144 6.202 10.3833 6.24818 10.4414 6.30638L17.9414 13.8064C17.9996 13.8644 18.0458 13.9334 18.0773 14.0093C18.1088 14.0853 18.125 14.1667 18.125 14.2489C18.125 14.3311 18.1088 14.4125 18.0773 14.4884C18.0458 14.5644 17.9996 14.6333 17.9414 14.6914Z" fill="currentColor"></path></svg></span></div></div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_tabItem_2 gt_tab-content" data-name="Tab Item" data-attribute="tabItem" data-class="gt_tab-content" index="2"><div class="gt_atom-3qX1gpR9pRgvLGG_tabContent_2 gt_pt2--large xs:gt_pt2--medium gt_content--box" data-name="Tab Content" data-attribute="tabContent" index="2" data-class="gt_pt2--large xs:gt_pt2--medium gt_content--box"><div class="gt_col-lg-4 gt_col-md-4 gt_col-sm-4 gt_col-12 gt_atom-3qX1gpR9pRgvLGG_imageBlock_2 gt_image-block" data-name="Image Box" data-attribute="imageBlock" data-class="gt_image-block" index="2"><div class="gt_atom-3qX1gpR9pRgvLGG_image_2 gt_px2--medium gt_image" data-name="Image" data-attribute="image" data-class="gt_px2--medium gt_image" index="2"><div class="gt_image--body"><a href="/pages/shipping-policy" target="_blank"><img class="gt_atom-img gt_lazyload" src="https://cdn.shopify.com/s/files/1/0550/5987/3838/t/2/assets/YXXfvArcZj-box2-2-png_20x.png" alt="Free US Shipping | Worldwide Delivery @ Bixtore.com" title=""><div class="gt_atom--overlay"></div><div class="gt_atom--overlay-hover"></div></a></div></div></div><div class="gt_col-lg-8 gt_col-md-8 gt_col-sm-8 gt_col-12 gt_atom-3qX1gpR9pRgvLGG_boxMessage_2 gt_box-message" data-name="Message Box" data-attribute="boxMessage" data-class="gt_box-message" index="2"><div class="gt_atom-3qX1gpR9pRgvLGG_title1_2 gt_subheading gt_font--bold gt_box-message-heading" data-name="Title" data-attribute="title1" data-class="gt_subheading gt_font--bold gt_box-message-heading" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Worldwide Delivery</div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_message1_2 gt_mb2--medium gt_text" data-name="Message" data-attribute="message1" data-class="gt_mb2--medium gt_text" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;"><div>Generally, we offer <strong>Free Shipping</strong> for all orders to US destination. For worldwide delivery outside USA,&nbsp; a low Standard S&amp;H flat shipping fee (less than $5.00) is usually charged unless order value exceeds certain amount ($100) . Certain products under promotion may be eligible for Free Shipping worldwide without order value requirement. So take advantage of it when you see it available for your interested items at checkout.&nbsp;</div><div>&nbsp;</div><div>Our team will process and ship out your order within 1-3 business days pending order verifcation and credit approval. A shipping confirmation email with the tracking number will be sent to you once your order is dispatched. Normally, you can expect to get your order delivered in 6-14 business days after shipping confirmation.</div></div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_title2_2 gt_subheading gt_font--bold gt_box-message-heading" data-name="Title" data-attribute="title2" data-class="gt_subheading gt_font--bold gt_box-message-heading" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Hassle-Free Returns/Exchange</div></div></div><div class="gt_atom-3qX1gpR9pRgvLGG_message2_2 gt_mb2--medium gt_text" data-name="Message" data-attribute="message2" data-class="gt_mb2--medium gt_text" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;"><div>We make dedicated effort to offer you quality goods at great value price. We stand behind what we deliver by offering:</div><ul><li>Free Return on defective units upon reception</li><li>30-day hassle-free Refund if you are not totally satisfied with your purchase.</li><li>We are unable to accept returns on incorrectly purchased products, and products damaged due to customer misuse.</li></ul></div></div></div></div></div></div></div></div></div></div></section>
+
+
+<div class="gt_widget-Dbif4KfGylDxbaE" data-name="Ryviu Reviews">
+  <div class="gt_container">
+    <div class="gt_reviews">
+        
+          
+            
+            <div class="lt-block-reviews"> 
+              <ryviu-widget handle="{{product.handle}}" product_id="{{product.id}}" title_product="{{product.title}}" image_product="{{ product.featured_image.src | img_url: '100x' }}"></ryviu-widget>
+            </div>
+            
+          
+
+      
+     </div>
+  </div>
+</div>
+
+<section class="gt_section-5U6Q6AizfHdSwJ9 " data-name="Related Products">
+  {%- assign gtCachedProduct = product -%}
+  
+  
+  
+  {% assign number_of_products = 4 %}
+  {% assign number_of_products_to_fetch = number_of_products | plus: 1 %}
+  {% assign found_a_collection = false %}
+  {% if collection == null or collection.handle == 'all' %}
+    {% for c in product.collections %}
+      {% if found_a_collection == false and c.handle != 'all' and c.all_products_count > 1 %}
+        {% assign found_a_collection = true %}
+        {% assign collection = c %}
+      {% endif %}
+    {% endfor %} 
+  {% endif %}
+
+  {% if found_a_collection or "production" == "dev"%}
+    <div class="gt_productlist">
+        <div class="position_hook">
+                
+            </div>
+          <div class="gt_container">
+            <div class="gt_productlist-content">
+              <div class="gt_flex gt_flex-column gt_align-i-center gt_productlist-head">
+                <h3>
+                  You May Also Like
+                </h3>
+              </div>
+              <div class="position_hook">
+                  
+              </div>
+              {% for product in collection.products limit: number_of_products_to_fetch %}
+                {% if product.handle == gtCachedProduct.handle %}
+                  {% assign isExist = true %}
+                {% endif %}
+              {% endfor %}
+
+              <div class="gt_flex gt_flex-wrap gt_productlist-items">
+                {% if isExist %}
+                  {% for product in collection.products limit: number_of_products_to_fetch %}
+                    {% unless product.handle == gtCachedProduct.handle %}
+                      <div class="gt_productlist-item">
+                        <div class="gt_element-85689 gt_product-element  gt_product-hover--img-change   gt_product-hover--img-scale " data-name="Master Product List" data-keyword="product">
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  
+  <script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{gtCurrentVariant.id}}">
+    {{ product | json }}
+  </script>
+  {% unless gtCurrentVariant == empty %}
+  <script type="application/json">
+    {{ gtCurrentVariant | json }}
+  </script>
+  {% endunless %}
+
+  
+  {% form 'product', product, class:'gt_product-form ' %}
+  
+  <input type="hidden" name="id" class="gt_swatches--input" value="{{gtCurrentVariant.id}}"><input type="hidden" name="quantity" class="gt_quantity--input" value="1"><a class="link_gt_product gt_product-default" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-image-box"><div class="gt_product-above-top-image-hook" style="position: absolute; top: 0; left: 0; width: 100% ; z-index: 4;"></div><div class="gt_product-above-bottom-image-hook" style="position: absolute; bottom: 0; left: 0; width: 100% ; z-index: 4;"></div>
+      
+      {%- if gtCurrentVariant.compare_at_price > gtCurrentVariant.price -%}
+      <div class="gt_product-sale-tag"><!--                <div class="gt_product-sale-tag&#45;&#45;inner gt_pt&#45;&#45;extra-small gt_pb&#45;&#45;extra-small gt_pr&#45;&#45;small gt_pl&#45;&#45;small">--><div class="gt_product-sale-tag--inner"><div class="gt_product-sale-tag--value gt_product-sale-tag--value--percent"></div><div class="gt_product-sale-tag--value gt_product-sale-tag--value--number"></div><div class="gt_product-sale-tag--after"></div></div></div>
+      {%- endif -%}
+      
+      <div class="gt_product-sold-out-tag" data-sold-out="Sold Out">
+          {% unless gtCurrentVariant.available %}
+            <div class="gt_product-sold-out-tag--inner">
+              Sold Out
+            </div>
+          {% endunless %}
+        </div><div class="gt_product-image"><div class="gt_product-image--inner"><div class="gt_product-image--list">
+            {%- assign product_image_front = product.featured_image -%}
+            {%- assign product_image_back = product.images | last -%}
+
+            
+            {%- assign product_image_front = product.featured_image -%}
+            
+
+            
+            
+            {% assign nth = 2 | minus: 1 %}
+            {% assign limit = product.images | size | minus: 1  %}
+            {% assign nth = nth | at_most: limit %}
+            {% assign product_image_back = product.images[nth] %}
+            
+            
+
+            <img class="gt_product-image--front not-variant gt_lazyload" src="{{ product_image_front.src | img_url: '50x' }}" data-id="{{ product_image_front.id }}" alt="{{ product_image_front.alt | escape | replace: '&quot;', '&apos;' }}"><img class="gt_product-image--back gt_lazyload" src="{{ product_image_back.src | img_url: '50x' }}" data-id="{{ product_image_back.id }}" alt="{{ product_image_back.alt | escape | replace: '&quot;', '&apos;' }}"></div></div></div><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-2"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></a><div class="gt_product-info gt_flex1"><div class="gt_product-info--top gt_flex1"><div class="gt_flex1"></div><div class="gt_mb--extra-small gt_product-price gt_product-price--origin gt_product-default"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+            {{ gtCurrentVariant.price | money }}
+          </span>
+          
+            {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+              <div class="gt_pr--extra-small gt_pt--extra-small"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+                {{ gtCurrentVariant.compare_at_price | money }}
+              </span>
+            {% endif %}
+          
+        </div><a class="link_gt_product" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-name"><h4 class="gt_subheading gt_atom-85689_productTitle " data-name="Product Title" data-attribute="productTitle">
+  {{product.title}}
+</h4></div></a><div class="gt_product_vendor"></div><div class="gt_product-price gt_product-price--custom"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+          {{ gtCurrentVariant.price | money }}
+        </span>
+          {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+            <div class="gt_pr--extra-small gt_pt--extra-small gt_distance--custom"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+              {{ gtCurrentVariant.compare_at_price | money }}
+            </span>
+          {% endif %}
+      </div><div class="gt_product_variants gt_product_variants--vertical"></div></div><div class="wrapper_price"><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-default"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></div>
+  
+  
+  {% endform %}
+  
+</div>
+                      </div>
+                    {% endunless %}
+                  {% endfor %}
+                {% else %}
+                  {% for product in collection.products limit: 4 %}
+                    <div class="gt_productlist-item">
+                      <div class="gt_element-85689 gt_product-element  gt_product-hover--img-change   gt_product-hover--img-scale " data-name="Master Product List" data-keyword="product">
+  {%- assign gtCurrentVariant = product.selected_or_first_available_variant -%}
+  
+  <script type="application/json" class="ProductJson" data-id="{{product.id}}" data-variant="{{gtCurrentVariant.id}}">
+    {{ product | json }}
+  </script>
+  {% unless gtCurrentVariant == empty %}
+  <script type="application/json">
+    {{ gtCurrentVariant | json }}
+  </script>
+  {% endunless %}
+
+  
+  {% form 'product', product, class:'gt_product-form ' %}
+  
+  <input type="hidden" name="id" class="gt_swatches--input" value="{{gtCurrentVariant.id}}"><input type="hidden" name="quantity" class="gt_quantity--input" value="1"><a class="link_gt_product gt_product-default" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-image-box"><div class="gt_product-above-top-image-hook" style="position: absolute; top: 0; left: 0; width: 100% ; z-index: 4;"></div><div class="gt_product-above-bottom-image-hook" style="position: absolute; bottom: 0; left: 0; width: 100% ; z-index: 4;"></div>
+      
+      {%- if gtCurrentVariant.compare_at_price > gtCurrentVariant.price -%}
+      <div class="gt_product-sale-tag"><!--                <div class="gt_product-sale-tag&#45;&#45;inner gt_pt&#45;&#45;extra-small gt_pb&#45;&#45;extra-small gt_pr&#45;&#45;small gt_pl&#45;&#45;small">--><div class="gt_product-sale-tag--inner"><div class="gt_product-sale-tag--value gt_product-sale-tag--value--percent"></div><div class="gt_product-sale-tag--value gt_product-sale-tag--value--number"></div><div class="gt_product-sale-tag--after"></div></div></div>
+      {%- endif -%}
+      
+      <div class="gt_product-sold-out-tag" data-sold-out="Sold Out">
+          {% unless gtCurrentVariant.available %}
+            <div class="gt_product-sold-out-tag--inner">
+              Sold Out
+            </div>
+          {% endunless %}
+        </div><div class="gt_product-image"><div class="gt_product-image--inner"><div class="gt_product-image--list">
+            {%- assign product_image_front = product.featured_image -%}
+            {%- assign product_image_back = product.images | last -%}
+
+            
+            {%- assign product_image_front = product.featured_image -%}
+            
+
+            
+            
+            {% assign nth = 2 | minus: 1 %}
+            {% assign limit = product.images | size | minus: 1  %}
+            {% assign nth = nth | at_most: limit %}
+            {% assign product_image_back = product.images[nth] %}
+            
+            
+
+            <img class="gt_product-image--front not-variant gt_lazyload" src="{{ product_image_front.src | img_url: '50x' }}" data-id="{{ product_image_front.id }}" alt="{{ product_image_front.alt | escape | replace: '&quot;', '&apos;' }}"><img class="gt_product-image--back gt_lazyload" src="{{ product_image_back.src | img_url: '50x' }}" data-id="{{ product_image_back.id }}" alt="{{ product_image_back.alt | escape | replace: '&quot;', '&apos;' }}"></div></div></div><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-2"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></a><div class="gt_product-info gt_flex1"><div class="gt_product-info--top gt_flex1"><div class="gt_flex1"></div><div class="gt_mb--extra-small gt_product-price gt_product-price--origin gt_product-default"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+            {{ gtCurrentVariant.price | money }}
+          </span>
+          
+            {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+              <div class="gt_pr--extra-small gt_pt--extra-small"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+                {{ gtCurrentVariant.compare_at_price | money }}
+              </span>
+            {% endif %}
+          
+        </div><a class="link_gt_product" href="{{product.url}}" title="{{product.title | escape | replace: '&quot;', '&apos;' }}"><div class="gt_product-name"><h4 class="gt_subheading gt_atom-85689_productTitle " data-name="Product Title" data-attribute="productTitle">
+  {{product.title}}
+</h4></div></a><div class="gt_product_vendor"></div><div class="gt_product-price gt_product-price--custom"><span class="gt_product-price--current" data-currentprice="{{ gtCurrentVariant.price }}">
+          {{ gtCurrentVariant.price | money }}
+        </span>
+          {% if gtCurrentVariant.compare_at_price > gtCurrentVariant.price %}
+            <div class="gt_pr--extra-small gt_pt--extra-small gt_distance--custom"></div><span class="gt_product-price--compare" data-currentprice="{{ gtCurrentVariant.compare_at_price }}">
+              {{ gtCurrentVariant.compare_at_price | money }}
+            </span>
+          {% endif %}
+      </div><div class="gt_product_variants gt_product_variants--vertical"></div></div><div class="wrapper_price"><div class="gt_product-button gt_mt--small gt_atc-button-pc gt_product-style-default"><button class="gt_button gt_button--small gt_atom-85689_productButtonBuy  {% unless gtCurrentVariant.available %}gt_sold_out{% endunless %}  gt_product-button--add-to-cart" {% unless gtCurrentVariant.available %}disabled="disabled" {% endunless %} data-name="Product Button Add To Cart" name="add" data-attribute="productButtonBuy" data-class="gt_product-button--add-to-cart"><span class="gt_button-content"><span class="gt_button-content-text">
+      
+        {% unless gtCurrentVariant.available %}
+          
+          <span class="gt_button-content-text-main">
+            Sold out
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% else %}
+          
+          <span class="gt_button-content-text-main">
+            Add
+          </span><span data-optimize-type="icon" data-attribute="iconRightData," data-section-id="85689_productButtonBuy" class="gt_icon"><svg height="100%" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.69998 20C5.19998 20 4.09998 18.8 4.09998 17.4C4.09998 15.9 5.29998 14.8 6.69998 14.8C8.19998 14.8 9.29998 16 9.29998 17.4C9.39998 18.8 8.19998 20 6.69998 20ZM6.69998 16.7C6.29998 16.7 6.09998 17 6.09998 17.3C6.09998 17.7 6.39998 17.9 6.69998 17.9C7.09998 17.9 7.29998 17.6 7.29998 17.3C7.39998 17 7.09998 16.7 6.69998 16.7Z" fill="currentColor"></path><path d="M16.5 20C15 20 13.9 18.8 13.9 17.4C13.9 15.9 15.1 14.8 16.5 14.8C18 14.8 19.1 16 19.1 17.4C19.2 18.8 18 20 16.5 20ZM16.5 16.7C16.1 16.7 15.9 17 15.9 17.3C15.9 17.7 16.2 17.9 16.5 17.9C16.9 17.9 17.1 17.6 17.1 17.3C17.2 17 16.9 16.7 16.5 16.7Z" fill="currentColor"></path><path d="M16 14.3H7.3C6.7 14.3 6 14.1 5.6 13.7C5.1 13.3 4.8 12.7 4.7 12.1L3.5 2.6C3.5 2.4 3.4 2.3 3.3 2.2C3.1 2.1 3 2 2.8 2H1C0.4 2 0 1.6 0 1C0 0.4 0.4 0 1 0H2.8C3.4 0 4.1 0.2 4.5 0.7C5 1.1 5.3 1.7 5.4 2.3L5.6 4.1H19C19.3 4.1 19.6 4.2 19.8 4.5C20 4.7 20 5 20 5.3L18.6 12.2C18.5 12.8 18.1 13.4 17.7 13.7C17.2 14.1 16.6 14.3 16 14.3ZM16 12.3C16.1 12.3 16.3 12.3 16.4 12.2C16.5 12.1 16.6 12 16.6 11.8L17.7 6.1H6L6.7 11.7C6.7 11.9 6.8 12 6.9 12.1C7 12.2 7.2 12.2 7.3 12.3H16Z" fill="currentColor"></path></svg></span>
+          
+        {% endunless %}
+      
+    </span><span class="atom-button-loading-circle-loader"><span class="atom-button-loading-check-mark atom-button-loading-check-mark-draw"></span></span></span></button></div></div></div>
+  
+  
+  {% endform %}
+  
+</div>
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="position_hook">
+            
+          </div>
+    </div>
+  {% endif %}
+  {%- assign product = gtCachedProduct -%}
+</section>
+
+
+<section class="gt_section-3E3yBP8rJ4w4f2L " data-name="FAQ"><div class="gt_faq-bg gt_lazyload" style=" background-image: url('')"><div class="gt_overlay"></div></div><box attribute="faq"><div class="gt_container"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqBox gt_row gt_faq" data-name="FAQ" data-attribute="faqBox" data-class="gt_row gt_faq"><div class="gt_col-lg-6 gt_col-md-6 gt_col-sm-12 gt_col-12 gt_atom-3E3yBP8rJ4w4f2L_faqContentColumn gt_items--center gt_faq--content" data-name="FAQ Content" data-attribute="faqContentColumn" data-class="gt_items--center gt_faq--content"><div class="gt_atom-3E3yBP8rJ4w4f2L_description gt_heading gt_mb2--large" data-name="Title" data-attribute="description" data-class="gt_heading gt_mb2--large"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Last-Minute Questions</div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_faqList gt_faq--list" data-name="FAQ List" data-attribute="faqList" data-class="gt_faq--list"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqListItem_0 gt_faq--item" data-name="Item" data-attribute="faqListItem" data-class="gt_faq--item" index="0"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqQuestion_0 gt_justify--space-between gt_items--center gt_py--small gt_faq--question  gt_active " data-name="FAQ Question" data-attribute="faqQuestion" data-class="gt_justify--space-between gt_items--center gt_py--small gt_faq--question  gt_active " index="0"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqTitle_0 gt_font--bold gt_mr--small gt_faq--title" data-name="Message" data-attribute="faqTitle" data-class="gt_font--bold gt_mr--small gt_faq--title" index="0"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Can I cancel my order after placing it?</div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_iconOpen_0 gt_icon--open" data-name="Icon" data-attribute="iconOpen" data-class="gt_icon--open" index="0"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3E3yBP8rJ4w4f2L_iconOpen_0" class="gt_icon"><svg height="100%" viewBox="0 0 24 25" fill="currentColor"><path d="M21 2.09375C21.3978 2.09375 21.7794 2.25179 22.0607 2.53309C22.342 2.81439 22.5 3.19593 22.5 3.59375V21.5938C22.5 21.9916 22.342 22.3731 22.0607 22.6544C21.7794 22.9357 21.3978 23.0938 21 23.0938H3C2.60218 23.0938 2.22064 22.9357 1.93934 22.6544C1.65804 22.3731 1.5 21.9916 1.5 21.5938V3.59375C1.5 3.19593 1.65804 2.81439 1.93934 2.53309C2.22064 2.25179 2.60218 2.09375 3 2.09375H21ZM3 0.59375C2.20435 0.59375 1.44129 0.909821 0.87868 1.47243C0.316071 2.03504 0 2.7981 0 3.59375V21.5938C0 22.3894 0.316071 23.1525 0.87868 23.7151C1.44129 24.2777 2.20435 24.5938 3 24.5938H21C21.7956 24.5938 22.5587 24.2777 23.1213 23.7151C23.6839 23.1525 24 22.3894 24 21.5938V3.59375C24 2.7981 23.6839 2.03504 23.1213 1.47243C22.5587 0.909821 21.7956 0.59375 21 0.59375H3Z" fill="currentColor"></path><path d="M12 6.59375C12.1989 6.59375 12.3897 6.67277 12.5303 6.81342C12.671 6.95407 12.75 7.14484 12.75 7.34375V11.8438H17.25C17.4489 11.8438 17.6397 11.9228 17.7803 12.0634C17.921 12.2041 18 12.3948 18 12.5938C18 12.7927 17.921 12.9834 17.7803 13.1241C17.6397 13.2647 17.4489 13.3438 17.25 13.3438H12.75V17.8438C12.75 18.0427 12.671 18.2334 12.5303 18.3741C12.3897 18.5147 12.1989 18.5938 12 18.5938C11.8011 18.5938 11.6103 18.5147 11.4697 18.3741C11.329 18.2334 11.25 18.0427 11.25 17.8438V13.3438H6.75C6.55109 13.3438 6.36032 13.2647 6.21967 13.1241C6.07902 12.9834 6 12.7927 6 12.5938C6 12.3948 6.07902 12.2041 6.21967 12.0634C6.36032 11.9228 6.55109 11.8438 6.75 11.8438H11.25V7.34375C11.25 7.14484 11.329 6.95407 11.4697 6.81342C11.6103 6.67277 11.8011 6.59375 12 6.59375Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_iconClose_0 gt_icon--close" data-name="Icon" data-attribute="iconClose" data-class="gt_icon--close" index="0"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3E3yBP8rJ4w4f2L_iconClose_0" class="gt_icon"><svg height="100%" viewBox="0 0 24 24" fill="currentColor"><path d="M21 1.5C21.3978 1.5 21.7794 1.65804 22.0607 1.93934C22.342 2.22064 22.5 2.60218 22.5 3V21C22.5 21.3978 22.342 21.7794 22.0607 22.0607C21.7794 22.342 21.3978 22.5 21 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H21ZM3 0C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V21C0 21.7956 0.316071 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H21C21.7956 24 22.5587 23.6839 23.1213 23.1213C23.6839 22.5587 24 21.7956 24 21V3C24 2.20435 23.6839 1.44129 23.1213 0.87868C22.5587 0.316071 21.7956 0 21 0H3Z" fill="currentColor"></path><path d="M6 12C6 11.8011 6.07902 11.6103 6.21967 11.4697C6.36032 11.329 6.55109 11.25 6.75 11.25H17.25C17.4489 11.25 17.6397 11.329 17.7803 11.4697C17.921 11.6103 18 11.8011 18 12C18 12.1989 17.921 12.3897 17.7803 12.5303C17.6397 12.671 17.4489 12.75 17.25 12.75H6.75C6.55109 12.75 6.36032 12.671 6.21967 12.5303C6.07902 12.3897 6 12.1989 6 12Z" fill="currentColor"></path></svg></span></div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_faqAnswers_0 gt_pt2--small gt_pb--small gt_faq--answers  gt_active-ans " data-name="FAQ Answers" data-attribute="faqAnswers" data-class="gt_pt2--small gt_pb--small gt_faq--answers  gt_active-ans " index="0"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqContent_0 gt_mb--none" data-name="Message" data-attribute="faqContent" data-class="gt_mb--none" index="0"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Yes you can cancel your order within 24 hours of placement and get a full refund. No questions asked.</div></div></div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_faqListItem_1 gt_faq--item" data-name="Item" data-attribute="faqListItem" data-class="gt_faq--item" index="1"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqQuestion_1 gt_justify--space-between gt_items--center gt_py--small gt_faq--question " data-name="FAQ Question" data-attribute="faqQuestion" data-class="gt_justify--space-between gt_items--center gt_py--small gt_faq--question " index="1"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqTitle_1 gt_font--bold gt_mr--small gt_faq--title" data-name="Message" data-attribute="faqTitle" data-class="gt_font--bold gt_mr--small gt_faq--title" index="1"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Can I change my shipping address after placing my order?</div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_iconOpen_1 gt_icon--open" data-name="Icon" data-attribute="iconOpen" data-class="gt_icon--open" index="1"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3E3yBP8rJ4w4f2L_iconOpen_1" class="gt_icon"><svg height="100%" viewBox="0 0 24 25" fill="currentColor"><path d="M21 2.09375C21.3978 2.09375 21.7794 2.25179 22.0607 2.53309C22.342 2.81439 22.5 3.19593 22.5 3.59375V21.5938C22.5 21.9916 22.342 22.3731 22.0607 22.6544C21.7794 22.9357 21.3978 23.0938 21 23.0938H3C2.60218 23.0938 2.22064 22.9357 1.93934 22.6544C1.65804 22.3731 1.5 21.9916 1.5 21.5938V3.59375C1.5 3.19593 1.65804 2.81439 1.93934 2.53309C2.22064 2.25179 2.60218 2.09375 3 2.09375H21ZM3 0.59375C2.20435 0.59375 1.44129 0.909821 0.87868 1.47243C0.316071 2.03504 0 2.7981 0 3.59375V21.5938C0 22.3894 0.316071 23.1525 0.87868 23.7151C1.44129 24.2777 2.20435 24.5938 3 24.5938H21C21.7956 24.5938 22.5587 24.2777 23.1213 23.7151C23.6839 23.1525 24 22.3894 24 21.5938V3.59375C24 2.7981 23.6839 2.03504 23.1213 1.47243C22.5587 0.909821 21.7956 0.59375 21 0.59375H3Z" fill="currentColor"></path><path d="M12 6.59375C12.1989 6.59375 12.3897 6.67277 12.5303 6.81342C12.671 6.95407 12.75 7.14484 12.75 7.34375V11.8438H17.25C17.4489 11.8438 17.6397 11.9228 17.7803 12.0634C17.921 12.2041 18 12.3948 18 12.5938C18 12.7927 17.921 12.9834 17.7803 13.1241C17.6397 13.2647 17.4489 13.3438 17.25 13.3438H12.75V17.8438C12.75 18.0427 12.671 18.2334 12.5303 18.3741C12.3897 18.5147 12.1989 18.5938 12 18.5938C11.8011 18.5938 11.6103 18.5147 11.4697 18.3741C11.329 18.2334 11.25 18.0427 11.25 17.8438V13.3438H6.75C6.55109 13.3438 6.36032 13.2647 6.21967 13.1241C6.07902 12.9834 6 12.7927 6 12.5938C6 12.3948 6.07902 12.2041 6.21967 12.0634C6.36032 11.9228 6.55109 11.8438 6.75 11.8438H11.25V7.34375C11.25 7.14484 11.329 6.95407 11.4697 6.81342C11.6103 6.67277 11.8011 6.59375 12 6.59375Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_iconClose_1 gt_icon--close" data-name="Icon" data-attribute="iconClose" data-class="gt_icon--close" index="1"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3E3yBP8rJ4w4f2L_iconClose_1" class="gt_icon"><svg height="100%" viewBox="0 0 24 24" fill="currentColor"><path d="M21 1.5C21.3978 1.5 21.7794 1.65804 22.0607 1.93934C22.342 2.22064 22.5 2.60218 22.5 3V21C22.5 21.3978 22.342 21.7794 22.0607 22.0607C21.7794 22.342 21.3978 22.5 21 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H21ZM3 0C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V21C0 21.7956 0.316071 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H21C21.7956 24 22.5587 23.6839 23.1213 23.1213C23.6839 22.5587 24 21.7956 24 21V3C24 2.20435 23.6839 1.44129 23.1213 0.87868C22.5587 0.316071 21.7956 0 21 0H3Z" fill="currentColor"></path><path d="M6 12C6 11.8011 6.07902 11.6103 6.21967 11.4697C6.36032 11.329 6.55109 11.25 6.75 11.25H17.25C17.4489 11.25 17.6397 11.329 17.7803 11.4697C17.921 11.6103 18 11.8011 18 12C18 12.1989 17.921 12.3897 17.7803 12.5303C17.6397 12.671 17.4489 12.75 17.25 12.75H6.75C6.55109 12.75 6.36032 12.671 6.21967 12.5303C6.07902 12.3897 6 12.1989 6 12Z" fill="currentColor"></path></svg></span></div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_faqAnswers_1 gt_pt2--small gt_pb--small gt_faq--answers " data-name="FAQ Answers" data-attribute="faqAnswers" data-class="gt_pt2--small gt_pb--small gt_faq--answers " index="1"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqContent_1 gt_mb--none" data-name="Message" data-attribute="faqContent" data-class="gt_mb--none" index="1"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Yes you can as long as your order has not been shipped out yet.</div></div></div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_faqListItem_2 gt_faq--item" data-name="Item" data-attribute="faqListItem" data-class="gt_faq--item" index="2"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqQuestion_2 gt_justify--space-between gt_items--center gt_py--small gt_faq--question " data-name="FAQ Question" data-attribute="faqQuestion" data-class="gt_justify--space-between gt_items--center gt_py--small gt_faq--question " index="2"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqTitle_2 gt_font--bold gt_mr--small gt_faq--title" data-name="Message" data-attribute="faqTitle" data-class="gt_font--bold gt_mr--small gt_faq--title" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Do you accept Cash On Delivery (COD)?</div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_iconOpen_2 gt_icon--open" data-name="Icon" data-attribute="iconOpen" data-class="gt_icon--open" index="2"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3E3yBP8rJ4w4f2L_iconOpen_2" class="gt_icon"><svg height="100%" viewBox="0 0 24 25" fill="currentColor"><path d="M21 2.09375C21.3978 2.09375 21.7794 2.25179 22.0607 2.53309C22.342 2.81439 22.5 3.19593 22.5 3.59375V21.5938C22.5 21.9916 22.342 22.3731 22.0607 22.6544C21.7794 22.9357 21.3978 23.0938 21 23.0938H3C2.60218 23.0938 2.22064 22.9357 1.93934 22.6544C1.65804 22.3731 1.5 21.9916 1.5 21.5938V3.59375C1.5 3.19593 1.65804 2.81439 1.93934 2.53309C2.22064 2.25179 2.60218 2.09375 3 2.09375H21ZM3 0.59375C2.20435 0.59375 1.44129 0.909821 0.87868 1.47243C0.316071 2.03504 0 2.7981 0 3.59375V21.5938C0 22.3894 0.316071 23.1525 0.87868 23.7151C1.44129 24.2777 2.20435 24.5938 3 24.5938H21C21.7956 24.5938 22.5587 24.2777 23.1213 23.7151C23.6839 23.1525 24 22.3894 24 21.5938V3.59375C24 2.7981 23.6839 2.03504 23.1213 1.47243C22.5587 0.909821 21.7956 0.59375 21 0.59375H3Z" fill="currentColor"></path><path d="M12 6.59375C12.1989 6.59375 12.3897 6.67277 12.5303 6.81342C12.671 6.95407 12.75 7.14484 12.75 7.34375V11.8438H17.25C17.4489 11.8438 17.6397 11.9228 17.7803 12.0634C17.921 12.2041 18 12.3948 18 12.5938C18 12.7927 17.921 12.9834 17.7803 13.1241C17.6397 13.2647 17.4489 13.3438 17.25 13.3438H12.75V17.8438C12.75 18.0427 12.671 18.2334 12.5303 18.3741C12.3897 18.5147 12.1989 18.5938 12 18.5938C11.8011 18.5938 11.6103 18.5147 11.4697 18.3741C11.329 18.2334 11.25 18.0427 11.25 17.8438V13.3438H6.75C6.55109 13.3438 6.36032 13.2647 6.21967 13.1241C6.07902 12.9834 6 12.7927 6 12.5938C6 12.3948 6.07902 12.2041 6.21967 12.0634C6.36032 11.9228 6.55109 11.8438 6.75 11.8438H11.25V7.34375C11.25 7.14484 11.329 6.95407 11.4697 6.81342C11.6103 6.67277 11.8011 6.59375 12 6.59375Z" fill="currentColor"></path></svg></span></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_iconClose_2 gt_icon--close" data-name="Icon" data-attribute="iconClose" data-class="gt_icon--close" index="2"><div class="gt_icon-wrapper"><span data-optimize-type="icon" data-attribute="textValue," data-section-id="3E3yBP8rJ4w4f2L_iconClose_2" class="gt_icon"><svg height="100%" viewBox="0 0 24 24" fill="currentColor"><path d="M21 1.5C21.3978 1.5 21.7794 1.65804 22.0607 1.93934C22.342 2.22064 22.5 2.60218 22.5 3V21C22.5 21.3978 22.342 21.7794 22.0607 22.0607C21.7794 22.342 21.3978 22.5 21 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H21ZM3 0C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.316071 1.44129 0 2.20435 0 3V21C0 21.7956 0.316071 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H21C21.7956 24 22.5587 23.6839 23.1213 23.1213C23.6839 22.5587 24 21.7956 24 21V3C24 2.20435 23.6839 1.44129 23.1213 0.87868C22.5587 0.316071 21.7956 0 21 0H3Z" fill="currentColor"></path><path d="M6 12C6 11.8011 6.07902 11.6103 6.21967 11.4697C6.36032 11.329 6.55109 11.25 6.75 11.25H17.25C17.4489 11.25 17.6397 11.329 17.7803 11.4697C17.921 11.6103 18 11.8011 18 12C18 12.1989 17.921 12.3897 17.7803 12.5303C17.6397 12.671 17.4489 12.75 17.25 12.75H6.75C6.55109 12.75 6.36032 12.671 6.21967 12.5303C6.07902 12.3897 6 12.1989 6 12Z" fill="currentColor"></path></svg></span></div></div></div><div class="gt_atom-3E3yBP8rJ4w4f2L_faqAnswers_2 gt_pt2--small gt_pb--small gt_faq--answers " data-name="FAQ Answers" data-attribute="faqAnswers" data-class="gt_pt2--small gt_pb--small gt_faq--answers " index="2"><div class="gt_atom-3E3yBP8rJ4w4f2L_faqContent_2 gt_mb--none" data-name="Message" data-attribute="faqContent" data-class="gt_mb--none" index="2"><div class="gt_text-wrapper"><div class="gt_box-desc" style="display: inline;">Unfortunately, we are not accepting COD as of now.</div></div></div></div></div></div></div></div></div></box></section>
+
+  

@@ -1,0 +1,253 @@
+
+  
+<section class="gt_section-EKykB1kIgMoQJFw " data-name="Article">
+    <div class="article_page">
+        <div class="gf_container">
+            <h1 class="gt_heading h2_title">{{ article.title }}</h1>
+               
+            <p class="gt_text--small time">{{ article.published_at | date: "%b %d, %y" }}</p>
+                
+            <div class="aricle_body gt_mt--medium">
+                <div class="gt_mb--medium image_article">
+                  <img class=" gt_lazyload" src="{{ article.image.src | img_url: '1200x' }}" alt="{{ article.title | escape | replace: '&quot;', '&apos;' }}">
+                </div>
+                <div class="gt_mb--medium gt_box-desc content_article">
+                    {{ article.content }}
+                </div>
+                  
+                  {% if article.tags.size > 0 %}
+                  <ul class="gt_mb--small list_tags">
+                      {% for tag in article.tags %}
+                      <li>
+                          <a class="tag" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %} {% endunless %}
+                      </li>
+                      {% endfor %}
+                  </ul>
+                  {% endif %}
+                
+                  
+                <div class="gt_flex gt_flex-wrap icon_social">
+                  
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://{{shop.domain}}{{ article.url }}" target="_blank">
+                        <div class="gt_flex icon_content">
+                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 0C0.895431 0 0 0.89543 0 2V13C0 14.1046 0.89543 15 2 15H6.49451V9.17226H5.08691V7.05287H6.49451V5.38539C6.49451 3.81801 7.40294 3 9.42752 3H11.2878V5.17374H9.82127C9.3097 5.17374 9.20119 5.36823 9.20119 5.86018V7.05287H11.2878L11.0894 9.14652H9.20119V15H13C14.1046 15 15 14.1046 15 13V2C15 0.895431 14.1046 0 13 0H2Z" fill="#3B5A9B"></path>
+                            </svg>
+                            <span class="gt_text--small">
+                              Share
+                            </span>
+                        </div>
+                    </a>
+                   
+                   
+                    <a href="http://pinterest.com/pin/create/link/?url=https://{{shop.domain}}{{ article.url }}">
+                        <div class="gt_flex icon_content">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                    <path d="M8.00012 -5.80126e-05C6.16306 -0.000306638 4.38189 0.631675 2.95583 1.78971C1.52978 2.94775 0.545742 4.56129 0.169037 6.35924C-0.207668 8.15719 0.0459147 10.03 0.887182 11.6631C1.72845 13.2961 3.10614 14.5899 4.78881 15.327C4.76606 14.7684 4.78472 14.0978 4.92817 13.4902C5.08212 12.8406 5.9574 9.13089 5.9574 9.13089C5.78362 8.73174 5.69656 8.30025 5.70199 7.86495C5.70199 6.67949 6.38892 5.79432 7.24496 5.79432C7.97213 5.79432 8.32376 6.3407 8.32376 6.99553C8.32376 7.72675 7.85725 8.82067 7.61758 9.83412C7.41699 10.6831 8.04269 11.3753 8.88007 11.3753C10.3962 11.3753 11.4167 9.42827 11.4167 7.12207C11.4167 5.36865 10.2358 4.05607 8.08817 4.05607C5.66117 4.05607 4.14911 5.86371 4.14911 7.88711C4.14911 8.58684 4.35495 9.07549 4.67393 9.45626C4.82204 9.6312 4.84245 9.70117 4.79055 9.90234C4.75207 10.0493 4.66401 10.4038 4.62728 10.5438C4.57421 10.7461 4.41035 10.8184 4.22725 10.7438C3.10938 10.2878 2.58864 9.06325 2.58864 7.68769C2.58864 5.41355 4.5054 2.68984 8.30626 2.68984C11.3607 2.68984 13.3708 4.90041 13.3708 7.27251C13.3708 10.4108 11.626 12.7538 9.05559 12.7538C8.19197 12.7538 7.37966 12.2873 7.10093 11.7566C7.10093 11.7566 6.63442 13.5999 6.5382 13.9556C6.36851 14.5725 6.03671 15.1888 5.7329 15.6693C6.83351 15.9956 7.99146 16.0813 9.1281 15.9204C10.2647 15.7596 11.3535 15.356 12.3203 14.7371C13.2871 14.1182 14.1094 13.2984 14.7313 12.3336C15.3533 11.3687 15.7602 10.2813 15.9246 9.14516C16.089 8.00907 16.007 6.8509 15.684 5.74932C15.3611 4.64774 14.8049 3.62857 14.0531 2.76101C13.3014 1.89346 12.3717 1.19785 11.3273 0.72143C10.2828 0.245011 9.14809 -0.00105584 8.00012 -5.80126e-05Z" fill="#CB2027"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0">
+                                        <rect width="16" height="16" fill="white"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <span class="gt_text--small">
+                               PIN IT
+                            </span>
+                        </div>
+                    </a>
+                    
+                    
+                    <a href="https://twitter.com/share?url=https://{{shop.domain}}{{ article.url }}" target="_blank">
+                        <div class="gt_flex icon_content">
+                            <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 10.0941C1.49341 10.9399 3.2324 11.3896 5.00893 11.3893C11.0864 11.3893 14.5175 6.87611 14.3088 2.82887C14.9506 2.42318 15.5048 1.91991 15.9451 1.3428C15.3464 1.57421 14.712 1.7263 14.0626 1.79413C14.7491 1.43526 15.2638 0.869308 15.511 0.20165C14.8654 0.53732 14.1597 0.774293 13.4239 0.902486C12.9305 0.442801 12.2786 0.138747 11.569 0.0373029C10.8593 -0.0641412 10.1315 0.0426713 9.49777 0.341237C8.86409 0.639802 8.3599 1.1135 8.06309 1.68914C7.76629 2.26479 7.69339 2.91033 7.85567 3.52604C6.55411 3.4686 5.28088 3.17101 4.11875 2.65263C2.95661 2.13425 1.93159 1.40668 1.11031 0.51721C0.692832 1.15108 0.565341 1.90083 0.753715 2.61431C0.942089 3.32779 1.43221 3.95154 2.12462 4.35897C1.60297 4.34327 1.09328 4.21742 0.638638 3.99204C0.63007 4.66248 0.887501 5.3146 1.36666 5.83627C1.84583 6.35793 2.51678 6.71654 3.26415 6.85042C2.78233 6.96599 2.27668 6.98231 1.78652 6.89812C1.99652 7.4698 2.40411 7.96968 2.95253 8.32812C3.50095 8.68657 4.16288 8.88574 4.84614 8.89789C4.16746 9.36751 3.3901 9.71488 2.55855 9.92014C1.727 10.1254 0.857566 10.1845 0 10.0941H0Z" fill="#1F9FF5"></path>
+                            </svg>
+                            <span class="gt_text--small">
+                               TWEET
+                            </span>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="paging gt_mt--large">
+                    <a href="{{ blog.previous_article }}">
+                      &lt; Prev
+                    </a>
+                    <a href="{{ blog.url }}">
+                      Back to blog
+                    </a>
+                    <a href="{{ blog.next_article }}">
+                      Next &gt;
+                    </a>
+                </div>
+                  {%- assign new_comment = false -%}
+                  {%- if comment and comment.created_at -%}
+                    {%- assign new_comment = true -%}
+                    {%- assign new_comment_id = comment.id -%}
+                  {%- endif -%}
+
+                  {%- if new_comment -%}
+                    {%- assign duplicate_comment = false -%}
+                    {%- for comment in article.comments -%}
+                      {%- if comment.id == new_comment_id -%}
+                        {%- assign duplicate_comment = true -%}
+                        {% break %}
+                      {%- endif -%}
+                    {%- endfor -%}
+
+                    {%- if duplicate_comment -%}
+                      {%- assign number_of_comments = article.comments_count -%}
+                    {%- else -%}
+                      {%- assign number_of_comments = article.comments_count | plus: 1 -%}
+                    {%- endif -%}
+                    {%- else -%}
+                      {%- assign number_of_comments = article.comments_count -%}
+                  {%- endif -%}
+
+                  <!-- Code to output article content can be added here. -->
+
+                  {%- if blog.comments_enabled? -%}
+                    {%- if number_of_comments > 0 -%}
+                      <hr aria-hidden="true">
+                      <h4>{{ article.comments_count }} comment</h4>
+                      <ul>
+
+                        <!-- If a comment was just submitted with no blank field, show it. -->
+                        {%- if new_comment -%}
+                          <li class="gt_comment_item">
+                            <div class="gt_comment_content">
+                              {{ comment.content }}
+                            </div>
+                            <span class="gt_comment_author">- {{ comment.author }} posted </span>
+                              <span class="gt_comment_time">  {{ comment.created_at | date: "%b %d, %Y" }}</span>
+                          </li>
+                        {%- endif -%}
+
+                        {% for comment in article.comments %}
+                          {% unless comment.id == new_comment_id %}
+                            <li class="gt_comment_item">
+                              <div class="gt_comment_content">
+                                {{ comment.content }}
+                              </div>
+                              <span class="gt_comment_author">- {{ comment.author }} posted</span>
+                                <span class="gt_comment_time"> {{ comment.created_at | date: "%b %d, %Y" }}</span>
+                            </li>
+                          {% endunless %}
+                        {% endfor %}
+
+                      </ul>
+                    {%- endif -%}
+                  {%- endif -%}
+
+                <div class="comment gt_mt--large">
+                  
+                  {% if article.comments_enabled? %}
+                  
+                    <h4 class="gt_subheading gt_mb--medium h4_comment">
+                      Leave a Comment
+                    </h4>
+
+                    <div class="form_comment">
+                        <!-- START COMMENT FORM -->
+                        {% form article %}
+                            {% if form.posted_successfully? %}
+                                {% if article.moderated? %}
+                                    <p class="gt_comment_noti">Your comment has been added and will be published as soon as possible.</p>
+                                {% else %}
+                                    <p class="gt_comment_noti">Your comment has been added.</p>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if form.errors %}
+                                <p>Error, please enter all fields.</p>
+                            {% endif %}
+                            <div class="gt_mb--medium">
+                              <div class="gt_flex gt_flex-md-column gt_flex-wrap group_comment">
+                                <div class="gt_comment_input">
+                                  <div for="comment_author" class="gt_mb--extra-small {% if form.errors contains 'author' %}error{% endif %}">Name</div>
+                                  <input type="text" id="comment_author" name="comment[author]" value="{{ form.author }}" class="gt_mb--small gt_input field{% if form.errors contains "author" %} error{% endif %}">
+                                </div>
+
+                                <div class="gt_comment_input">
+                                  <div for="comment_email" class="gt_mb--extra-small {% if form.errors contains 'email' %}error{% endif %}">
+                                    Email
+                                  </div>
+                                  <input type="text" id="comment_email" name="comment[email]" value="{{ form.email }}" class="gt_mb--small gt_input field{% if form.errors contains "email" %} error{% endif %}">
+                                </div>
+                              </div>
+
+                              <div for="comment_email" class="gt_mb--extra-small {% if form.errors contains 'body' %}error{% endif %}">
+                                Comment
+                              </div>
+                              <div class="line_comment">
+                              <textarea id="comment_body" name="comment[body]" {% if form.errors contains "body" %} class="gt_input error" {% endif %}>{{ form.body }}</textarea>
+                              </div>
+                            </div>
+                            <div class="button_post gt_mt--medium">
+                              <button type="submit" class="gt_button--large button comment submit">POST COMMENT</button>
+                            </div>
+                        {% endform %}
+
+                      <!-- END COMMENT FORM -->
+                    </div>
+                  
+                  {% endif %}
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="application/ld+json">{%- assign schemaArticle = article -%}
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": "{% if schemaArticle.content %}{{ schemaArticle.content | strip_html | escape }}{% endif %}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ shop.url }}{{ page.url }}"
+  },
+  "headline": "{{ schemaArticle.title | escape}}",
+  {% if schemaArticle.excerpt != blank %}
+    "description": "{% if schemaArticle.excerpt %}{{ schemaArticle.excerpt | strip_html | escape }}{% endif %}",
+  {% endif %}
+  {% if schemaArticle.image %}
+    {% assign image_size = schemaArticle.image.width | append: 'x' %}
+    "image": [
+      "https:{{ schemaArticle | img_url: image_size }}"
+    ],
+  {% endif %}
+  "datePublished": "{{ schemaArticle.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "dateCreated": "{{ schemaArticle.created_at | date: '%Y-%m-%dT%H:%M:%SZ' }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ schemaArticle.author | escape }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if settings.share_image %}
+      {% assign image_size = settings.share_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": "{{ settings.share_image.height }}",
+        "url": "https:{{ settings.share_image | img_url: image_size }}",
+        "width": "{{ settings.share_image.width }}"
+      },
+    {% elsif schemaArticle.image %}
+      {% assign image_size = schemaArticle.image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": "{{ schemaArticle.image.height }}",
+        "url": "https:{{ schemaArticle.image | img_url: image_size }}",
+        "width": "{{ schemaArticle.image.width }}"
+      },
+    {% endif %}
+    "name": "{{ shop.name | escape }}"
+  }
+}
+</script>
+  </section>
+
+
+  

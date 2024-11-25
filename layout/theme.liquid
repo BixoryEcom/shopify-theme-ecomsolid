@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
+<head>
+ {%- render 'beae_header' -%}
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TH7BFBH');</script>
+<!-- End Google Tag Manager -->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="canonical" href="{{ canonical_url }}">
+
+  
+  
+  
+  {% render 'header-settings' %}
+{% render 'ecomsolid-preload' %}
+{% render 'header-seo' %}
+{% render 'header-social-meta' %}
+{{ content_for_header }}
+
+{% render 'header-custom' %}
+  
+  
+{% render 'ecomsolid-head' %}
+{% render 'ecomsolid-discounts' %}
+
+<!-- RYVIU APP :: Settings global -->	
+    <script> var ryviu_global_settings = {{shop.metafields.ryviu.user_settings }};</script>
+<!-- RYVIU APP -->
+
+    <!-- Upsell & Cross Sell - Selleasy by Logbase - Starts -->
+      <script src='https://upsell-app.logbase.io/lb-upsell.js?shop=mybixtore.myshopify.com' defer></script>
+    <!-- Upsell & Cross Sell - Selleasy by Logbase - Ends -->
+
+  
+</head>
+
+<body id="{{ page_title | handle }}" class="template-{{ template.name | handle }}">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH7BFBH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->  
+  {% render 'ecomsolid-layout-before' %}<main role="main" id="MainContent" >
+    {{ content_for_layout }}
+  </main>
+{% render 'ecomsolid-layout-after' %}
+{% render 'ecomsolid-global-widgets' %}
+  
+  
+{% render 'ecomsolid-footer' %}
+
+ {%- render 'beae_footer' -%}
+ </body>
+</html>
